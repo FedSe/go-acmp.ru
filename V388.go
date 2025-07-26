@@ -1,52 +1,50 @@
 package main
 import (
-	. "fmt"
 	b "bufio"
+	. "fmt"
 	. "os"
-	. "strconv"
 )
 func main() {
 	var (
 		n, m, c, x, i, f, j, a int
-		R, C, D [564001]int
-		s = b.NewScanner(Stdin)
+		R, C, D                [564001]int
+		s                      = b.NewReader(Stdin)
 	)
-	s.Split(b.ScanWords)
-	Scan(&n, &m)
 
+	Fscan(s, &n, &m)
 	for x < m {
 		C[x] = -1001
-	x++
+		x++
 	}
-
-	for s.Scan() {
-		D[j], _ = Atoi(s.Text())
-	j++
+	w := n * m
+	for j < w {
+		Fscan(s, &D[j])
+		j++
 	}
 
 	for i < n {
 		R[i] = 1001
-		for
-		j = 0
-		j < m
-		{
+		for j = 0; j < m; {
 			a = D[i*m+j]
-			if a < R[i] { R[i] = a }
-			if a > C[j] { C[j] = a }
-		j++
+			if a < R[i] {
+				R[i] = a
+			}
+			if a > C[j] {
+				C[j] = a
+			}
+			j++
 		}
-	i++
+		i++
 	}
 
 	for f < n {
-		for
-		j = 0
-		j < m
-		{
-			if R[f] == C[j] { c++ }
-		j++
+		for j = 0; j < m; {
+			if R[f] == C[j] {
+				c++
+			}
+			j++
 		}
-	f++
+		f++
 	}
 
 	Print(c)

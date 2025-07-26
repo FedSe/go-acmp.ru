@@ -1,27 +1,27 @@
 package main
 import (
-	. "fmt"
 	b "bufio"
+	. "fmt"
 	. "os"
 )
 func main() {
 	var (
-		t [202]int
+		t          [202]int
 		z, n, a, m int
-		s = b.NewScanner(Stdin)
+		s          = b.NewReader(Stdin)
 	)
-	s.Split(b.ScanWords)
 
-	Scanln(&n)
-	for s.Scan() {
-	z++
-		Sscan(s.Text(), &a)
+	Fscan(s, &n)
+	for n > 0 {
+		z++
+		Fscan(s, &a)
 		f := &t[a+101]
 		b := z - *f
 		if b > t[a] && *f > 0 {
 			t[a] = b
 		}
 		*f = z
+		n--
 	}
 
 	z = 1
@@ -29,7 +29,7 @@ func main() {
 		if m < t[z] {
 			m = t[z]
 		}
-	z++
+		z++
 	}
 
 	Print(m)

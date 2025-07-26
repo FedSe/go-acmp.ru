@@ -1,24 +1,22 @@
 package main
 import (
 	b "bufio"
-	."fmt"
+	. "fmt"
 	. "os"
 	. "sort"
-	. "strconv"
 )
 func main() {
 	var (
-		p [100001][2]int
+		p       [100001][2]int
 		a, n, i int
-		s = b.NewScanner(Stdin)
+		s       = b.NewReader(Stdin)
 	)
-	s.Split(b.ScanWords)
 
-	Scan(&n)
-	for s.Scan() {
-		a, _ = Atoi(s.Text())
+	Fscan(s, &n)
+	for i < n {
+		Fscan(s, &a)
 		p[i] = [2]int{a, i + 1}
-	i++
+		i++
 	}
 
 	Slice(p[:n], func(i, j int) bool {
@@ -37,7 +35,7 @@ func main() {
 			u = p[i-1][1]
 			b = p[i][1]
 		}
-	i++
+		i++
 	}
 
 	Print(m, u, b)

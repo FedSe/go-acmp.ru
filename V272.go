@@ -1,18 +1,20 @@
 package main
 import (
 	b "bufio"
-	."fmt"
+	. "fmt"
 	. "os"
 )
 func main() {
 	var y, z, i, a int
 	Scan(&z, &y)
 
-	s := b.NewScanner(Stdin)
-	s.Split(b.ScanWords)
+	s := b.NewReader(Stdin)
+	for {
+		_, e := Fscan(s, &a)
+		if e != nil {
+			break
+		}
 
-	for s.Scan() {
-		Sscan(s.Text(), &a)
 		i++
 
 		if i%2 < 1 {
@@ -25,6 +27,5 @@ func main() {
 			}
 		}
 	}
-
 	Print(y + z)
 }

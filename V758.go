@@ -1,30 +1,31 @@
 package main
 import (
-	. "fmt"
-	. "sort"
 	b "bufio"
+	. "fmt"
 	. "os"
+	. "sort"
 )
+
 func main() {
 	var (
-		a, n int
-		t [] int
-		s = b.NewScanner(Stdin)
+		a, n, i int
+		t       []int
+		s       = b.NewReader(Stdin)
 	)
-	s.Split(b.ScanWords)
-	Scan(&n)
 
-	for s.Scan() {
-		Sscan(s.Text(), &n)
-		t = append(t, n)
+	Fscan(s, &n)
+	for n > 0 {
+		Fscan(s, &i)
+		t = append(t, i)
+		n--
 	}
 	Ints(t)
 
 	for len(t) > 3 {
-		i := t[1]*2
-		n = len(t)-1
+		i = t[1] * 2
+		n = len(t) - 1
 		a += t[n] + t[0]
-		if t[n-1] + t[0] > i {
+		if t[n-1]+t[0] > i {
 			a += i
 			n--
 		}
@@ -32,8 +33,12 @@ func main() {
 	}
 
 	a += t[0]
-	if len(t) > 2 { a += t[1] + t[2] }
-	if len(t) == 2 { a += t[1] - t[0] }
+	if len(t) > 2 {
+		a += t[1] + t[2]
+	}
+	if len(t) == 2 {
+		a += t[1] - t[0]
+	}
 
 	Print(a)
 }

@@ -1,32 +1,31 @@
 package main
 import (
-	. "fmt"
 	b "bufio"
+	. "fmt"
 	. "os"
 	. "sort"
-	. "strconv"
 )
+
 func main() {
 	var (
-		a []int
-		n = 0
-		w = b.NewWriter(Stdout)
-		s = b.NewScanner(Stdin)
+		a    []int
+		n, i int
+		w    = b.NewWriter(Stdout)
+		s    = b.NewReader(Stdin)
 	)
 
-	s.Split(b.ScanWords)
-	Scan(&n)
+	Fscan(s, &n)
 
-	for s.Scan() {
-		n, _ = Atoi(s.Text())
-		a = append(a, n)
+	for n > 0 {
+		Fscan(s, &i)
+		a = append(a, i)
+		n--
 	}
 	Ints(a)
 
 	for _, r := range a {
-		w.WriteString(Sprint(r, " "))
+		Fprintln(w, r)
 	}
- 
-	w.Flush()
 
+	w.Flush()
 }

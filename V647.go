@@ -1,40 +1,38 @@
 package main
 import (
+	b "bufio"
 	. "fmt"
 	. "os"
-	b "bufio"
 )
 func main() {
 	var (
-		a, p [131071]int
+		a, p       [131071]int
 		n, m, q, i int
-		s = b.NewScanner(Stdin)
+		s          = b.NewReader(Stdin)
 	)
 
-	Scan(&n, &m)
-	s.Split(b.ScanWords)
-
+	Fscan(s, &n, &m)
 	for i < n {
-	i++
+		i++
 		p[i] = m + i - 1
 	}
 	n += m
 
-	for s.Scan() {
-		Sscan(s.Text(), &q)
+	for m > 0 {
+		Fscan(s, &q)
 		i = p[q]
 		x := i
 		u := 0
 		for x > 0 {
 			u += a[x]
-		x &= x + 1
-		x--
+			x &= x + 1
+			x--
 		}
 		Print(i-m+1-u, " ")
 		x = i
 		for x < n {
 			a[x]++
-		x |= x + 1
+			x |= x + 1
 		}
 		m--
 		p[q] = m

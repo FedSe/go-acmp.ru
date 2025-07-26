@@ -1,0 +1,44 @@
+package main
+import (
+	b "bufio"
+	."fmt"
+	. "os"
+	. "sort"
+	. "strconv"
+)
+func main() {
+	var (
+		p [100001][2]int
+		a, n, i int
+		s = b.NewScanner(Stdin)
+	)
+	s.Split(b.ScanWords)
+
+	Scan(&n)
+	for s.Scan() {
+		a, _ = Atoi(s.Text())
+		p[i] = [2]int{a, i + 1}
+	i++
+	}
+
+	Slice(p[:n], func(i, j int) bool {
+		return p[i][0] < p[j][0]
+	})
+
+	m := p[1][0] - p[0][0]
+	u := p[0][1]
+	b := p[1][1]
+
+	i = 2
+	for i < n {
+		a = p[i][0] - p[i-1][0]
+		if m > a {
+			m = a
+			u = p[i-1][1]
+			b = p[i][1]
+		}
+	i++
+	}
+
+	Print(m, u, b)
+}

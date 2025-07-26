@@ -1,0 +1,39 @@
+package main
+import (
+	. "fmt"
+	. "strings"
+)
+func main() {
+	var (
+		v [1000]string
+		a = ""
+		n, o, i int
+	)
+
+	Scan(&n)
+	for i < n {
+		Scan(&v[i])
+	i++
+	}
+	Scan(&a)
+
+	for 0 < n {
+	n--
+		b := a
+		i = 0
+		for x := range v[n] {
+			q := IndexByte(b, v[n][x])
+			if q > -1 {
+				b = b[:q] + "@" + b[q+1:]
+			} else {
+				break
+			}
+			i++
+		}
+		if i == len(v[n]) {
+			o++
+		}
+	}
+
+	Print(o)
+}

@@ -2,9 +2,9 @@ package main
 import . "fmt"
 func main() {
 	var (
-		s = ""
-		p = s
-		a = 10000.
+		s             = ""
+		p             = s
+		a             = 10000.
 		x, i, n, u, t float64
 	)
 
@@ -21,14 +21,17 @@ func main() {
 				x = t
 			}
 			u += t
-		n++
+			n++
 		}
-	i++
+		i++
 	}
 
-	i = 4-n
-	Print("Ping statistics for ", p+":\nPackets: Sent = 4 Received = ", n, " Lost = ", i, " (", i*25, "% loss)\n")
+	i = 4 - n
+	Print("Ping statistics for ", p+`:
+Packets: Sent = 4 Received = `, n, " Lost = ", i, " (", i*25, `% loss)
+`)
 	if n > 0 {
-		Print("Approximate round trip times:\nMinimum = ", a, " Maximum = ", x, " Average = ", int(u/n+0.5))
+		Print(`Approximate round trip times:
+Minimum = `, a, " Maximum = ", x, " Average = ", int(u/n+0.5))
 	}
 }

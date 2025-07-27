@@ -5,12 +5,10 @@ func main() {
 	Scan(&a, &b)
 
 	for i < a {
-	i++
-		for 
+		i++
 		j := 0
-		j < b
-		{
-		j++
+		for j < b {
+			j++
 			if i*j%5 < 1 {
 				f++
 			} else if i*j%3 < 1 {
@@ -18,9 +16,11 @@ func main() {
 			} else if i*j%2 < 1 {
 				d++
 			}
-
 		}
 	}
 
-	Printf("RED : %d\nGREEN : %d\nBLUE : %d\nBLACK : %d", d, e, f, a*b-d-e-f)
+	Printf(`RED : %d
+GREEN : %d
+BLUE : %d
+BLACK : %d`, d, e, f, a*b-d-e-f)
 }

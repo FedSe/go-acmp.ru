@@ -6,10 +6,10 @@ import (
 func main() {
 	var (
 		n, u, i int
-		c []float64
-		e []string
-		o []int
-		r = .0
+		c       []float64
+		e       []string
+		o       []int
+		r       = .0
 	)
 	Scan(&n)
 
@@ -23,9 +23,9 @@ func main() {
 			Scan(&a)
 			e = append(e, a)
 			o = append(o, len(o))
-		u--
+			u--
 		}
-	n--
+		n--
 	}
 
 	Slice(o, func(i, j int) bool {
@@ -35,7 +35,8 @@ func main() {
 	u = len(o)
 	Println(u)
 	for i < u {
-		Printf("%.2f %s\n", c[o[i]], e[o[i]])
-	i++
+		Printf(`%.2f %s
+`, c[o[i]], e[o[i]])
+		i++
 	}
 }

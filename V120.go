@@ -2,44 +2,41 @@ package main
 import . "fmt"
 func main() {
 	var (
-		n, m, i int
-		a [20][20]int
+		n, m, j, i int
+		a          [20][20]int
 	)
 	Scan(&n, &m)
 
-	for i < n {
-		for
-		j := 0
-		j < m
-		{
-			Scan(&a[i][j])
-		j++
+	for j < n {
+		v := 0
+		for v < m {
+			Scan(&a[j][v])
+			v++
 		}
-	i++
+		j++
 	}
 
-	i = 1
-	for i < 20 {
-		a[0][i] += a[0][i-1]
-		a[i][0] += a[i-1][0]
-	i++
-	}
-
-	i = 1
 	for i < n {
-		for
-		j := 1
-		j < m
-		{
-			r := a[i-1][j]
-			e := a[i][j-1]
-			a[i][j] = a[i][j] + e
-			if e > r {
-				a[i][j] += r - e
+		j = 0
+		for j < m {
+			v := 0
+			if i > 0 {
+				v = a[i-1][j]
 			}
-		j++
+			if j > 0 {
+				v = a[i][j-1]
+				if i*j > 0 {
+					w := a[i-1][j]
+					if w < v {
+						v = w
+					}
+				}
+			}
+
+			a[i][j] += v
+			j++
 		}
-	i++
+		i++
 	}
 
 	Print(a[n-1][m-1])

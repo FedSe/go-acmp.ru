@@ -1,18 +1,14 @@
 package main
 import . "fmt"
-var k, n int
-
-func F(n int) int {
-	a := 0
-	if n > 0 {
-		a = F(n-1) + k
-		a %= n
-	}
-	return a
-}
-
 func main() {
-	Scan(&n, &k)
+	var n, k, s, i int
 
-	Print(F(n)+1)
+	Scan(&n, &k)
+	for i < n {
+		i++
+		s += k
+		s %= i
+	}
+
+	Print(s + 1)
 }

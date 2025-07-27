@@ -1,26 +1,23 @@
 package main
 import . "fmt"
-func main(){
-	var n, m, i int
-	a:=""
-	b:=a
+func main() {
+	n := 0
+	m := 0
+	a := ""
+	b := a
 
 	Scan(&a, &b)
 
-	for i < 4 {
-		for j := 0
-		j < 4
-		{
-			if a[i] == b[j] {
+	for i, v := range a {
+		for j, w := range b {
+			if v == w {
 				if i == j {
 					n++
 					m--
 				}
 				m++
 			}
-		j++
 		}
-	i++
 	}
 
 	Print(n, m)

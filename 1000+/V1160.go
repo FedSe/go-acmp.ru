@@ -1,7 +1,7 @@
 package main
 import (
-	. "fmt"
 	b "bufio"
+	. "fmt"
 	. "os"
 )
 func main() {
@@ -14,7 +14,7 @@ func main() {
 
 	Scan(&s)
 	n := len(s)
-	Print("0 ")
+	Println(0)
 	for i < n {
 		j := v[i-1]
 		for j > 0 && s[i] != s[j] {
@@ -24,8 +24,8 @@ func main() {
 			j++
 		}
 		v[i] = j
-		w.WriteString(Sprint(j, " "))
-	i++
+		Fprintln(w, j)
+		i++
 	}
 
 	w.Flush()

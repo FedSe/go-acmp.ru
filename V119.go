@@ -1,23 +1,24 @@
 package main
-import (. "fmt"
-. "sort"
+import (
+	. "fmt"
+	. "sort"
 )
 func main() {
-	var (i, n, a, b, c, j int
-	A []int
-)
+	var (
+		n, a, b, c int
+		A          []int
+	)
+    
 	Scan(&n)
-
-	for i < n {
+	for 0 < n {
 		Scan(&a, &b, &c)
-		A = append(A, a*3600 + b*60 + c)
-	i++
+		A = append(A, a*3600+b*60+c)
+		n--
 	}
 
 	Ints(A)
 
-	for j < n {
-		Println(A[j]/3600, A[j]/60%60, A[j]%60)
-	j++
+	for _, v := range A {
+		Println(v/3600, v/60%60, v%60)
 	}
 }

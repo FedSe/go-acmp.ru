@@ -1,7 +1,8 @@
 package main
 import . "fmt"
-func main(){
-	a:=1
+func main() {
+	a := 1
 	Scan(&a)
-	Print("The next number for the number ", a, " is ", a+1, ".\nThe previous number for the number ", a, " is ", a-1, ".")
+	Printf(`The next number for the number %d is %d.
+The previous number for the number %d is %d.`, a, a+1, a, a-1)
 }

@@ -6,23 +6,20 @@ func main() {
 	c := a
 	Scan(&a, &b, &c)
 
-	if a[0] == 'b' && b[0] == 'b' && c[0] == 'g' {
-		Print("black\nblack\nGREEN")
-	} else if a[0] == 'b' && b[0] == 'b' && c[0] == 'G' {
-		Print("black\nyellow\nblack")
-	} else if a[0] == 'b' && b[0] == 'y' && c[0] == 'b' {
-		Print("red\nblack\nblack")
-	} else if a[0] == 'r' && b[0] == 'b' && c[0] == 'b' {
-		Print("red\nyellow\nblack")
-	} else if a[0] == 'r' && b[0] == 'y' && c[0] == 'b' {
-		Print("black\nblack\ngreen")
-	} else if a[0] == 'b' && b[0] == 'Y' && c[0] == 'b' {
-		Print("black\nYELLOW\nblack")
-	} else if a[0] == 'R' && b[0] == 'b' && c[0] == 'b' {
-		Print("RED\nblack\nblack")
-	} else if a[0] == 'b' && b[0] == 'b' && c[0] == 'G' {
-		Print("black\nblack\nGREEN")
-	} else {
-		Print("error")
+	t := map[string]string{
+		"bbg": "black\nblack\nGREEN",
+		"bbG": "black\nyellow\nblack",
+		"byb": "red\nblack\nblack",
+		"rbb": "red\nyellow\nblack",
+		"ryb": "black\nblack\ngreen",
+		"bYb": "black\nYELLOW\nblack",
+		"Rbb": "RED\nblack\nblack",
 	}
+
+	a = t[string([]byte{a[0], b[0], c[0]})]
+	if a == "" {
+		a = "error"
+	}
+
+	Print(a)
 }

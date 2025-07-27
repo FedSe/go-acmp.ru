@@ -1,17 +1,17 @@
 package main
 import . "fmt"
 func main() {
-	var n, a, c, i int
-	b:=1
+	var n, a, i int
+	b := 1
 	Scan(&n)
-	for c < n {
-		a = b
-		b = c
-		c = a + b
+
+	for a < n {
+		a, b = b, a+b
 		i++
 	}
-	if c == n {
-		Print(1,"\n", i)
+
+	if a == n {
+		Println(1, i)
 	} else {
 		Print(0)
 	}

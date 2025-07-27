@@ -2,33 +2,27 @@ package main
 import . "fmt"
 func main() {
 	var (
-		n, c, r, t int
-		a          [100]int
-		s          = "YES"
+		n, c, r int
+		s       = "YES"
+		a       = ""
 	)
+    
 	Scan(&n)
-
 	for n > 0 {
 		Scan(&c)
 		if c%2 > 0 {
 			Println(c)
 			r++
 		} else {
-			a[t] = c
-			t++
+			a += Sprintln(c)
+			r--
 		}
 		n--
 	}
 
-	Println()
-	for n < t {
-		Println(a[n])
-		n++
-	}
-
-	if t < r {
+	if 0 < r {
 		s = "NO"
 	}
 
-	Println(s)
+	Print(a + s)
 }

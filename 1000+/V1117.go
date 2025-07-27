@@ -1,20 +1,11 @@
 package main
 import . "fmt"
-func main(){
-	n:=0
-	i:=1
+func main() {
+	n := 0
 	Scan(&n)
 
-	r := 540
-	for i <= n {
-		r += 45
-		if i != n && i & 1 > 0 {
-			r += 5
-		} else if i != n && i & 1 < 1 {
-			r += 15
-		}
-	i++
-	}
+	k := n - 1
+	r := 540 + 45*n + 20*(k/2) + 5*(k%2)
 
-	Print(r / 60, " ", r % 60)
+	Println(r/60, r%60)
 }

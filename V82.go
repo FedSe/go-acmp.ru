@@ -1,15 +1,15 @@
 package main
 import (
-	. "fmt"
-	. "os" 
 	b "bufio"
+	. "fmt"
+	. "os"
 	. "strconv"
 )
 func main() {
 	var (
-		a, c [300000]int
+		a, c    [300000]int
 		n, m, i int
-		s = b.NewScanner(Stdin)
+		s       = b.NewScanner(Stdin)
 	)
 
 	Scan(&n, &m)
@@ -23,11 +23,11 @@ func main() {
 		} else {
 			a[i-n] = f
 		}
-	i++
+		i++
 	}
 
 	for 0 < m {
-	m--
+		m--
 		if c[a[m]] > 0 {
 			c[a[m]] = 2
 		}
@@ -35,8 +35,7 @@ func main() {
 
 	for j, v := range c {
 		if v > 1 {
-			Print(j, " ")
+			Println(j)
 		}
 	}
-
 }

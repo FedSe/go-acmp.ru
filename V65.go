@@ -2,8 +2,8 @@ package main
 import . "fmt"
 func main() {
 	var (
-		v [9999]int
-		s = ""
+		v          [9999]int
+		s          = ""
 		n, i, f, l int
 	)
 	Scan(&s, &n)
@@ -11,19 +11,17 @@ func main() {
 	w := m
 
 	for i < n {
-	i++
+		i++
 		t := ""
 		Scan(&t)
 
 		h := 0
-		for
 		j := 0
-		j < w
-		{
+		for j < w {
 			if s[j] != t[j] {
 				h++
 			}
-		j++
+			j++
 		}
 
 		if h <= m {
@@ -38,8 +36,7 @@ func main() {
 
 	Println(f)
 	for l < f {
-		Print(v[l], " ")
-	l++
+		Println(v[l])
+		l++
 	}
-
 }

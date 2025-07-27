@@ -12,7 +12,7 @@ func main() {
 			a = s
 		}
 		s -= o - h
-		Print(a, " ")
-	n--
+		Println(a)
+		n--
 	}
 }

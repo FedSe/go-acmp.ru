@@ -2,7 +2,7 @@ package main
 import . "fmt"
 func main() {
 	var (
-		w [30000]int
+		w                               [30000]int
 		n, s, a, b, c, d, x, y, r, i, j int
 	)
 
@@ -13,7 +13,7 @@ func main() {
 	k := o*o + p*p
 
 	for i < n {
-	i++
+		i++
 		Scan(&x, &y, &r)
 		r *= r
 		if r*k >= (p*x-o*y+b*c-d*a)*(p*x-o*y+b*c-d*a) {
@@ -24,7 +24,7 @@ func main() {
 
 	Println(s)
 	for j < s {
-		Print(w[j], " ")
-	j++
+		Println(w[j])
+		j++
 	}
 }

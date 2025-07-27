@@ -3,7 +3,7 @@ import . "fmt"
 func main() {
 	var (
 		n, m, i, f int
-		a [100]int
+		a          [100]int
 	)
 	Scan(&n, &m)
 
@@ -11,11 +11,11 @@ func main() {
 	for 0 < m {
 		Scan(&f)
 		a[f-1]++
-	m--
+		m--
 	}
 
 	for i < n {
-		Print(a[i], " ")
-	i++
+		Println(a[i])
+		i++
 	}
 }

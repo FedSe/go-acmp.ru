@@ -10,19 +10,25 @@ func main() {
 
 	m--
 	for 0 < n {
-	n--
+		n--
 		a := 9
-		if s < 9 { a = s }
+		if s < 9 {
+			a = s
+		}
 		s -= a
 		x += Sprint(a)
-		
+
 		a = 9
-		if m < 9 { a = m }
+		if m < 9 {
+			a = m
+		}
 		m -= a
 
-		if n < 1 { a++ }
+		if n < 1 {
+			a++
+		}
 		y = Sprint(a) + y
 	}
 
-	Print(x, " ", y)
+	Println(x, y)
 }

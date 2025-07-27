@@ -2,41 +2,37 @@ package main
 import . "fmt"
 func main() {
 	var (
-		r [10001][3]int
-		d [101]int
+		r             [10001][3]int
+		d             [101]int
 		n, m, i, j, l int
-		F = 30000
-		f = 1
+		F             = 30000
+		f             = 1
 	)
 
 	Scan(&n, &m)
 
 	for i < n {
 		d[i] = F
-	i++
+		i++
 	}
 
 	d[0] = 0
 	for j < m {
-		for
 		i = 0
-		i < 3
-		{
+		for i < 3 {
 			Scan(&r[j][i])
 			if i < 2 {
 				r[j][i]--
 			}
-		i++
+			i++
 		}
-	j++
+		j++
 	}
 
 	for f > 0 {
-	f = 0
-		for
+		f = 0
 		k := 0
-		k < m
-		{
+		for k < m {
 			i = r[k][0]
 			j = r[k][1]
 			o := d[i] + r[k][2]
@@ -44,13 +40,12 @@ func main() {
 				f = 1
 				d[j] = o
 			}
-		k++
+			k++
 		}
 	}
 
 	for l < n {
-		Print(d[l], " ")
-	l++
+		Println(d[l])
+		l++
 	}
-
 }

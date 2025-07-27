@@ -8,24 +8,26 @@ func main() {
 	Scan(&n)
 
 	for z < n {
-	z++
+		z++
 		Scan(&s[z])
 	}
+    
 	x[1] = s[1]
-	for
 	i := 1
-	i < n
-	{
-	i++
+    
+	for i < n {
+		i++
 		z = x[i-1] + s[i]
 		x[i] = x[i-2] + s[i]
 		if z > x[i] {
 			x[i] = z
 		}
 	}
+    
 	e := x[n]
 	b := n
 	w[0] = b
+    
 	for b > 1 {
 		b--
 		if e == x[b]+s[b+1] {
@@ -44,8 +46,9 @@ func main() {
 
 	j++
 	w[j] = x[n]
+    
 	for j > -1 {
-		Print(w[j], " ")
-	j--
+		Println(w[j])
+		j--
 	}
 }

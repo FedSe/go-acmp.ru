@@ -2,14 +2,14 @@ package main
 import . "fmt"
 func main() {
 	var (
-		x [1001]int
+		x                   [1001]int
 		j, i, N, A, B, C, D int
 	)
 
 	Scan(&N, &A, &B, &C, &D)
 
 	for i < N {
-	i++
+		i++
 		x[i] = i
 	}
 
@@ -18,7 +18,7 @@ func main() {
 		i = x[A]
 		x[A] = x[B-A]
 		x[B-A] = i
-	A++
+		A++
 	}
 
 	D += C
@@ -26,12 +26,11 @@ func main() {
 		i = x[C]
 		x[C] = x[D-C]
 		x[D-C] = i
-	C++
+		C++
 	}
 
 	for j < N {
-	j++
-		Print(x[j], " ")
+		j++
+		Println(x[j])
 	}
-
 }

@@ -2,14 +2,14 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [1000]int
+		a       [1000]int
 		n, i, j int
 	)
 	Scan(&n, &a[0])
 	x := a[0]
 	y := x
 	for i < n-1 {
-	i++
+		i++
 		Scan(&a[i])
 		if a[i] > x {
 			x = a[i]
@@ -22,7 +22,7 @@ func main() {
 		if a[j] == x {
 			a[j] = y
 		}
-		Print(a[j], " ")
-	j++
+		Println(a[j])
+		j++
 	}
 }

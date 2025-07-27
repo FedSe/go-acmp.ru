@@ -6,18 +6,19 @@ func main() {
 	if n == 1 {
 		Print("No")
 	} else {
-		Println("Yes")
 		Scan(&v)
 		i := 1
 		for i < n {
-		i++
+			i++
 			Scan(&m)
 			s += i * m
 		}
-		Print(-s)
+		Print(`
+Yes
+`, -s)
 		i = 1
 		for i < n {
-		i++
+			i++
 			Print(" ", i*v)
 		}
 	}

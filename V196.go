@@ -3,16 +3,16 @@ import . "fmt"
 func main() {
 	var (
 		n, x, R, i, j int
-		m [100][100]int
-		y = -1
-		C = 1
+		m             [100][100]int
+		y             = -1
+		C             = 1
 	)
 	Scan(&n)
 
 	for i < n*n {
 		x += R
 		y += C
-		if 0 <= x*y && x < n && y < n && m[x][y] == 0 {
+		if 0 <= x*y && x < n && y < n && m[x][y] < 1 {
 			i++
 			m[x][y] = i
 		} else {
@@ -24,18 +24,16 @@ func main() {
 			} else if R == 1 || R == -1 {
 				C = -R
 				R = 0
-			} 
+			}
 		}
 	}
 
 	for j < n {
-		for
 		i = 0
-		i < n
-		{
-			Print(m[j][i], " ")
-		i++
+		for i < n {
+			Println(m[j][i])
+			i++
 		}
-	j++
+		j++
 	}
 }

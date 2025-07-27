@@ -1,10 +1,9 @@
 package main
 import (
-	. "fmt"
 	b "bufio"
+	. "fmt"
 	. "os"
 )
-
 func main() {
 	r := b.NewScanner(Stdin)
 
@@ -28,16 +27,14 @@ func main() {
 			j++
 		}
 		p[i] = j
-	i++
+		i++
 	}
 
-	for
 	i = 0
-	i < len(s)
-	{
-	i++
+	for i < len(s) {
+		i++
 		if p[n+i] == n {
-			Print(i-n, " ")
+			Println(i - n)
 		}
 	}
 }

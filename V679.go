@@ -11,7 +11,7 @@ func main() {
 	}
 
 	if w > 0 {
-		Print(2, w, " ")
+		Println(2, w)
 	}
 
 	if n/3 > 0 {

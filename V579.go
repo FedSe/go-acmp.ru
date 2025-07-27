@@ -2,13 +2,13 @@ package main
 import . "fmt"
 func main() {
 	var (
-		p, e [10001]int
+		p, e                   [10001]int
 		n, a, s, g, i, x, y, j int
 	)
 
 	Scan(&n)
 	for i < n {
-	i++
+		i++
 		Scan(&a)
 		if a > 0 {
 			p[x] = i
@@ -29,7 +29,7 @@ func main() {
 
 	Println(y)
 	for j < y {
-		Print(e[j], " ")
-	j++
+		Println(e[j])
+		j++
 	}
 }

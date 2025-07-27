@@ -3,15 +3,17 @@ import (
 	. "fmt"
 	. "sort"
 )
+
 type T struct {
 	d, h int
 }
+
 func main() {
 	var (
-		w []T
-		v []int
+		w                []T
+		v                []int
 		a, n, m, e, l, i int
-		t T
+		t                T
 	)
 
 	Scan(&n, &m)
@@ -21,7 +23,7 @@ func main() {
 		if t.h > 0 {
 			w = append(w, t)
 		}
-	l++
+		l++
 	}
 
 	for i < m {
@@ -29,7 +31,7 @@ func main() {
 		if l > 0 {
 			v = append(v, a)
 		}
-	i++
+		i++
 	}
 
 	Slice(w, func(i, j int) bool {
@@ -37,13 +39,13 @@ func main() {
 	})
 
 	if len(w) > 1 {
-		a = len(w) / 2 - 1
+		a = len(w)/2 - 1
 		i = 0
 		for i < len(w) {
 			if w[i].h > w[a].h || w[i].h == w[0].h {
 				v = append(v, w[i].d)
 			}
-		i++
+			i++
 		}
 	}
 
@@ -51,6 +53,6 @@ func main() {
 
 	Println(len(v))
 	for _, t := range v {
-		Print(t, " ")
+		Println(t)
 	}
 }

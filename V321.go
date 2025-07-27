@@ -9,19 +9,17 @@ func main() {
 
 		d := 0
 		x := n
-
 		for x > 0 {
 			t := x % i
-			if 1 << t & d > 0 {
+			if 1<<t&d > 0 {
 				goto A
 			}
 			d |= 1 << t
 			x /= i
 		}
 
-		Print(i, " ")
-A:
-	i++
+		Println(i)
+	A:
+		i++
 	}
-
 }

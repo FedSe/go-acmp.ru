@@ -1,16 +1,16 @@
 package main
 import . "fmt"
 func main() {
-	a := 0
 	n := 0
 	s := ""
+	w := s
 
 	Scan(&n)
 	for 0 < n {
-		Scan(&a)
-		s = Sprint(a, " ") + s
-	n--
+		Scan(&w)
+		s = w + " " + s
+		n--
 	}
-	
+
 	Print(s)
 }

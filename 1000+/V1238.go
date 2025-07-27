@@ -2,60 +2,49 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a, b, c [100][100]int
+		a, b, c             [100][100]int
 		n, m, p, i, l, j, w int
 	)
 
 	Scan(&n, &m, &p)
 	for i < n {
-		for
 		k := 0
-		k < m
-		{
+		for k < m {
 			Scan(&a[i][k])
-		k++
+			k++
 		}
-	i++
+		i++
 	}
 
 	for l < m {
-		for
 		i = 0
-		i < p
-		{
+		for i < p {
 			Scan(&b[l][i])
-		i++
+			i++
 		}
-	l++
+		l++
 	}
 
 	for j < n {
-		for
 		i = 0
-		i < p
-		{
+		for i < p {
 			c[j][i] = 0
-			for
-			v := 0
-			v < m
-			{
-				c[j][i] += a[j][v] * b[v][i]
-			v++
+			l = 0
+			for l < m {
+				c[j][i] += a[j][l] * b[l][i]
+				l++
 			}
-		i++
+			i++
 		}
-	j++
+		j++
 	}
 
 	for w < n {
-		for
 		i = 0
-		i < p
-		{
-			Print(c[w][i], " ")
-		i++
+		for i < p {
+			Println(c[w][i])
+			i++
 		}
-		Println()
-	w++
+		w++
 	}
 }

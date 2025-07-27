@@ -26,7 +26,7 @@ func main() {
 				d = s[len(s)-1]
 				s = s[:len(s)-1]
 			}
-			Print(d, " ")
+			Println(d)
 		}
 	n--
 	}

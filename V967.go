@@ -3,7 +3,6 @@ import (
 	. "fmt"
 	. "sort"
 )
-
 func main() {
 	var n, k, x, a, i int
 	Scan(&n, &k, &x)
@@ -29,9 +28,7 @@ func main() {
 	}
 	Ints(b)
 	
-
 	for _, c := range b {
-		Print(c, " ")
+		Println(c)
 	}
-
 }

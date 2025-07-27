@@ -1,11 +1,11 @@
 package main
-import ."fmt"
+import . "fmt"
 func main() {
 	var (
-	u[10] int
-	n = ""
-	t, i, j, a, b, c, l int
-)
+		u                   [10]int
+		n                   = ""
+		t, i, j, a, b, c, l int
+	)
 
 	for l < 3 {
 		Scan(&n)
@@ -17,25 +17,23 @@ func main() {
 			c = b
 			b = a
 		}
-	l++
+		l++
 	}
 
 	l = a & b & c
-
 	for i < 10 {
 		if l&(1<<i) > 0 {
 			t++
 			u[i]++
 		}
-	i++
+		i++
 	}
 
 	Println(t)
 	for j < 10 {
 		if u[j] > 0 {
-			Print(j, " ")
+			Println(j)
 		}
-	j++
+		j++
 	}
-
 }

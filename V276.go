@@ -5,13 +5,12 @@ func main() {
 	Scan(&n, &m)
 
 	for i < m-n%m {
-		Print(n/m," ")
-	i++
+		Println(n / m)
+		i++
 	}
 
 	for j < n%m {
-		Print(n/m+1," ")
-	j++
+		Println(n/m + 1)
+		j++
 	}
-
 }

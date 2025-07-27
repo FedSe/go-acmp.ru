@@ -10,18 +10,18 @@ func main() {
 	a := make([]int, n)
 	for i < n {
 		Scan(&a[i])
-	i++
+		i++
 	}
 	Ints(a)
 
 	for j < n {
-		Print(a[j], " ")
-	j += 2
+		Println(a[j])
+		j += 2
 	}
 
 	n -= 1 + n%2
 	for n > 0 {
-		Print(a[n], " ")
-	n -= 2
+		Println(a[n])
+		n -= 2
 	}
 }

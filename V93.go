@@ -3,19 +3,19 @@ import . "fmt"
 func main() {
 	var (
 		n, m, i, f, k int
-		g, h [30]string
+		g, h          [30]string
 	)
 
 	Scan(&n)
 	for k < n {
 		Scan(&g[k])
-	k++
+		k++
 	}
 
 	Scan(&m)
 	for f < m {
 		Scan(&h[f])
-	f++
+		f++
 	}
 
 	for i < n {
@@ -29,22 +29,19 @@ func main() {
 				continue
 			}
 			f = 0
-
-			for
 			u := 0
-			u < l
-			{
+			for u < l {
 				if g[i][u] != h[j][u] {
 					f++
 				}
-			u++
+				u++
 			}
 
 			if f == 1 {
 				k++
 			}
 		}
-		Print(k, " ")
-	i++
+		Println(k)
+		i++
 	}
 }

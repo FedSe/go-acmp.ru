@@ -28,7 +28,7 @@ func main() {
 			x &= x + 1
 			x--
 		}
-		Print(i-m+1-u, " ")
+		Println(i - m + 1 - u)
 		x = i
 		for x < n {
 			a[x]++

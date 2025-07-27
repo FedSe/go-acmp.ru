@@ -1,23 +1,19 @@
 package main
 import . "fmt"
 func main() {
-	a:=0
-	b:=0
+	a := 0
+	b := 0
 	Scan(&a, &b)
-
 	for a <= b {
-		x := a
-		y := a*a
-		for x > 0 {
-			if x%10 != y%10 {
-				goto A
-			}
-			x /= 10
-			y /= 10
+		p := 1
+		t := a
+		for t > 0 {
+			p *= 10
+			t /= 10
 		}
-
-		Print(a, " ")
-A:
-	a++
+		if a*a%p == a {
+			Println(a)
+		}
+		a++
 	}
 }

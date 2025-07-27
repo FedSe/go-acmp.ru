@@ -2,20 +2,20 @@ package main
 import . "fmt"
 func main() {
 	var (
-		n, x, y, l, i int
-		a = -100000
-		b = a
-		c = a*-3
+		n, x, y, l int
+		a          = -100000
+		b          = a
+		c          = a * -3
 	)
 
 	Scan(&n)
-	for i < n {
+	for 0 < n {
 		Scan(&x, &y, &l)
 		if a < x { a = x }
 		if b < y { b = y }
-		x += y+l
+		x += y + l
 		if c > x { c = x }
-	i++
+		n--
 	}
 	c -= a + b
 	s := float64(c*c) / 2.

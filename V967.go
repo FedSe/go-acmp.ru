@@ -4,13 +4,14 @@ import (
 	. "sort"
 )
 func main() {
-	var n, k, x, a, i int
+	var n, k, x, a int
 	Scan(&n, &k, &x)
 
 	b := make([]int, n)
-	for i < n {
+	for 0 < n {
+		n--
 		Scan(&a)
-		b[i] = 1
+		b[n] = 1
 		m := k
 		l := 0
 		for l < 2 {
@@ -20,14 +21,13 @@ func main() {
 				s += f % m
 				f /= m
 			}
-			b[i] *= s
+			b[n] *= s
 			m = x
-		l++
+			l++
 		}
-	i++
 	}
 	Ints(b)
-	
+
 	for _, c := range b {
 		Println(c)
 	}

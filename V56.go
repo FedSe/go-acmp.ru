@@ -6,21 +6,21 @@ import (
 func main() {
 	var (
 		n, i, j int
-		c, d []string
+		c, d    []string
 	)
 
 	Scan(&n)
 	a := make([]string, n)
 	for i < n {
 		Scan(&a[i])
-	i++
+		i++
 	}
 
 	Scan(&n)
 	b := make([]string, n)
 	for j < n {
 		Scan(&b[j])
-	j++
+		j++
 	}
 
 	for _, v := range a {
@@ -43,16 +43,18 @@ func main() {
 		}
 	}
 
-	for _ , i := range [3]string{"Friends: ", "Mutual Friends: ", "Also Friend of: "} {
-		Print("\n", i)
+	for _, v := range [3]string{`Friends: `, `
+Mutual Friends: `, `
+Also Friend of: `} {
 		Strings(a)
 		for i, s := range a {
-			if i != len(a)-1 {
+			if i < len(a)-1 {
 				s += ", "
 			}
-			Print(s)
+			v += s
 		}
-	a = c
-	c = d
+		Print(v)
+		a = c
+		c = d
 	}
 }

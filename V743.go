@@ -10,11 +10,12 @@ func main() {
 		w = a
 	)
 
-	Scanln(&i)
+	Scan(&i)
 	for 0 < i {
-		Scanf("%s -> %s\n", &a, &w)
+		Scanf(`
+%s -> %s`, &a, &w)
 		v[a] = append(v[a], w)
-	i--
+		i--
 	}
 	Scan(&a, &w)
 

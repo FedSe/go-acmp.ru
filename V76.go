@@ -11,11 +11,11 @@ func main() {
 		s             = b.NewReader(Stdin)
 	)
 
-	Fscanln(s, &p)
+	Fscan(s, &p)
 	l := p
 	for l > 0 {
-		Fscanf(s, `%d:%d %d:%d
-`, &p, &f, &u, &m)
+		Fscanf(s, `
+%d:%d %d:%d`, &p, &f, &u, &m)
 		f += p * 60
 		for f <= m+u*60 {
 			a[f]++

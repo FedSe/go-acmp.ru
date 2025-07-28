@@ -1,37 +1,36 @@
 package main
 import (
+	b "bufio"
 	. "fmt"
 	. "os"
-	b "bufio"
 )
 func main() {
 	var (
-		x, y, p, j [32]int
+		x, y, p, j                      [32]int
 		n, m, a, k, c, d, e, f, g, h, i int
-		r = b.NewReader(Stdin)
+		r                               = b.NewReader(Stdin)
+		q                               = "%d.%d.%d.%d "
 	)
 
 	Scanln(&n)
 	for i < n {
-		Scanf("%d.%d.%d.%d\n", &x[i], &y[i], &p[i], &j[i])
-	i++
+		Scanf(q, &x[i], &y[i], &p[i], &j[i])
+		i++
 	}
 
 	Scanln(&m)
 	for 0 < m {
 		u := 0
-		o, _ := r.ReadString('\n') 
-		Sscanf(o, "%d.%d.%d.%d %d.%d.%d.%d", &a, &c, &e, &g, &k, &d, &f, &h)
-		for
+		o, _ := r.ReadString('\n')
+		Sscanf(o, q+q, &a, &c, &e, &g, &k, &d, &f, &h)
 		i = 0
-		i < n
-		{
-			if a & x[i] == k & x[i] && c & y[i] == d & y[i] && e & p[i] == f & p[i] && g & j[i] == h & j[i] {
+		for i < n {
+			if a&x[i] == k&x[i] && c&y[i] == d&y[i] && e&p[i] == f&p[i] && g&j[i] == h&j[i] {
 				u++
 			}
-		i++
+			i++
 		}
 		Println(u)
-	m--
+		m--
 	}
 }

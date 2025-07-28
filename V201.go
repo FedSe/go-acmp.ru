@@ -1,6 +1,5 @@
 package main
 import . "fmt"
-
 type P struct {
 	r, b, e int
 }
@@ -8,23 +7,24 @@ type P struct {
 func main() {
 	var (
 		n, e, t, h, m, v, l int
-		p []*P
-		q []int
-		u = "%02d:%02d:%02d "
+		p                   []*P
+		q                   []int
+		u                   = "%02d:%02d:%02d "
 	)
 
 	Scanln(&n, &e)
 	for 0 < n {
+		Scanf(u+`%d
+`, &h, &m, &v, &l)
+
 		q = append(q, len(p))
-		var o P
-		o.b--
-		Scanf(u + "%d\n", &h, &m, &v, &l)
 		v += h*3600 + m*60
-		o.r = l
-		p = append(p, &o)
+		p = append(p, &P{l, -1, 0})
 
 		if len(p) == e {
-			if t < v { t = v }
+			if t < v {
+				t = v
+			}
 			for len(q) > 0 {
 				v = q[0]
 				q = q[1:]
@@ -44,11 +44,11 @@ func main() {
 				}
 			}
 			for _, c := range p {
-				Printf(u + u, c.b/3600%24, c.b/60%60, c.b%60,
+				Printf(u+u, c.b/3600%24, c.b/60%60, c.b%60,
 					c.e/3600%24, c.e/60%60, c.e%60)
 			}
 			p = []*P{}
 		}
-	n--
+		n--
 	}
 }

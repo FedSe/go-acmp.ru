@@ -1,25 +1,35 @@
 package main
 import . "fmt"
 func main() {
-	a := ""
-	b := a
-	c := a
-	Scan(&a, &b, &c)
+	var (
+		b = `black
+`
+		y = `yellow
+`
+		r = `red
+`
+		x = b
+		c = x
+		z = x
+	)
 
+	Scan(&x, &c, &z)
 	t := map[string]string{
-		"bbg": "black\nblack\nGREEN",
-		"bbG": "black\nyellow\nblack",
-		"byb": "red\nblack\nblack",
-		"rbb": "red\nyellow\nblack",
-		"ryb": "black\nblack\ngreen",
-		"bYb": "black\nYELLOW\nblack",
-		"Rbb": "RED\nblack\nblack",
+		"bbg": b + b + `GREEN`,
+		"bbG": b + y + b,
+		"byb": r + b + b,
+		"rbb": r + y + b,
+		"ryb": b + b + `green`,
+		"bYb": b + `YELLOW
+` + b,
+		"Rbb": `RED
+` + b + b,
 	}
 
-	a = t[string([]byte{a[0], b[0], c[0]})]
-	if a == "" {
-		a = "error"
+	x = t[string([]byte{x[0], c[0], z[0]})]
+	if x == "" {
+		x = "error"
 	}
 
-	Print(a)
+	Print(x)
 }

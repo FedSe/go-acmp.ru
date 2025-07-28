@@ -1,10 +1,9 @@
 package main
 import . "fmt"
-
 func main() {
-	var a, b, i, m, c, d uint64
+	var a, b, i, m, c, d uint
 	Scan(&a, &b)
-	
+
 	for i < 2 {
 		c = 0
 		d = 1
@@ -19,4 +18,4 @@ func main() {
 	}
 
 	Print(m)
-} 
+}

@@ -4,32 +4,28 @@ import (
 	. "fmt"
 	. "os"
 )
-const (
-	w int = iota
-	R
-	U
-	L
-)
 func main() {
 	var (
-		a [101][101]int
-		s [101]string
-		n, m, p, v, i int
-		u = w
-		r = b.NewScanner(Stdin)
-		x = 2
-		y = 2
-		o = 1
+		R                   = 1
+		U                   = 2
+		L                   = 3
+		a                   [101][101]int
+		s                   [101]string
+		n, m, p, v, i, w, u int
+		r                   = b.NewScanner(Stdin)
+		x                   = 2
+		y                   = 2
+		o                   = 1
 	)
 
 	Scan(&n, &m)
 
 	for r.Scan() {
 		s[i] = "@" + r.Text()
-	i++
+		i++
 	}
-	s[0] = s[0][1:]
 
+	s[0] = s[0][1:]
 	a[2][2] = 1
 
 	for !(x == m-1 && y == n-1) {

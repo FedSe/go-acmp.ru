@@ -1,26 +1,27 @@
 package main
+
 import (
-	. "fmt"
-	. "sort"
-	. "os"	
 	b "bufio"
+	. "fmt"
+	. "os"
+	. "sort"
 )
+
 type M struct {
 	t, w, d, s int
 }
 
 func main() {
-	var i, k, n int
+	var i, k, n, l int
 
-	r := b.NewScanner(Stdin)
-	Scanln(&n)
-
+	r := b.NewReader(Stdin)
+	Fscan(r, &n)
 	a := make([]M, n)
 
-	for r.Scan() {
-		Sscan(r.Text(), &a[i].t, &a[i].w)
+	for i < n {
+		Fscan(r, &a[i].t, &a[i].w)
 		a[i].d = i
-	i++
+		i++
 	}
 
 	Slice(a, func(i, j int) bool {
@@ -29,16 +30,13 @@ func main() {
 
 	a[0].s = a[0].t * a[0].w
 
-	for
-	i := 1
-	i < n
-	{
-		c := a[i].t * a[i].w
-		a[i].s = a[i-1].s
-		if a[i].s < c {
-			a[i].s = c
+	for l < n-1 {
+		l++
+		c := a[l].t * a[l].w
+		a[l].s = a[l-1].s
+		if a[l].s < c {
+			a[l].s = c
 		}
-	i++
 	}
 
 	Slice(a, func(i, j int) bool {
@@ -47,6 +45,6 @@ func main() {
 
 	for k < n {
 		Println(a[k].s)
-	k++
+		k++
 	}
 }

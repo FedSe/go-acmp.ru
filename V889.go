@@ -1,22 +1,22 @@
 package main
 import (
-	. "fmt"
-	. "sort"
-	. "os" 
 	b "bufio"
+	. "fmt"
+	. "os"
+	. "sort"
 )
 func main() {
 	s := 0
 	i := 0
-	r := b.NewScanner(Stdin)
+	r := b.NewReader(Stdin)
 
-	Scanln(&s, &i)
+	Fscan(r, &s, &i)
 
 	h := make([][2]int, i)
 
-	for r.Scan() {
-	i--
-		Sscan(r.Text(), &h[i][0], &h[i][1])
+	for i > 0 {
+		i--
+		Fscan(r, &h[i][0], &h[i][1])
 	}
 
 	Slice(h, func(i, j int) bool {

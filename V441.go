@@ -1,9 +1,9 @@
 package main
+
 import (
 	d "bufio"
 	. "fmt"
 	. "os"
-	. "strconv"
 	. "sort"
 )
 
@@ -12,7 +12,7 @@ type T struct {
 }
 
 type S struct {
-	p int
+	p    int
 	m, c []int
 }
 
@@ -28,37 +28,36 @@ func (s *S) H(w int) int {
 	i := d / s.p
 	for i < len(s.c) {
 		y += s.c[i]
-	i++
+		i++
 	}
 	return y
 }
 
 func main() {
-	var n, v, i, r, l, j int
-	o := 400
-	s := d.NewScanner(Stdin)
-	s.Split(d.ScanWords)
-	Scan(&n)
+	var (
+		n, r, j int
+		s       = d.NewReader(Stdin)
+	)
 
-	a := make([]T, n)
-	for l < n && s.Scan() {
-		v, _ = Atoi(s.Text())
-		a[l] = T{v: v, w: l}
-	l++
-	}
-	SliceStable(a, func(i, j int) bool {
-		return a[i].v < a[j].v
-	})
+	Fscan(s, &n)
 
-	b := make([]T, n)
-	for s.Scan() {
-		v, _ = Atoi(s.Text())
-		b[i] = T{v: v, w: i}
-	i++
+	F := func(n int) []T {
+		a := make([]T, n)
+		i := 0
+		v := 0
+		for i < n {
+			Fscan(s, &v)
+			a[i] = T{v, i, 0}
+			i++
+		}
+		SliceStable(a, func(i, j int) bool {
+			return a[i].v < a[j].v
+		})
+		return a
 	}
-	SliceStable(b, func(i, j int) bool {
-		return b[i].v < b[j].v
-	})
+
+	a := F(n)
+	b := F(n)
 
 	c := make([]T, n)
 	for j < n {
@@ -66,17 +65,18 @@ func main() {
 			Print(-1)
 			return
 		}
-		c[j] = T{v: a[j].v, w: a[j].w, q: b[j].w}
-	j++
+		c[j] = T{a[j].v, a[j].w, b[j].w}
+		j++
 	}
 	Slice(c, func(i, j int) bool {
 		return c[i].q < c[j].q
 	})
 
-	var e S
-	e.p = o
-	e.m = make([]int, n)
-	e.c = make([]int, (n+o-1)/o)
+	e := S{
+		p: 400,
+		m: make([]int, n),
+		c: make([]int, (n+399)/400),
+	}
 
 	for _, t := range c {
 		r += t.w + e.H(t.w+1) - t.q

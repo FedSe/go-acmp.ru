@@ -2,17 +2,13 @@ package main
 import (
 	. "fmt"
 	. "math"
-	. "os" 
-	b "bufio"
 )
 func main() {
 	var n, q, w, i, x, y, l float64
-	r := b.NewScanner(Stdin)
 
-	Scanln(&n, &q, &w, &l)
-
-	for r.Scan() {
-		Sscan(r.Text(), &x, &y)
+	Scan(&n, &q, &w, &l)
+	for n > 0 {
+		Scan(&x, &y)
 		i++
 		y = w - y
 		x = q - x
@@ -20,6 +16,7 @@ func main() {
 			Print(i)
 			return
 		}
+		n--
 	}
 
 	Print("Yes")

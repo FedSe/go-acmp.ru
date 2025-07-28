@@ -1,31 +1,29 @@
 package main
 import (
-	. "fmt"
-	. "strconv"
-	. "os"
 	b "bufio"
+	. "fmt"
+	. "os"
 )
 func main() {
 	var (
-		c, v [1000]int
+		c, v    [1000]int
 		n, i, j int
-		s = b.NewScanner(Stdin)
+		s       = b.NewReader(Stdin)
 	)
 
-	Scan(&n)
-	s.Split(b.ScanWords)
+	Fscan(s, &n)
 
-	for s.Scan() {
-		v[j], _ = Atoi(s.Text())
-	j++
+	for j < n {
+		Fscan(s, &v[j])
+		j++
 	}
 
 	for i < n {
 		j = v[i]
-		c[2] += c[1]*j
-		c[1] += c[0]*j
+		c[2] += c[1] * j
+		c[1] += c[0] * j
 		c[0] += j
-	i++
+		i++
 	}
 
 	Print(c[2])

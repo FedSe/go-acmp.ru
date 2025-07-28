@@ -5,18 +5,18 @@ import (
 	. "os"
 )
 func main() {
-	r := b.NewScanner(Stdin)
+	var (
+		p [100001]int
+		r = b.NewReader(Stdin)
+		s = ""
+		t = s
+		i = 1
+	)
 
-	r.Scan()
-	s := r.Text()
-	r.Scan()
-	t := r.Text()
+	Fscan(r, &s, &t)
 
 	n := len(t)
 	t += "#" + s
-
-	var p [100001]int
-	i := 1
 
 	for i < len(t) {
 		j := p[i-1]

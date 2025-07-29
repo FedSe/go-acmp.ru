@@ -20,26 +20,23 @@ func main() {
 
 	for i < n {
 		k = 0
-		for
 		j := 0
-		j < m
-		j++ {
+		for j < m {
 			l := len(g[i])
-			if l != len(h[j]) {
-				continue
-			}
-			f = 0
-			u := 0
-			for u < l {
-				if g[i][u] != h[j][u] {
-					f++
+			if l == len(h[j]) {
+				f = 0
+				u := 0
+				for u < l {
+					if g[i][u] != h[j][u] {
+						f++
+					}
+					u++
 				}
-				u++
+				if f == 1 {
+					k++
+				}
 			}
-
-			if f == 1 {
-				k++
-			}
+			j++
 		}
 		Println(k)
 		i++

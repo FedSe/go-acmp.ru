@@ -1,25 +1,17 @@
 package main
 import . "fmt"
-
-func isDigit(n string) int {
-	t:=0
-	if n >= "0" && n <= "9" {
-		t++
-	}
-	return t
-}
-
-func main(){
-	i:=0
-	c:=0
-	s:=""
+func main() {
+	c := 0
+	i := 0
 
 	for i < 3 {
+		s := ""
 		Scan(&s)
-		c+=isDigit(s)
-	i++
+		if s[0] > 47 && s[0] < 58 {
+			c++
+		}
+		i++
 	}
 
 	Print(c)
-
 }

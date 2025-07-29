@@ -1,25 +1,17 @@
 package main
 import . "fmt"
-
-func isLetter(n string) int {
-	t:=0
-	if (n >= "a" && n <= "z") || (n >= "A" && n <= "Z") {
-		t++
-	}
-	return t
-}
-
-func main(){
-	i:=0
-	c:=0
-	s:=""
+func main() {
+	c := 0
+	i := 0
 
 	for i < 3 {
+		s := ""
 		Scan(&s)
-		c+=isLetter(s)
-	i++
+		if s[0] > 64 && s[0] < 91 || s[0] > 96 && s[0] < 123 {
+			c++
+		}
+		i++
 	}
 
 	Print(c)
-
 }

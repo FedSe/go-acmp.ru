@@ -1,29 +1,21 @@
 package main
 import . "fmt"
 func main() {
-	var (
-		n = 0
-		k = 1
-		i = 2
-		a [2e5]int
-	)
-    
+	m := map[int]int{1: 1}
+	n := 0
+	a := 1
+	i := 2
+
 	Scan(&n)
-    
-	a[1] = 1
 	for i <= n {
-
-		a[i] = a[i-1] + 2
-
-		if i == a[k] {
-			a[i]++
-			k++
-		} else if i > a[k] {
-			k++
+		if m[i] > 0 {
+			a += 3
+		} else {
+			a += 2
 		}
-
+		m[a] = 1
 		i++
 	}
 
-	Print(a[n])
+	Print(a)
 }

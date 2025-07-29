@@ -1,17 +1,14 @@
 package main
 import . "fmt"
-func F(n int) int {
-	f := 1
-	for n > 1 {
-		f *= n
-		n--
-	}
-	return f
-}
-
 func main() {
-	n := 0
-	k := 0
+	var n, k, i int
+	r := 1
+
 	Scan(&n, &k)
-	Print(F(n) / F(k) / F(n-k))
+	for i < k {
+		i++
+		r = r * (n - i + 1) / i
+	}
+
+	Print(r)
 }

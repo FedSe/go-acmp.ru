@@ -1,48 +1,31 @@
 package main
 import . "fmt"
 func main() {
-	var (
-		f = []int{2, 3}
-		s, n, b int
-		k = 2
-		i = 5
-		p = 1
-		a = 1228
-	)
+	x := 0
+	c := 0
+	a := 2
 
-	for i < 10000 {
-		j := 0
-		for j < k {
-			if f[j]*f[j] > i {
-				break
+	Scan(&x)
+	for a <= x/2 {
+		p, q := 1, 1
+		i := 2
+		for i*i <= a {
+			if a%i < 1 {
+				p = 0
 			}
-			if i%f[j] < 1 {
-				goto A
+			i++
+		}
+		i = 2
+		for i*i <= x-a {
+			if (x-a)%i < 1 {
+				q = 0
 			}
-		j++
+			i++
 		}
-
-		f = append(f, i)
-		k++
-A:
-		if i == p*6-1 {
-			i = p*6 + 1
-			p++
-		} else {
-			i = p*6 - 1
+		if p * q > 0 {
+			c++
 		}
+		a++
 	}
-
-	Scan(&n)
-	for f[b] <= n/2 {
-		for f[b]+f[a] > n {
-			a--
-		}
-		if f[b]+f[a] == n {
-			s++
-		}
-		b++
-	}
-
-	Print(s)
+	Print(c)
 }

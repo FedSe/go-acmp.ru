@@ -5,20 +5,20 @@ import (
 )
 func main() {
 	var (
-		v [1000]string
-		a = ""
+		v       [1e3]string
+		a       = ""
 		n, o, i int
 	)
 
 	Scan(&n)
 	for i < n {
 		Scan(&v[i])
-	i++
+		i++
 	}
-	Scan(&a)
 
+	Scan(&a)
 	for 0 < n {
-	n--
+		n--
 		b := a
 		i = 0
 		for x := range v[n] {

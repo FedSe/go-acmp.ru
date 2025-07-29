@@ -2,11 +2,12 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a       [1000]int
-		n, i, j int
+		a       [1e3]int
+		n, i, j, x int
 	)
-	Scan(&n, &a[0])
-	x := a[0]
+	
+	Scan(&n, &x)
+	a[0] = x
 	y := x
 	for i < n-1 {
 		i++

@@ -2,7 +2,7 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a          [100001]int
+		a          [1e5]int
 		j, i, n, k int
 	)
 
@@ -16,7 +16,7 @@ func main() {
 	if k > 0 {
 		k %= n
 	} else {
-		k = n - ((-k) % n)
+		k = (k%n + n) % n
 	}
 
 	i = n - k

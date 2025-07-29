@@ -6,7 +6,7 @@ import (
 )
 func main() {
 	var (
-		v [1000000]int
+		v [1e6]int
 		s = ""
 		i = 1
 		w = b.NewWriter(Stdout)

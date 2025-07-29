@@ -2,42 +2,39 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [1000002]int
+		a       [1e6 + 2]int
 		m, n, c int
-		i = 2
-		j = 2
-		M = 1000001
+		i       = 2
+		j       = 2
+		M       = 1000001
 	)
 
 	for i < M {
 		a[i] = 1
-	i++
+		i++
 	}
-    
+
 	for j <= M/2 {
-		for
 		i = j + j
-		i <= M
-		i += j {
+		for i <= M {
 			a[i] += j
+			i += j
 		}
-	j++
+		j++
 	}
-    
+
 	Scan(&m, &n)
-    
-	for
+
 	i = m
-	i <= n
-	{
+	for i <= n {
 		j = a[i]
 		if j >= m && j <= n && a[j] == i && i < j {
-		c++
+			c++
 			Println(i, j)
 		}
-	i++
+		i++
 	}
-    
+
 	if c < 1 {
 		Print("Absent")
 	}

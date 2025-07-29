@@ -3,27 +3,23 @@ import . "fmt"
 func main() {
 	var (
 		n, i, c int
-		a [1000]int
+		a       [1e3]int
 	)
 
 	Scan(&n)
-
 	for i < n {
 		Scan(&a[i])
-	i++
+		i++
 	}
 
 	Scan(&n)
-
 	for 0 < n {
 		Scan(&i, &c)
-		for
 		i--
-		i < c
-		{
+		for i < c {
 			Println(a[i])
-		i++
+			i++
 		}
-	n--
+		n--
 	}
 }

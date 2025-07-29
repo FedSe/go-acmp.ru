@@ -7,7 +7,7 @@ import (
 )
 func main() {
 	var (
-		p       [100001][2]int
+		p       [1e5][2]int
 		a, n, i int
 		s       = b.NewReader(Stdin)
 	)

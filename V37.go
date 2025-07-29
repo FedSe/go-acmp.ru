@@ -11,11 +11,11 @@ func main() {
 	)
 
 	Scan(&n, &q)
-	t := int(Round(q * 1000))
+	t := int(Round(q * 1e3))
 
 	for 0 < n {
 		Scan(&x, &y, &z, &k)
-		if (z*z+k*k)*1000000 > t*t*(x*x+y*y) {
+		if (z*z+k*k)*1e6 > t*t*(x*x+y*y) {
 			s = "No"
 		}
 		n--

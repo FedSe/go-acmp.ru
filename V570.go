@@ -1,21 +1,21 @@
 package main
 import (
-	. "fmt"
-	. "strings"
-	. "os"
 	b "bufio"
+	. "fmt"
+	. "os"
+	. "strings"
 )
 func main() {
 	var (
-		p [1000]string
+		p          [1e3]string
 		n, m, i, k int
-		a = 1001
-		v = -1
-		d = v
-		c = 1000
-		u = "CIRCLE"
-		o = u
-		s = b.NewScanner(Stdin)
+		a          = 1001
+		v          = -1
+		d          = v
+		c          = 1000
+		u          = "CIRCLE"
+		o          = u
+		s          = b.NewScanner(Stdin)
 	)
 
 	Scan(&n, &m, &o)
@@ -37,14 +37,12 @@ func main() {
 				d = i
 			}
 		}
-	i++
+		i++
 	}
 
 	if a != 1001 {
-		for
 		k = a - 1
-		k <= a+1
-		{
+		for k <= a+1 {
 			l := c - 1
 			for l <= c+1 {
 				y := v - 1
@@ -59,20 +57,20 @@ func main() {
 									if p[x][a] != 42 {
 										goto A
 									}
-								x++
+									x++
 								}
-							a++
+								a++
 							}
 							u = "SQUARE"
 							goto A
 						}
-					z++
+						z++
 					}
-				y++
+					y++
 				}
-			l++
+				l++
 			}
-		k++
+			k++
 		}
 	}
 A:

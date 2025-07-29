@@ -1,13 +1,13 @@
 package main
 import (
-	. "fmt"
-	. "sort"
-	. "os"
 	b "bufio"
+	. "fmt"
+	. "os"
+	. "sort"
 )
 func main() {
 	var (
-		a [100000]int
+		a [1e5]int
 		n = 0
 		r = b.NewScanner(Stdin)
 		s = "Yes"
@@ -23,7 +23,7 @@ func main() {
 	d := a[1] - a[0]
 
 	for 1 < n {
-	n--
+		n--
 		if a[n]-a[n-1] != d {
 			s = "No"
 		}

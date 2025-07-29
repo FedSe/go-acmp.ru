@@ -6,13 +6,12 @@ import (
 )
 func main() {
 	var (
-		c, v    [1000]int
+		c, v    [1e3]int
 		n, i, j int
 		s       = b.NewReader(Stdin)
 	)
 
 	Fscan(s, &n)
-
 	for j < n {
 		Fscan(s, &v[j])
 		j++

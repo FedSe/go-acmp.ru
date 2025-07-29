@@ -4,11 +4,10 @@ import (
 	. "fmt"
 	. "os"
 )
-
 func main() {
 
 	var (
-		a          [100002]int
+		a          [2e5]int
 		i, c, v, q int
 		r          = b.NewScanner(Stdin)
 	)

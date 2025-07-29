@@ -4,7 +4,7 @@ func main() {
 	var (
 		s             = ""
 		p             = s
-		a             = 10000.
+		a             = 1e4
 		x, i, n, u, t float64
 	)
 

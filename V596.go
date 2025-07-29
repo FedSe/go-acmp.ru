@@ -2,10 +2,10 @@ package main
 import . "fmt"
 func main() {
 	var (
-		x, y, r, v, k [10000]int
-		m [100]string
+		x, y, r, v, k    [1e4]int
+		m                [100]string
 		n, f, i, j, l, o int
-		u = -1
+		u                = -1
 	)
 
 	Scan(&n)
@@ -19,7 +19,7 @@ func main() {
 				o = f
 				break
 			}
-		f++
+			f++
 		}
 		if o == -1 {
 			u++
@@ -28,22 +28,22 @@ func main() {
 		}
 		v[i] = o
 		Scan(&x[i], &y[i], &r[i])
-	i++
+		i++
 	}
 
 	Scan(&f, &o)
 	for l < n {
-		i = x[l]-f
-		c := y[l]-o
+		i = x[l] - f
+		c := y[l] - o
 		if i*i+c*c <= r[l]*r[l] {
 			k[v[l]]++
 		}
-	l++
+		l++
 	}
 
 	Println(u + 1)
 	for j <= u {
 		Println(m[j], k[j])
-	j++
+		j++
 	}
 }

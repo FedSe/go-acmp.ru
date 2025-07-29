@@ -2,10 +2,10 @@ package main
 import . "fmt"
 func main() {
 	var (
-		p [1000000]int
-		i=2
-		n=i
-		m=i
+		p [1e6+1]int
+		i = 2
+		n = i
+		m = i
 	)
 	Scan(&m, &n)
 	n++
@@ -13,16 +13,14 @@ func main() {
 	for i < n {
 		if p[i] > 0 {
 			i++
-			continue
+		} else {
+			j := i * i
+			for j < n {
+				p[j] = 1
+				j += i
+			}
+			i++
 		}
-		for
-		j := i * i
-		j < n
-		{
-			p[j] = 1
-		j += i
-		}
-	i++
 	}
 
 	for m < n {
@@ -30,7 +28,7 @@ func main() {
 			Println(m)
 			i = 0
 		}
-	m++
+		m++
 	}
 
 	if i > 0 {

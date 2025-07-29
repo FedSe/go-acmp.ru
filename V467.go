@@ -7,7 +7,7 @@ func main() {
 	var n, w, i, l, r, m, j int
 
 	Scan(&n)
-	a := []int{0, 1000000000}
+	a := []int{0, 1e9}
 	for 0 < n {
 		Scan(&l, &r)
 		a = append(a, l, r)

@@ -2,7 +2,7 @@ package main
 import . "fmt"
 func main() {
 	var (
-		u, o [100002]int
+		u, o                      [2e5]int
 		a, b, d, f, k, c, t, i, j int
 	)
 
@@ -10,11 +10,11 @@ func main() {
 	for 0 < j {
 		Scan(&t)
 		u[t] = 1
-	j--
+		j--
 	}
 
 	for i < a {
-	i++
+		i++
 		o[i] = u[f]
 		if f == d {
 			f = 0
@@ -26,11 +26,11 @@ func main() {
 	for 0 < j {
 		Scan(&t)
 		o[t] = 1
-	j--
+		j--
 	}
 
 	for j < b {
-	j++
+		j++
 		if o[j] > 0 {
 			k++
 		}
@@ -41,7 +41,7 @@ func main() {
 
 	i = b
 	for i < a {
-	i++
+		i++
 		if o[i] > 0 {
 			k++
 		}

@@ -6,15 +6,16 @@ func main() {
 
 	h := -1
 	v := h
-	for i < 1000001 {
-	i++
+	d--
+	for i <= 1e6 {
+		i++
 		p := m * i
-		x := (d - 1) / p
-		y := d - x*p - 1
-		if x+1 == e && y / i + 1 == f {
+		x := d / p
+		y := d - x*p
+		if x+1 == e && y/i+1 == f {
 			x = (c - 1) / p
 			y = c - x*p - 1
-			z := y / i + 1
+			z := y/i + 1
 			if v < 0 {
 				v = z
 				b = 1
@@ -35,12 +36,16 @@ func main() {
 
 	if a != 1 {
 		h = 0
-		if a < 1 { h-- }
+		if a < 1 {
+			h--
+		}
 	}
 
 	if b != 1 {
 		v = 0
-		if b < 1 { v-- }
+		if b < 1 {
+			v--
+		}
 	}
 
 	Print(h, v)

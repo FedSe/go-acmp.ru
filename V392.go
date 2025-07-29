@@ -7,7 +7,7 @@ import (
 func main() {
 	var (
 		n, m, i, j int
-		a          [100000]int
+		a          [1e5]int
 		s          = b.NewReader(Stdin)
 	)
 

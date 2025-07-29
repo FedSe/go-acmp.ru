@@ -6,7 +6,7 @@ import (
 )
 func main() {
 	var (
-		p [100001]int
+		p [1e5]int
 		r = b.NewReader(Stdin)
 		s = ""
 		t = s

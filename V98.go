@@ -3,14 +3,14 @@ import . "fmt"
 func main() {
 	var (
 		n, s, c, i, j int
-		a [10000]int
+		a             [1e4]int
+		t             = 1 > 0
 	)
-	Scan(&n)
-	t := 1>0
 
+	Scan(&n)
 	for j < n {
 		Scan(&a[j])
-	j++
+		j++
 	}
 
 	n--
@@ -30,7 +30,7 @@ func main() {
 		}
 
 		t = !t
-	n--
+		n--
 	}
 
 	Print(s, ":", c)

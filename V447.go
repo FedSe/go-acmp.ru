@@ -12,7 +12,7 @@ func main() {
 		for m%10 < 1 {
 			m /= 10
 		}
-		m %= 1000000
+		m %= 1e6
 	}
 
 	Print(m % 10)

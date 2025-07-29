@@ -2,14 +2,14 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a, b, c [1000]int
+		a, b, c       [1e3]int
 		i, n, t, v, o int
 	)
 
 	Scan(&n)
 	for i < n {
 		Scan(&a[i], &b[i], &c[i])
-	i++
+		i++
 	}
 
 	Scan(&t)
@@ -20,13 +20,13 @@ func main() {
 			if a[i] <= o && b[i] > o {
 				h += c[i]
 			}
-		i++
+			i++
 		}
 		v += h
 		if v < 0 {
 			v = 0
 		}
-	o++
+		o++
 	}
 
 	Print(v)

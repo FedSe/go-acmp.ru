@@ -5,6 +5,7 @@ func main() {
 		u                   [10]int
 		n                   = ""
 		t, i, j, a, b, c, l int
+		P                   = Println
 	)
 
 	for l < 3 {
@@ -29,10 +30,10 @@ func main() {
 		i++
 	}
 
-	Println(t)
+	P(t)
 	for j < 10 {
 		if u[j] > 0 {
-			Println(j)
+			P(j)
 		}
 		j++
 	}

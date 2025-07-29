@@ -2,20 +2,19 @@ package main
 import . "fmt"
 func main() {
 	var (
-		d, p [251][251]int
+		d, p                [251][251]int
 		n, i, j, u, v, r, h int
-		x = []int{-1, 1, 0, 0, 0, 0, -1, 1}
-		a [251]string
-		W = 99999
+		x                   = []int{-1, 1, 0, 0, 0, 0, -1, 1}
+		a                   [251]string
+		W                   = 99999
+		P                   = Println
 	)
 
 	Scan(&n)
 	for i < n {
 		Scan(&a[i])
-		for
 		j = 0
-		j < n
-		{
+		for j < n {
 			d[i][j] = W
 			if a[i][j] == 64 {
 				u = i
@@ -25,22 +24,20 @@ func main() {
 				r = i
 				h = j
 			}
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	d[u][v] = 0
-	q := [][2]int{[2]int{u, v}}
+	q := [][2]int{{u, v}}
 
 	for len(q) > 0 {
 		i = q[0][0]
 		j = q[0][1]
 		q = q[1:]
-		for
 		k := 0
-		k < 4
-		{
+		for k < 4 {
 			u = i + x[k]
 			v = j + x[k+4]
 			if u >= 0 && u < n && v >= 0 && v < n && a[u][v] != 79 && d[u][v] > d[i][j]+1 {
@@ -48,26 +45,24 @@ func main() {
 				p[u][v] = k
 				q = append(q, [2]int{u, v})
 			}
-		k++
+			k++
 		}
 	}
 
 	if d[r][h] < W {
-		Println("Y")
+		P("Y")
 		for a[r][h] != 64 {
 			a[r] = a[r][:h] + "+" + a[r][h+1:]
 			v = p[r][h]
 			r -= x[v]
 			h -= x[v+4]
 		}
-		for
 		i = 0
-		i < n
-		{
-			Println(a[i])
-		i++
+		for i < n {
+			P(a[i])
+			i++
 		}
 	} else {
-		Print("N")
+		P("N")
 	}
 }

@@ -1,18 +1,19 @@
 package main
-import (. "fmt"
-. "sort"
+import (
+	. "fmt"
+	. "sort"
 )
 func main() {
-	a,b:= []int{1,2,3},[]int{1,2,3}
-	Scan(&a[0], &a[1], &a[2], &b[0], &b[1], &b[2])
-	Ints(a)
-	Ints(b)
-	s:=0
-	i:=0
-	for i < 3 {
-		s+=a[i]*b[i]
-	i++
+	var a [6]int
+	i := 0
+
+	for i < 6 {
+		Scan(&a[i])
+		i++
 	}
 
-	Print(s)
+	Ints(a[:3])
+	Ints(a[3:])
+
+	Print(a[0]*a[3] + a[1]*a[4] + a[2]*a[5])
 }

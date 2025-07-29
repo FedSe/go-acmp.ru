@@ -3,23 +3,22 @@ import (
 	. "fmt"
 	. "sort"
 )
-
 type T struct {
 	d, h int
 }
-
 func main() {
 	var (
 		w                []T
 		v                []int
 		a, n, m, e, l, i int
 		t                T
+		S = Scan
+		P = Println
 	)
 
-	Scan(&n, &m)
-
+	S(&n, &m)
 	for l < n {
-		Scan(&t.d, &t.h, &e)
+		S(&t.d, &t.h, &e)
 		if t.h > 0 {
 			w = append(w, t)
 		}
@@ -27,7 +26,7 @@ func main() {
 	}
 
 	for i < m {
-		Scan(&a, &l, &e)
+		S(&a, &l, &e)
 		if l > 0 {
 			v = append(v, a)
 		}
@@ -51,8 +50,8 @@ func main() {
 
 	Ints(v)
 
-	Println(len(v))
+	P(len(v))
 	for _, t := range v {
-		Println(t)
+		P(t)
 	}
 }

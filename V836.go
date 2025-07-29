@@ -4,10 +4,12 @@ import (
 	. "sort"
 )
 func main() {
-	n := 0
-	a := 0
-	var v []int
-    
+	var (
+		v []int
+		n, a int
+		P = Println
+	)
+
 	Scan(&n)
 	for 0 < n {
 		Scan(&a)
@@ -18,8 +20,8 @@ func main() {
 	}
 	Ints(v)
 
-	Println(len(v))
+	P(len(v))
 	for _, i := range v {
-		Println(i)
+		P(i)
 	}
 }

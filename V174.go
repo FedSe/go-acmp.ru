@@ -3,18 +3,19 @@ import . "fmt"
 func main() {
 	var (
 		f, n, i, l int
-		s = 0.
-		a [40]float64
+		s          = 0.
+		a          [40]float64
+		S          = Scan
 	)
-	Scan(&n)
 
+	S(&n)
 	for l < n {
-		Scan(&a[l])
-	l++
+		S(&a[l])
+		l++
 	}
 
 	for f < n-1 {
-	f++
+		f++
 		j := f
 		k := a[f]
 		for j > 0 && k < a[j-1] {
@@ -24,12 +25,12 @@ func main() {
 		a[j] = k
 	}
 
-	Scan(&s)
+	S(&s)
 	for i < n {
 		if s < a[i] {
 			s = (s + a[i]) / 2
 		}
-	i++
+		i++
 	}
 
 	Printf("%.6f", s)

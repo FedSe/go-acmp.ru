@@ -6,24 +6,22 @@ import (
 func main() {
 	var (
 		n, m, j, i, l int
-		u, w []string
-		a [100]string
-		e = ""
+		u, w          []string
+		a             [100]string
+		e             = ""
+		S             = Scan
 	)
 
-	Scan(&n, &m)
-
+	S(&n, &m)
 	for j < n {
-		Scan(&a[j])
-	j++
+		S(&a[j])
+		j++
 	}
 
 	for i < n {
-	Scan(&e)
-		for
+		S(&e)
 		j = 0
-		j < m
-		{
+		for j < m {
 			c := a[i][j]
 			v := string(c)
 			if c != e[j] && c != 46 {
@@ -33,19 +31,18 @@ func main() {
 					w = append(w, v)
 				}
 			}
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	Println(len(u) + len(w))
-
 	for l < 2 {
 		Strings(w)
 		for _, s := range w {
 			Print(s)
 		}
 		w = u
-	l++
+		l++
 	}
 }

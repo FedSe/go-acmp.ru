@@ -1,8 +1,10 @@
 package main
+
 import (
 	. "fmt"
 	. "sort"
 )
+
 func G(a int) string {
 	s := ""
 	w := s
@@ -14,7 +16,7 @@ func G(a int) string {
 		a = -a
 	}
 	for a > 0 {
-		s = string(a%10+'0') + s
+		s = string(a%10+48) + s
 		a = a / 10
 	}
 	s = w + s
@@ -24,12 +26,10 @@ func G(a int) string {
 func F(x []int, a int, b int) string {
 	w := G(x[a]) + ", ..., " + G(x[b])
 	v := ""
-	for
 	z := a
-	z <= b
-	{
+	for z <= b {
 		v = v + G(x[z]) + ", "
-	z++
+		z++
 	}
 	v = v[:len(v)-2]
 	if len(w) <= len(v) {
@@ -39,18 +39,24 @@ func F(x []int, a int, b int) string {
 }
 
 func main() {
-	var n, t, i int
+	var (
+		x       []int
+		n, t, i int
+		P       = Print
+	)
+
 	Scan(&n)
 	a := make(map[int]bool)
 	for 0 < n {
 		Scan(&t)
 		a[t] = true
-	n--
+		n--
 	}
-	x := make([]int, 0)
+
 	for s := range a {
 		x = append(x, s)
 	}
+
 	Ints(x)
 	n = len(x)
 
@@ -60,22 +66,22 @@ func main() {
 			for k <= n-2 && x[k]+1 == x[k+1] {
 				k++
 			}
-			Print(F(x, i, k))
+			P(F(x, i, k))
 			i = k + 1
 			if i < n {
-				Print(", ")
+				P(", ")
 			}
 		} else {
-			Print(x[i], ", ")
+			P(x[i], ", ")
 			i++
 		}
 	}
-n--
+	n--
 	if i < n {
-		Print(x[i], ", ")
+		P(x[i], ", ")
 		i++
 	}
 	if i == n {
-		Print(x[i])
+		P(x[i])
 	}
 }

@@ -2,25 +2,27 @@ package main
 import . "fmt"
 func main() {
 	var (
-		u, v [10]int
+		u, v                [10]int
 		n, m, a, b, s, j, i int
+		S                   = Scan
+		P                   = Println
 	)
 
-	Scan(&n, &m)
+	S(&n, &m)
 	for s < n {
-		Scan(&v[s])
-	s++
+		S(&v[s])
+		s++
 	}
 	if n < 2 {
-		Print(1, v[0])
+		P(1, v[0])
 		return
 	}
 	for j < n {
 		u[j] = j + 1
-	j++
+		j++
 	}
 	for 0 < m {
-		Scan(&a, &b)
+		S(&a, &b)
 		s = u[a-1]
 		h := u[b-1]
 		if s > h {
@@ -31,23 +33,23 @@ func main() {
 			if u[j] == s {
 				u[j] = h
 			}
-		j++
+			j++
 		}
-	m--
+		m--
 	}
 
 	for i < n {
-	i++
+		i++
 		j = 0
 		s = 0
 		for j < n {
 			if u[j] == i {
 				s += v[j]
 			}
-		j++
+			j++
 		}
 		if s > 0 {
-			Println(i, s)
+			P(i, s)
 		}
 	}
 }

@@ -9,11 +9,12 @@ func main() {
 		n, m, i, j int
 		a          [1e5]int
 		s          = b.NewReader(Stdin)
+		S          = Fscan
 	)
 
-	Fscan(s, &n)
+	S(s, &n)
 	for i < n {
-		Fscan(s, &a[i])
+		S(s, &a[i])
 		if a[m] > a[i] {
 			m = i
 		}

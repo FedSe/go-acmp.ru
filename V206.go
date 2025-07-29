@@ -1,50 +1,49 @@
 package main
 import . "fmt"
+
 type H struct {
 	b, e, d int
 }
 
 func main() {
 	var (
-		x, y [101]int
+		x, y    [101]int
 		n, u, m int
-		F = 99999
+		F       = 99999
+		S       = Scan
 	)
-	Scan(&n, &u, &m)
 
+	S(&n, &u, &m)
 	r := make([][]H, n+1)
+
 	for 0 < m {
-	m--
+		m--
 		var l, h, g int
-		Scan(&l, &h, &g)
-		for
+		S(&l, &h, &g)
 		j := 1
-		j < l
-		{
+		for j < l {
 			w := 0
 			k := 0
-			Scan(&k, &w)
+			S(&k, &w)
 			r[h] = append(r[h], H{g, w, k})
 			h = k
 			g = w
-		j++
+			j++
 		}
 	}
 
 	for m <= n {
 		y[m] = F
-	m++
+		m++
 	}
 	y[1] = 0
 
 	for {
 		v := -1
 		m = F
-		for
 		i := 0
-		i < n
-		{
-		i++
+		for i < n {
+			i++
 			if x[i] < 1 && y[i] < m {
 				m = y[i]
 				v = i
@@ -64,6 +63,8 @@ func main() {
 	}
 
 	n = y[u]
-	if n == F { n = -1 }
+	if n == F {
+		n = -1
+	}
 	Print(n)
 }

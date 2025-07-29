@@ -2,41 +2,42 @@ package main
 import . "fmt"
 
 var (
-	a [101][101]int
-	b [101]int
+	a                [101][101]int
+	b                [101]int
 	k, n, s, l, i, j int
-	w = "No"
+	w                = "No"
+	S                = Scan
 )
+
 func F(j int) {
 	if b[j] > 0 {
 		return
 	}
 	b[j] = 1
 	k++
-	for
 	i := 1
-	i <= n
-	i++ {
+	for i <= n {
 		if a[j][i] > 0 {
 			F(i)
 		}
+		i++
 	}
 }
 
 func main() {
-	Scan(&n, &s)
+	S(&n, &s)
 
 	for {
-		Scan(&i)
+		S(&i)
 		if i < 1 {
 			break
 		}
-		Scan(&j)
+		S(&j)
 		a[i][j] = 1
 	}
 
 	for l < n {
-	l++
+		l++
 		if a[s][l] > 0 {
 			F(l)
 		}
@@ -47,5 +48,4 @@ func main() {
 	}
 
 	Print(w)
-
 }

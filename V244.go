@@ -5,10 +5,10 @@ func main() {
 		u          [5e4]int
 		n, k, z, i int
 		m          = -1
+		P          = Print
 	)
 
 	Scan(&n, &k)
-
 	for z < n {
 		Scan(&u[z])
 		z++
@@ -37,7 +37,7 @@ func main() {
 
 		if r*o > 0 {
 			if r*o > r+o || m >= 0 {
-				Print("FAIL")
+				P("FAIL")
 				return
 			}
 
@@ -55,5 +55,5 @@ func main() {
 		i++
 	}
 
-	Print("OK ", m+1)
+	P("OK ", m+1)
 }

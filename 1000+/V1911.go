@@ -6,15 +6,17 @@ import (
 )
 func main() {
 	var (
-		m       [200001]int
+		m       [3e5]int
 		a, r    []int
 		x, l, i int
 		s       = b.NewReader(Stdin)
+		P       = Println
+		S       = Fscan
 	)
 
-	Fscan(s, &l)
+	S(s, &l)
 	for l > 0 {
-		Fscan(s, &x)
+		S(s, &x)
 		m[x]++
 		l--
 	}
@@ -45,9 +47,9 @@ func main() {
 	}
 	x = len(r)
 
-	Println(x / 2)
+	P(x / 2)
 	for i < x {
-		Println(r[i], r[i+1])
+		P(r[i], r[i+1])
 		i += 2
 	}
 }

@@ -7,8 +7,9 @@ import (
 func main() {
 	g := 0
 	r := b.NewReader(Stdin)
-	Fscan(r, &g)
+	S := Fscan
 
+	S(r, &g)
 	for g > 0 {
 		var (
 			C, D, E             [2e4]int
@@ -16,9 +17,9 @@ func main() {
 			o                   = int(9e18)
 			s                   = "Accepted"
 		)
-		Fscan(r, &n)
+		S(r, &n)
 		for j < n {
-			Fscan(r, &a, &v)
+			S(r, &a, &v)
 			C[a]++
 			C[v]--
 			D[a] += j

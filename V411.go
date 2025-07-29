@@ -4,10 +4,14 @@ import (
 	. "math"
 )
 func main() {
-	a:=0.
-	b:=a
-	c:=a
-	w := 1
+	var (
+		a = 0.
+		b = a
+		c = a
+		w = 1
+		P = Println
+	)
+
 	Scan(&a, &b, &c)
 
 	if a == 0 {
@@ -18,9 +22,9 @@ func main() {
 			}
 		}
 
-		Println(w)
+		P(w)
 		if w > 0 {
-			Print(-c / b)
+			P(-c / b)
 		}
 		return
 	}
@@ -35,12 +39,11 @@ func main() {
 		w = 2
 	}
 
-	Println(w)
+	P(w)
 	c = Sqrt(c)
 	for 0 < w {
-		Println((-b - c) / (a * 2))
+		P((-b - c) / (a * 2))
 		c = -c
-	w--
+		w--
 	}
-
 }

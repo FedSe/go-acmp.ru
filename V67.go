@@ -10,15 +10,16 @@ func main() {
 		n, m, a, k, c, d, e, f, g, h, i int
 		r                               = b.NewReader(Stdin)
 		q                               = "%d.%d.%d.%d "
+		S                               = Scanln
 	)
 
-	Scanln(&n)
+	S(&n)
 	for i < n {
 		Scanf(q, &x[i], &y[i], &p[i], &j[i])
 		i++
 	}
 
-	Scanln(&m)
+	S(&m)
 	for 0 < m {
 		u := 0
 		o, _ := r.ReadString('\n')

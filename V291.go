@@ -8,15 +8,16 @@ func main() {
 		v       [1e3]string
 		a       = ""
 		n, o, i int
+		S = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	for i < n {
-		Scan(&v[i])
+		S(&v[i])
 		i++
 	}
 
-	Scan(&a)
+	S(&a)
 	for 0 < n {
 		n--
 		b := a

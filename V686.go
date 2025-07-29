@@ -4,24 +4,27 @@ import (
 	. "sort"
 )
 func main() {
-	var n, i, j int
-	Scan(&n)
+	var (
+		n, i, j int
+		a       [3e4]int
+		P       = Println
+	)
 
-	a := make([]int, n)
+	Scan(&n)
 	for i < n {
 		Scan(&a[i])
 		i++
 	}
-	Ints(a)
+	Ints(a[:n])
 
 	for j < n {
-		Println(a[j])
+		P(a[j])
 		j += 2
 	}
 
 	n -= 1 + n%2
 	for n > 0 {
-		Println(a[n])
+		P(a[n])
 		n -= 2
 	}
 }

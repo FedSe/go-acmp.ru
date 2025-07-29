@@ -3,38 +3,37 @@ import . "fmt"
 func main() {
 	var (
 		n, p, s, v, i, m int
-		a [100]int
+		a                [100]int
+		S                = Scan
 	)
-	Scan(&n)
 
+	S(&n)
 	for i < n {
-		Scan(&m)
+		S(&m)
 		if m > p {
 			p = m
 		}
 		a[i] = m
 		s += m
-	i++
+		i++
 	}
 
-	Scan(&v)
+	S(&v)
 
 	p--
 	for p+1 < s {
 		m = (s + p) / 2
 		c := 1
 		d := 0
-		for
 		j := 0
-		j < n
-		{
+		for j < n {
 			i = a[j]
 			d += i
 			if d > m {
 				c++
 				d = i
 			}
-		j++
+			j++
 		}
 
 		if c > v {

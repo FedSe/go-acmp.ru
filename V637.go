@@ -2,17 +2,20 @@ package main
 import . "fmt"
 func main() {
 	var n, s, i int
+	S := Scan
 
-	Scan(&n)
+	S(&n)
 	a := make([]int, n)
 	for i < n {
-		Scan(&a[i])
-	i++
+		S(&a[i])
+		i++
 	}
 
-	Scan(&n)
-	for _ , d := range a {
-		if d > n { d = n }
+	S(&n)
+	for _, d := range a {
+		if d > n {
+			d = n
+		}
 		s += d
 	}
 	Print(s)

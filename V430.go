@@ -4,17 +4,22 @@ import (
 	. "math"
 )
 func main() {
-	var r, a, b, c, d float64
+	var (
+		r, a, b, c, d float64
+		C             = Cos
+		S             = Sin
+	)
+
 	Scan(&r, &a, &c, &b, &d)
 
-	a = a / 180 * Pi
-	b = b / 180 * Pi
-	c = c / 180 * Pi
-	d = d / 180 * Pi
+	a *= Pi / 180
+	b *= Pi / 180
+	c *= Pi / 180
+	d *= Pi / 180
 
-	x := r * Cos(a) * Cos(c) - r * Cos(b) * Cos(d)
-	y := r * Cos(a) * Sin(c) - r * Cos(b) * Sin(d)
-	z := r * Sin(a) - r * Sin(b)
+	x := r*C(a)*C(c) - r*C(b)*C(d)
+	y := r*C(a)*S(c) - r*C(b)*S(d)
+	z := r*S(a) - r*S(b)
 
-	Print(r * 2 * Asin(Min(1., Sqrt(x*x + y*y + z*z)/2/r)))
+	Print(r * 2 * Asin(Min(1., Sqrt(x*x+y*y+z*z)/2/r)))
 }

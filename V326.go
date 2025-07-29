@@ -4,9 +4,10 @@ func main() {
 	var (
 		n, m, i, k, l int
 		a, c          [201]int
+		P = Println
 	)
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
 		Scan(&a[i])
 		c[a[i]+100]++
@@ -22,13 +23,13 @@ func main() {
 	i = m - 100
 	for k < n {
 		if a[k] != i {
-			Println(a[k])
+			P(a[k])
 		}
 		k++
 	}
 
 	for l < c[m] {
-		Println(i)
+		P(i)
 		l++
 	}
 }

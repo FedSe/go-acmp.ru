@@ -2,19 +2,21 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [1001]int
+		a          [1001]int
 		n, l, r, i int
+		S = Scan
 	)
-	Scan(&n)
+
+	S(&n)
 	for i < n {
-	i++
-		Scan(&a[i])
+		i++
+		S(&a[i])
 	}
-	Scan(&l, &r)
+	S(&l, &r)
 
 	i = l
 	for l < r {
-	l++
+		l++
 		if a[l] > a[i] {
 			i = l
 		}

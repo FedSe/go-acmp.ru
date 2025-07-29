@@ -2,23 +2,26 @@ package main
 import . "fmt"
 func main() {
 	var (
-		s [100]int
+		s                [100]int
 		n, x, y, t, p, i int
-		a = -1
+		a                = -1
+		S = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	for i < n {
-		Scan(&s[i])
-	i++
+		S(&s[i])
+		i++
 	}
-	Scan(&y, &t, &p)
+	S(&y, &t, &p)
 
 	t--
 	y--
 	y /= p
-	t = t/p-y+1
-	if t > n { t = n }
+	t = t/p - y + 1
+	if t > n {
+		t = n
+	}
 
 	for a < 2 {
 		p = a * y
@@ -27,14 +30,16 @@ func main() {
 		p %= n
 		i = 0
 		for i < t {
-			if x < s[p] { x = s[p] }
+			if x < s[p] {
+				x = s[p]
+			}
 			p += a
 			p %= n
 			p += n
 			p %= n
-		i++
+			i++
 		}
-	a += 2
+		a += 2
 	}
 
 	Print(x)

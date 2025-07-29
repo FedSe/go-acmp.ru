@@ -7,19 +7,20 @@ func main() {
 	var (
 		n, i, j int
 		c, d    []string
+		S       = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	a := make([]string, n)
 	for i < n {
-		Scan(&a[i])
+		S(&a[i])
 		i++
 	}
 
-	Scan(&n)
+	S(&n)
 	b := make([]string, n)
 	for j < n {
-		Scan(&b[j])
+		S(&b[j])
 		j++
 	}
 

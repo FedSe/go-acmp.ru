@@ -6,42 +6,40 @@ import (
 )
 func main() {
 	var (
-	v, x, y []float64
-	n, i, j int
-	s = map[float64]int{}
-	c = .0
-	k = c
-)
-	Scan(&n)
+		v, x, y []float64
+		n, i, j int
+		s       = map[float64]int{}
+		c       = .0
+		k       = c
+		P       = Println
+	)
 
+	Scan(&n)
 	for i < n {
 		Scan(&c, &k)
 		x = append(x, c)
 		y = append(y, k)
-	i++
+		i++
 	}
 
 	for j < n {
-		for
 		i = j + 1
-		i < n
-		{
-			c = x[j]-x[i]
-			k = y[j]-y[i]
-			s[Sqrt(c*c + k*k)] = 1
-		i++
+		for i < n {
+			c = x[j] - x[i]
+			k = y[j] - y[i]
+			s[Sqrt(c*c+k*k)] = 1
+			i++
 		}
-	j++
+		j++
 	}
- 
+
 	for d := range s {
 		v = append(v, d)
 	}
 	Float64s(v)
-	Println(len(v))
 
+	P(len(v))
 	for _, d := range v {
-		Println(d)
+		P(d)
 	}
-
 }

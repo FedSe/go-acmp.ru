@@ -9,9 +9,10 @@ func main() {
 		a, p       [131071]int
 		n, m, q, i int
 		s          = b.NewReader(Stdin)
+		S          = Fscan
 	)
 
-	Fscan(s, &n, &m)
+	S(s, &n, &m)
 	for i < n {
 		i++
 		p[i] = m + i - 1
@@ -19,7 +20,7 @@ func main() {
 	n += m
 
 	for m > 0 {
-		Fscan(s, &q)
+		S(s, &q)
 		i = p[q]
 		x := i
 		u := 0

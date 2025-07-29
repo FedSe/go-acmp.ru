@@ -1,28 +1,23 @@
 package main
-import ."fmt"
+import . "fmt"
 func main() {
 	var (
-		p [100]int
+		p                [100]int
 		n, m, b, a, y, i int
+		S                = Scan
 	)
 
-	Scan(&n)
-
+	S(&n)
 	for i < n {
-		Scan(&p[i])
-	i++
+		S(&p[i])
+		i++
 	}
 
-	Scan(&b, &m)
-
+	S(&b, &m)
 	for 0 < m {
-		t := 0
-		s := 0
-		for
-		j := 0
-		j < n
-		{
-			Scan(&i)
+		var t, s, j int
+		for j < n {
+			S(&i)
 			s += i
 			t += i * p[j]
 			j++
@@ -36,7 +31,6 @@ func main() {
 		}
 		Println(a)
 		y += 2
-	m--
+		m--
 	}
-
 }

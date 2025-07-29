@@ -3,46 +3,44 @@ import . "fmt"
 func main() {
 	var (
 		n, m, p, i, j int
-		s = "YES"
-		e [100]string
+		s             = "YES"
+		e             [100]string
+		S             = Scan
 	)
 
-	Scan(&n, &m)
+	S(&n, &m)
 	for j < n {
-		Scan(&e[j])
-	j++
+		S(&e[j])
+		j++
 	}
 
 	for i < n {
-		for
 		j = 0
-		j < m
-		{
+		for j < m {
 			l := "."
-			Scan(&p)
+			S(&p)
 			if p > 3 {
 				l += "R"
 			}
-			if p % 2 == 1 {
+			if p%2 == 1 {
 				l += "B"
 			}
 			if p == 2 || p == 3 || p == 6 || p == 7 {
 				l += "G"
 			}
-				
-				for
-				f := 0
-				f < len(l)
-				{
-					if []byte(e[i])[j] == l[f] {
-						p=9
-					}
-				f++
+			f := 0
+			for f < len(l) {
+				if []byte(e[i])[j] == l[f] {
+					p = 9
 				}
-			if p != 9 { s="NO" }
-		j++
+				f++
+			}
+			if p != 9 {
+				s = "NO"
+			}
+			j++
 		}
-	i++
+		i++
 	}
 
 	Print(s)

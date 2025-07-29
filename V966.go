@@ -4,15 +4,16 @@ func main() {
 	var (
 		a, b, c       [1e3]int
 		i, n, t, v, o int
+		S             = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	for i < n {
-		Scan(&a[i], &b[i], &c[i])
+		S(&a[i], &b[i], &c[i])
 		i++
 	}
 
-	Scan(&t)
+	S(&t)
 	for o < t {
 		i = 0
 		h := 0

@@ -5,15 +5,17 @@ import (
 )
 func main() {
 	var (
-		e Int
+		e    Int
 		i, n int64
+		N    = NewInt
 	)
+	
 	Scan(&n)
-	a := NewInt(1)
+	a := N(1)
 
 	for i < n {
-	i++
-		e.Add(&e, a.Mul(a, NewInt(i)))
+		i++
+		e.Add(&e, a.Mul(a, N(i)))
 	}
 
 	Print(&e)

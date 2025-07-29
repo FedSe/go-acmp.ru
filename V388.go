@@ -9,22 +9,24 @@ func main() {
 		n, m, c, x, i, f, j, a int
 		R, C, D                [564001]int
 		s                      = b.NewReader(Stdin)
+		S                      = Fscan
 	)
 
-	Fscan(s, &n, &m)
+	S(s, &n, &m)
 	for x < m {
 		C[x] = -1001
 		x++
 	}
 	w := n * m
 	for j < w {
-		Fscan(s, &D[j])
+		S(s, &D[j])
 		j++
 	}
 
 	for i < n {
 		R[i] = 1001
-		for j = 0; j < m; {
+		j = 0
+		for j < m {
 			a = D[i*m+j]
 			if a < R[i] {
 				R[i] = a
@@ -38,7 +40,8 @@ func main() {
 	}
 
 	for f < n {
-		for j = 0; j < m; {
+		j = 0
+		for j < m {
 			if R[f] == C[j] {
 				c++
 			}

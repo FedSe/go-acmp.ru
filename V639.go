@@ -10,17 +10,18 @@ func main() {
 		e       []string
 		o       []int
 		r       = .0
+		S       = Scan
 	)
-	Scan(&n)
 
+	S(&n)
 	for 0 < n {
-		Scan(&u)
+		S(&u)
 		for 0 < u {
-			Scan(&r)
+			S(&r)
 			c = append(c, r)
 
 			a := ""
-			Scan(&a)
+			S(&a)
 			e = append(e, a)
 			o = append(o, len(o))
 			u--

@@ -6,12 +6,14 @@ func main() {
 		m                [100]string
 		n, f, i, j, l, o int
 		u                = -1
+		S                = Scan
+		P                = Println
 	)
 
-	Scan(&n)
+	S(&n)
 	for i < n {
 		a := ""
-		Scan(&a)
+		S(&a)
 		o = -1
 		f = 0
 		for f <= u {
@@ -27,11 +29,11 @@ func main() {
 			o = u
 		}
 		v[i] = o
-		Scan(&x[i], &y[i], &r[i])
+		S(&x[i], &y[i], &r[i])
 		i++
 	}
 
-	Scan(&f, &o)
+	S(&f, &o)
 	for l < n {
 		i = x[l] - f
 		c := y[l] - o
@@ -41,9 +43,9 @@ func main() {
 		l++
 	}
 
-	Println(u + 1)
+	P(u + 1)
 	for j <= u {
-		Println(m[j], k[j])
+		P(m[j], k[j])
 		j++
 	}
 }

@@ -10,11 +10,12 @@ func main() {
 		p       [1e5][2]int
 		a, n, i int
 		s       = b.NewReader(Stdin)
+		S       = Fscan
 	)
 
-	Fscan(s, &n)
+	S(s, &n)
 	for i < n {
-		Fscan(s, &a)
+		S(s, &a)
 		p[i] = [2]int{a, i + 1}
 		i++
 	}

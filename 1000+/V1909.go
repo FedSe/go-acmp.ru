@@ -1,25 +1,30 @@
 package main
 import . "fmt"
 func main() {
-	var n, s, m, v int
-	Scan(&n)
+	var (
+		n, s, m, v int
+		S          = Scan
+		P          = Print
+	)
+
+	S(&n)
 	if n == 1 {
-		Print("No")
+		P("No")
 	} else {
-		Scan(&v)
+		S(&v)
 		i := 1
 		for i < n {
 			i++
-			Scan(&m)
+			S(&m)
 			s += i * m
 		}
-		Print(`
+		P(`
 Yes
 `, -s)
 		i = 1
 		for i < n {
 			i++
-			Print(" ", i*v)
+			P(" ", i*v)
 		}
 	}
 }

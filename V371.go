@@ -7,6 +7,7 @@ func main() {
 		i       = 2
 		j       = 2
 		M       = 1000001
+		P       = Println
 	)
 
 	for i < M {
@@ -30,12 +31,12 @@ func main() {
 		j = a[i]
 		if j >= m && j <= n && a[j] == i && i < j {
 			c++
-			Println(i, j)
+			P(i, j)
 		}
 		i++
 	}
 
 	if c < 1 {
-		Print("Absent")
+		P("Absent")
 	}
 }

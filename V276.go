@@ -2,15 +2,16 @@ package main
 import . "fmt"
 func main() {
 	var m, n, i, j int
+	P := Println
 	Scan(&n, &m)
 
 	for i < m-n%m {
-		Println(n / m)
+		P(n / m)
 		i++
 	}
 
 	for j < n%m {
-		Println(n/m + 1)
+		P(n/m + 1)
 		j++
 	}
 }

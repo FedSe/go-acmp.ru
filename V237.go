@@ -5,64 +5,55 @@ import (
 )
 func main() {
 	var (
-		T [10][10]byte
+		T          [10][10]byte
 		n, m, j, i int
-		s = ""
-		v []byte
+		s          = ""
+		v          []byte
+		S          = Scan
 	)
 
-	Scan(&n, &m)
-
+	S(&n, &m)
 	for j < n {
-		Scan(&s)
-		for
+		S(&s)
 		x := 0
-		x < len(s)
-		{
+		for x < len(s) {
 			T[j][x] = s[x]
-		x++
+			x++
 		}
-	j++
+		j++
 	}
+    
 	for 0 < m {
-		Scan(&s)
-		for
+		S(&s)
 		x := 0
-		x < len(s)
-		{
-			for
+		for x < len(s) {
 			i := 0
-			i < n
-			{
-				for
+			for i < n {
 				j = 0
-				j < n
-				{
+				for j < n {
 					if T[i][j] == s[x] {
 						T[i][j] = 3
 						goto A
 					}
-				j++
+					j++
 				}
-			i++
+				i++
 			}
-A:
-		x++
+		A:
+			x++
 		}
-	m--
+		m--
 	}
 
 	for i < n {
-		for
 		j = 0
-		j < n
-		{
+		for j < n {
 			if T[i][j] != 3 {
 				v = append(v, T[i][j])
 			}
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	Slice(v, func(i, j int) bool {

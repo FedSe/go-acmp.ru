@@ -2,50 +2,44 @@ package main
 import . "fmt"
 func main() {
 	var (
-		f, t [100]string
+		f, t                [100]string
 		n, m, a, o, i, j, x int
+		S                   = Scan
 	)
 
-	Scan(&n, &m)
-	
+	S(&n, &m)
 	for i < n {
-		Scan(&f[i])
-	i++
+		S(&f[i])
+		i++
 	}
-	Scan(&o, &x)
 
+	S(&o, &x)
 	for j < o {
-		Scan(&t[j])
-	j++
+		S(&t[j])
+		j++
 	}
 
 	x -= m
 	o -= n
 	for 0 <= x {
-		for
 		y := 0
-		y <= o
-		{
-			for
+		for y <= o {
 			i = x
-			i < x+m
-			{
-				for
+			for i < x+m {
 				j = y
-				j < y+n
-				{
-					if f[j-y][i-x] - t[j][i] > 200 {
+				for j < y+n {
+					if f[j-y][i-x]-t[j][i] > 200 {
 						goto A
 					}
-				j++
+					j++
 				}
-			i++
+				i++
 			}
 			a++
-A:
-		y++
+		A:
+			y++
 		}
-	x--
+		x--
 	}
 
 	Print(a)

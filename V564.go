@@ -6,36 +6,33 @@ import (
 func main() {
 	var (
 		n, i, j, x, y, z int
-		m = -1.
-		a [100]float64
+		m                = -1.
+		a                [100]float64
+		P                = Println
 	)
-	Scan(&n)
 
+	Scan(&n)
 	for j < n {
 		Scan(&a[j])
-	j++
+		j++
 	}
 
 	for i < n {
-	i++
-		for
+		i++
 		j = i
-		j < n
-		{
-		j++
-			for
+		for j < n {
+			j++
 			k := j
-			k < n
-			{
+			for k < n {
 				d := a[i-1]
 				b := a[j-1]
 				c := a[k]
-				p := (d+b+c) / 2
+				p := (d + b + c) / 2
 				p = Sqrt(p * (p - d) * (p - b) * (p - c))
 				if d >= b+c || b >= d+c || c >= d+b {
 					p = -1
 				}
-			k++
+				k++
 				if p > m {
 					m = p
 					x = i
@@ -46,8 +43,8 @@ func main() {
 		}
 	}
 
-	Println(m)
+	P(m)
 	if m > -1 {
-		Print(x, y, z)
+		P(x, y, z)
 	}
 }

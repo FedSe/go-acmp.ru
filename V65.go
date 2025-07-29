@@ -2,18 +2,21 @@ package main
 import . "fmt"
 func main() {
 	var (
-		v          [9999]int
+		v          [1e4]int
 		s          = ""
 		n, i, f, l int
+		P          = Println
+		S          = Scan
 	)
-	Scan(&s, &n)
+
+	S(&s, &n)
 	m := len(s)
 	w := m
 
 	for i < n {
 		i++
 		t := ""
-		Scan(&t)
+		S(&t)
 
 		h := 0
 		j := 0
@@ -34,9 +37,9 @@ func main() {
 		}
 	}
 
-	Println(f)
+	P(f)
 	for l < f {
-		Println(v[l])
+		P(v[l])
 		l++
 	}
 }

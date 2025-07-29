@@ -1,11 +1,12 @@
 package main
 import . "fmt"
-var h, m int
-
 func main() {
-	Scanf("%d:%d", &h, &m)
+	h := 0
+	m := 0
+	f := "%02d:%02d"
+	Scanf(f, &h, &m)
 
-	T:
+T:
 	m++
 	h += m / 60
 	m = m % 60
@@ -15,5 +16,5 @@ func main() {
 		goto T
 	}
 
-	Printf("%02d:%02d", h, m)
+	Printf(f, h, m)
 }

@@ -4,11 +4,12 @@ func main() {
 	var (
 		u, o                      [2e5]int
 		a, b, d, f, k, c, t, i, j int
+		S = Scan
 	)
 
-	Scan(&a, &b, &d, &j, &f)
+	S(&a, &b, &d, &j, &f)
 	for 0 < j {
-		Scan(&t)
+		S(&t)
 		u[t] = 1
 		j--
 	}
@@ -22,9 +23,9 @@ func main() {
 		f++
 	}
 
-	Scan(&j)
+	S(&j)
 	for 0 < j {
-		Scan(&t)
+		S(&t)
 		o[t] = 1
 		j--
 	}

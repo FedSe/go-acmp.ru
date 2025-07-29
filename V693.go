@@ -5,13 +5,15 @@ import (
 	. "strings"
 )
 func main() {
-	s:="No"
-	a:=s
-	b:=s
+	s := "No"
+	a := s
+	b := s
+	L := ToLower
+
 	Scan(&a, &b)
 
-	c := []byte(ToLower(a))
-	d := []byte(ToLower(b))
+	c := []byte(L(a))
+	d := []byte(L(b))
 
 	Slice(c, func(i, j int) bool {
 		return c[i] < c[j]

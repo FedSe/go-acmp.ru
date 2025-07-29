@@ -11,12 +11,12 @@ type T struct {
 	v, w, q int
 }
 
-type S struct {
+type H struct {
 	p    int
 	m, c []int
 }
 
-func (s *S) H(w int) int {
+func (s *H) H(w int) int {
 	d := (w + s.p - 1) / s.p * s.p
 	y := 0
 	for w < len(s.m) && w < d {
@@ -37,16 +37,18 @@ func main() {
 	var (
 		n, r, j int
 		s       = d.NewReader(Stdin)
+		S       = Fscan
+		P       = Print
 	)
 
-	Fscan(s, &n)
+	S(s, &n)
 
 	F := func(n int) []T {
 		a := make([]T, n)
 		i := 0
 		v := 0
 		for i < n {
-			Fscan(s, &v)
+			S(s, &v)
 			a[i] = T{v, i, 0}
 			i++
 		}
@@ -62,7 +64,7 @@ func main() {
 	c := make([]T, n)
 	for j < n {
 		if a[j].v != b[j].v {
-			Print(-1)
+			P(-1)
 			return
 		}
 		c[j] = T{a[j].v, a[j].w, b[j].w}
@@ -72,11 +74,7 @@ func main() {
 		return c[i].q < c[j].q
 	})
 
-	e := S{
-		p: 400,
-		m: make([]int, n),
-		c: make([]int, (n+399)/400),
-	}
+	e := H{400, make([]int, n), make([]int, (n+399)/400)}
 
 	for _, t := range c {
 		r += t.w + e.H(t.w+1) - t.q
@@ -84,5 +82,5 @@ func main() {
 		e.c[t.w/e.p]++
 	}
 
-	Print(r)
+	P(r)
 }

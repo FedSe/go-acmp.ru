@@ -1,19 +1,23 @@
 package main
 import . "fmt"
 func main() {
-	var n, m, a int
-	s := 1
+	var (
+		n, m, a int
+		s       = 1
+		S       = Scan
+		P       = Println
+	)
 
-	Scan(&n, &m)
+	S(&n, &m)
 	if n < 2 {
-		Print(1, m)
+		P(1, m)
 		return
 	}
 	x := []int{m}
 
-	Scan(&m)
+	S(&m)
 	if n < 3 {
-		Print(2, x[0], m)
+		P(2, x[0], m)
 		return
 	}
 
@@ -23,7 +27,7 @@ func main() {
 	}
 
 	for 2 < n {
-		Scan(&a)
+		S(&a)
 		for a > x[s] && x[s] < m && s > 0 {
 			x = x[:len(x)-1]
 			s--
@@ -33,11 +37,11 @@ func main() {
 		if x[s] > m {
 			m = x[s]
 		}
-	n--
+		n--
 	}
 
-	Println(len(x))
+	P(len(x))
 	for _, s := range x {
-		Println(s)
+		P(s)
 	}
 }

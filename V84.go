@@ -3,21 +3,22 @@ import . "fmt"
 func main() {
 	var (
 		n, m, i, j, k int
-		a [100]string
+		a             [100]string
+		S             = Scan
+		r             = -1
+		d             = r
 	)
-	Scan(&n, &m)
 
+	S(&n, &m)
 	for j < n {
-		Scan(&a[j])
-	j++
+		S(&a[j])
+		j++
 	}
 
-	l, r, u, d := m, -1, n, -1
+	l, u := m, n
 	for i < n {
-		for
 		j = 0
-		j < m
-		{
+		for j < m {
 			if a[i][j] == 42 {
 				if i < u {
 					u = i
@@ -32,24 +33,22 @@ func main() {
 					r = j
 				}
 			}
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	for k < n {
-		for
 		j = 0
-		j < m
-		{
+		for j < m {
 			s := "."
 			if k >= u && k <= d && j >= l && j <= r {
 				s = "*"
 			}
 			Print(s)
-		j++
+			j++
 		}
 		Println()
-	k++
+		k++
 	}
 }

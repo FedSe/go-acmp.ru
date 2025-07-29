@@ -4,13 +4,14 @@ func main() {
 	var (
 		a, b, c             [100][100]int
 		n, m, p, i, l, j, w int
+		S = Scan
 	)
 
-	Scan(&n, &m, &p)
+	S(&n, &m, &p)
 	for i < n {
 		k := 0
 		for k < m {
-			Scan(&a[i][k])
+			S(&a[i][k])
 			k++
 		}
 		i++
@@ -19,7 +20,7 @@ func main() {
 	for l < m {
 		i = 0
 		for i < p {
-			Scan(&b[l][i])
+			S(&b[l][i])
 			i++
 		}
 		l++

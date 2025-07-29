@@ -5,19 +5,19 @@ import (
 	. "os"
 	. "sort"
 )
-
 func main() {
 	var (
 		a    []int
 		n, i int
 		w    = b.NewWriter(Stdout)
 		s    = b.NewReader(Stdin)
+		S    = Fscan
 	)
 
-	Fscan(s, &n)
+	S(s, &n)
 
 	for n > 0 {
-		Fscan(s, &i)
+		S(s, &i)
 		a = append(a, i)
 		n--
 	}

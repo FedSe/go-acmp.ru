@@ -2,19 +2,20 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a[21][21]int
+		a          [21][21]int
 		n, i, l, k int
-		c = 1
-		s = ""
+		c          = 1
+		s          = ""
+		P          = Println
 	)
 
 	Scan(&n, &s)
 
 	for l < n {
-	l++
+		l++
 		j := 0
 		for j < n {
-		j++
+			j++
 			a[l][j] = c
 			c++
 		}
@@ -41,9 +42,9 @@ func main() {
 			l = 1
 			f = &a[x+1][y]
 		}
-	i++
+		i++
 		if *p == j {
-			Print("ERROR ", i)
+			P("ERROR", i)
 			return
 		}
 
@@ -52,12 +53,11 @@ func main() {
 	}
 
 	for k < n {
-	k++
+		k++
 		i = 0
 		for i < n {
-		i++
-			Println(a[k][i])
+			i++
+			P(a[k][i])
 		}
 	}
-
 }

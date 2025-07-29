@@ -4,17 +4,18 @@ func main() {
 	var (
 		n, i, c int
 		a       [1e3]int
+		S = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	for i < n {
-		Scan(&a[i])
+		S(&a[i])
 		i++
 	}
 
-	Scan(&n)
+	S(&n)
 	for 0 < n {
-		Scan(&i, &c)
+		S(&i, &c)
 		i--
 		for i < c {
 			Println(a[i])

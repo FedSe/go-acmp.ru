@@ -5,25 +5,26 @@ import (
 )
 func main() {
 	var (
-		v [40]string
-		s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		o = "IMPOSSIBLE"
-		n = s
-		m = s
+		v    [40]string
+		s    = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		o    = "IMPOSSIBLE"
+		n    = s
+		m    = s
 		i, a int
+		I    = Index
 	)
 
 	Scan(&n, &m)
 	for i < 27 {
 		w := ""
-		for _ , x := range n {
-			w += string(s[(Index(s, string(x))+i)%26])
+		for _, x := range n {
+			w += string(s[(I(s, string(x))+i)%26])
 		}
-		if Index(w, m) > -1 {
+		if I(w, m) > -1 {
 			v[a] = w
-		a++
+			a++
 		}
-	i++
+		i++
 	}
 
 	if a > 0 {

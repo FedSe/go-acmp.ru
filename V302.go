@@ -5,34 +5,30 @@ import (
 )
 func main() {
 	var (
-		x, y, d, c [1001]float64
-		n, i int
-		e = .0
+		x, y, d, c [1e3]float64
+		n, i       int
+		e          = .0
+		M          = Inf(1)
 	)
 
 	Scan(&n)
-
 	for i < n {
 		Scan(&x[i], &y[i])
-		d[i] = Inf(1)
-	i++
+		d[i] = M
+		i++
 	}
 
 	d[0] = 0
-
 	for {
-		m := Inf(1)
+		m := M
 		r := -1
-
-		for
 		i = 0
-		i < n
-		{
+		for i < n {
 			if c[i] < 1 && d[i] < m {
 				m = d[i]
 				r = i
 			}
-		i++
+			i++
 		}
 
 		if r == -1 {
@@ -41,17 +37,14 @@ func main() {
 
 		e = Max(e, d[r])
 		c[r] = 1
-
-		for
 		i = 0
-		i < n
-		{
+		for i < n {
 			if c[i] < 1 {
 				a := x[i] - x[r]
 				m = y[i] - y[r]
-				d[i] = Min(a*a + m*m, d[i])
+				d[i] = Min(a*a+m*m, d[i])
 			}
-		i++
+			i++
 		}
 	}
 

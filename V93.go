@@ -4,17 +4,18 @@ func main() {
 	var (
 		n, m, i, f, k int
 		g, h          [30]string
+		S             = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	for k < n {
-		Scan(&g[k])
+		S(&g[k])
 		k++
 	}
 
-	Scan(&m)
+	S(&m)
 	for f < m {
-		Scan(&h[f])
+		S(&h[f])
 		f++
 	}
 

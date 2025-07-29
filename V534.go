@@ -3,20 +3,21 @@ import . "fmt"
 func main() {
 	var (
 		n, m, t, i, j, k int
-		a [100]int
+		a                [100]int
+		S = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	for i < n {
-		Scan(&a[i])
-	i++
+		S(&a[i])
+		i++
 	}
 
-	Scan(&m)
+	S(&m)
 	for j < m {
-		Scan(&t)
+		S(&t)
 		a[t-1]--
-	j++
+		j++
 	}
 
 	for k < n {
@@ -25,6 +26,6 @@ func main() {
 			s = "yes"
 		}
 		Println(s)
-	k++
+		k++
 	}
 }

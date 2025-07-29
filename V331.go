@@ -1,21 +1,13 @@
 package main
 import . "fmt"
 func main() {
-	var a, b, c, d int
-
-	Scanf("%d:%d", &c, &d)
+	var h, m, a, b int
+	f := `%02d:%02d
+`
+	Scanf(f, &h, &m)
 	Scan(&a, &b)
-	a += c
-	b += d
 
-	if b > 59 {
-		b -= 60
-		a++
-	}
-	
-	for a > 23 {
-		a -= 24
-	}
+	b += h*60 + m + a*60
 
-	Printf("%02d:%02d", a, b)
+	Printf(f, (b/60)%24, b%60)
 }

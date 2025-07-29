@@ -5,11 +5,12 @@ import (
 )
 func main() {
 	var a, b, c, d, e, f float64
+	M := Min
 	Scan(&a, &b, &c, &d, &e, &f)
 
-	a = Min(a, b+c)
-	b = Min(b, a+c)
-	w := a+b
+	a = M(a, b+c)
+	b = M(b, a+c)
+	w := a + b
 
-	Print(Min(Min(a/d + c/e + b/f, b/d + c/e + a/f), w/d + w/e))
+	Print(M(M(a/d+c/e+b/f, b/d+c/e+a/f), w/d+w/e))
 }

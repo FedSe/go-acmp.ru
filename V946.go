@@ -2,17 +2,16 @@ package main
 import . "fmt"
 func main() {
 	var (
-		s []int
+		s       []int
 		n, k, d int
+		S       = Scan
 	)
 
-	Scan(&n)
-
+	S(&n)
 	for n > 0 {
-		Scan(&k)
-
+		S(&k)
 		if k < 3 {
-			Scan(&d)
+			S(&d)
 			if k == 1 {
 				s = append([]int{d}, s...)
 			} else {
@@ -28,6 +27,6 @@ func main() {
 			}
 			Println(d)
 		}
-	n--
+		n--
 	}
 }

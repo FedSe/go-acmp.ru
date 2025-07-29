@@ -2,9 +2,9 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [51][51]int
+		a             [51][51]int
 		n, s, t, i, k int
-		F = 99999999
+		F             = 99999999
 	)
 
 	Scan(&n, &s, &t)
@@ -12,42 +12,36 @@ func main() {
 	t--
 
 	for i < n {
-		for
 		j := 0
-		j < n
-		{
+		for j < n {
 			Scan(&a[i][j])
 			if a[i][j] < 0 {
 				a[i][j] = F
 			}
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	for k < n {
-		for
 		i = 0
-		i < n
-		{
-			for
+		for i < n {
 			j := 0
-			j < n
-			{
+			for j < n {
 				f := a[i][k] + a[k][j]
 				if a[i][j] > f {
 					a[i][j] = f
 				}
-			j++
+				j++
 			}
-		i++
+			i++
 		}
-	k++
+		k++
 	}
 
-	if a[s][t] < F {
-		Print(a[s][t])
-	} else {
-		Print(-1)
+	i = a[s][t]
+	if i >= F {
+		i = -1
 	}
+	Print(i)
 }

@@ -4,9 +4,10 @@ func main() {
 	var (
 		s             [53][53]int
 		n, m, v, y, x int
+		S             = Scan
 	)
 
-	Scan(&n, &m)
+	S(&n, &m)
 	for y < 53 {
 		x = 0
 		for x < 53 {
@@ -20,9 +21,9 @@ func main() {
 		y++
 	}
 
-	Scan(&n)
+	S(&n)
 	for n > 0 {
-		Scan(&m, &y, &x)
+		S(&m, &y, &x)
 		a, b, c, d := &s[y+1][x+1], &s[y][x+1], &s[y+1][x], &s[y][x]
 		w := []*int{a, b, c}
 		if m == 2 {

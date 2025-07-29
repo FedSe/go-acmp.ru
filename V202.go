@@ -7,14 +7,12 @@ import (
 func main() {
 	var (
 		p [1e5]int
-		r = b.NewReader(Stdin)
 		s = ""
 		t = s
 		i = 1
 	)
 
-	Fscan(r, &s, &t)
-
+	Fscan(b.NewReader(Stdin), &s, &t)
 	n := len(t)
 	t += "#" + s
 

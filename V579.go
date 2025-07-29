@@ -4,6 +4,7 @@ func main() {
 	var (
 		p, e                   [1e4]int
 		n, a, s, g, i, x, y, j int
+		P                      = Println
 	)
 
 	Scan(&n)
@@ -27,9 +28,9 @@ func main() {
 		y = x
 	}
 
-	Println(y)
+	P(y)
 	for j < y {
-		Println(e[j])
+		P(e[j])
 		j++
 	}
 }

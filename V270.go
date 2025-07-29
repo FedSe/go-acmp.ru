@@ -6,21 +6,21 @@ import (
 func main() {
 	s := ""
 	i := 0
+	C := Contains
 
 	Scan(&s)
-	if s[0] < 96 || Contains(s, "__") || s[len(s)-1] == 95 {
+	if s[0] < 96 || C(s, "__") || s[len(s)-1] == 95 {
 		s = "0_"
 	}
 
-	a := Contains(s, "_")
-
+	a := C(s, "_")
 	if a {
 		for i < len(s) {
 			if s[i] < 91 {
 				Print("Error!")
 				return
 			}
-		i++
+			i++
 		}
 	}
 
@@ -35,7 +35,7 @@ func main() {
 			s = s[:i] + "_" + ToLower(s[i:i+1]) + s[i+1:]
 			i++
 		}
-	i++
+		i++
 	}
 
 	Print(s)

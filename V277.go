@@ -2,35 +2,35 @@ package main
 import . "fmt"
 func main() {
 	var a, b, c, d, i int
+	P := Print
 	Scan(&a, &b, &c)
 
 	if a != 0 {
-		Print(a)
+		P(a)
 		d++
 	}
 
 	s := "x"
 	for i < 2 {
 		if b != 0 {
-			if d * b > 0 {
-				Print("+")
+			if d*b > 0 {
+				P("+")
 			}
-			if b * b != 1 {
-				Print(b)
+			if b*b != 1 {
+				P(b)
 			}
 			if b == -1 {
 				s = "-" + s
 			}
-			Print(s)
+			P(s)
 			d++
 		}
-	b = c
-	s = "y"
-	i++
+		b = c
+		s = "y"
+		i++
 	}
 
-
 	if d < 1 {
-		Print(0)
+		P(0)
 	}
 }

@@ -4,25 +4,24 @@ func main() {
 	var (
 		n, m, i, f, t int
 		p             [201]int
-		o             [5000]int
+		o             [5e3]int
+		S             = Scan
 	)
 
-	Scan(&n)
-
+	S(&n)
 	for t < n {
-		Scan(&o[t])
+		S(&o[t])
 		t++
 	}
 
-	Scan(&m)
-
+	S(&m)
 	for f < 201 {
 		p[f] = f
 		f++
 	}
 
 	for 0 < m {
-		Scan(&f, &t)
+		S(&f, &t)
 		p[f] = t
 		m--
 	}

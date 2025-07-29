@@ -5,13 +5,15 @@ func main() {
 		n, c, r int
 		s       = "YES"
 		a       = ""
+		S       = Scan
+		P       = Println
 	)
-    
-	Scan(&n)
+
+	S(&n)
 	for n > 0 {
-		Scan(&c)
+		S(&c)
 		if c%2 > 0 {
-			Println(c)
+			P(c)
 			r++
 		} else {
 			a += Sprintln(c)
@@ -24,5 +26,5 @@ func main() {
 		s = "NO"
 	}
 
-	Print(a + s)
+	P(a + s)
 }

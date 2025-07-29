@@ -4,15 +4,16 @@ func main() {
 	var (
 		a          [1e5]int
 		j, i, n, k int
+		S = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	for i < n {
-		Scan(&a[i])
+		S(&a[i])
 		i++
 	}
 
-	Scan(&k)
+	S(&k)
 	if k > 0 {
 		k %= n
 	} else {

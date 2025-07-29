@@ -2,25 +2,26 @@ package main
 import . "fmt"
 func main() {
 	var (
-		b, d, e [101]string
+		b, d, e                [101]string
 		n, m, a, c, i, x, l, j int
+		P                      = Println
 	)
 
 	Scan(&n, &m)
 	for x < n {
 		Scan(&b[x])
-	x++
+		x++
 	}
 	for i < n {
 		x = 0
 		for x < m/2+1 {
-			d[i]   += "BW"
+			d[i] += "BW"
 			d[i+1] += "WB"
-			e[i]   += "WB"
+			e[i] += "WB"
 			e[i+1] += "BW"
-		x++
+			x++
 		}
-	i += 2
+		i += 2
 	}
 	for l < n {
 		x = 0
@@ -40,9 +41,9 @@ func main() {
 			}
 			e[l] = e[l][:x] + s + e[l][x+1:]
 			c++
-		x++
+			x++
 		}
-	l++
+		l++
 	}
 
 	if a < c {
@@ -50,15 +51,15 @@ func main() {
 		e = d
 	}
 
-	Println(c)
+	P(c)
 	for j < n {
 		x = 0
 		for x < m {
 			if e[j][x] < 49 {
-				Println(j+1, x+1)
+				P(j+1, x+1)
 			}
-		x++
+			x++
 		}
-	j++
+		j++
 	}
 }

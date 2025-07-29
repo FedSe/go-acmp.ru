@@ -1,38 +1,46 @@
 package main
 import (
 	d "bufio"
-	."fmt"
+	. "fmt"
 	. "os"
 	. "strconv"
 )
 func main() {
 	var (
-		a, b, c [2001]int
+		a, b, c             [2e3]int
 		n, m, i, k, j, l, h int
-		s = d.NewScanner(Stdin)
+		s                   = d.NewScanner(Stdin)
+		S                   = Scan
+		P                   = Print
 	)
 	s.Split(d.ScanWords)
 
-	Scan(&n)
+	S(&n)
 	for k < n {
-		Scan(&a[k])
-	k++
+		S(&a[k])
+		k++
 	}
 	if n < 3 {
 		i = a[0]
 		if n > 1 {
 			h = a[0]
-			if h > a[1] { h = a[1] }
+			if h > a[1] {
+				h = a[1]
+			}
 			i += a[1]
 			for l < n {
-				Scan(&a[l])
-			l++
+				S(&a[l])
+				l++
 			}
-			if h > a[0] { h = a[0] }
-			if h > a[1] { h = a[1] }
+			if h > a[0] {
+				h = a[0]
+			}
+			if h > a[1] {
+				h = a[1]
+			}
 			i += a[0] + a[1]
 		}
-		Print(i - h)
+		P(i - h)
 		return
 	}
 
@@ -42,18 +50,18 @@ func main() {
 		if m > x {
 			x = m
 		}
-	h++
+		h++
 	}
 	for j < n {
-		Scan(&b[j])
-	j++
+		S(&b[j])
+		j++
 	}
 	for l < n-2 {
 		m = b[l] + b[l+1] + b[l+2]
 		if m > x {
 			x = m
 		}
-	l++
+		l++
 	}
 	for i < n-1 {
 		m = b[i] + b[i+1] + a[i+1]
@@ -72,7 +80,7 @@ func main() {
 		if m > x {
 			x = m
 		}
-	i++
+		i++
 	}
 
 	j = 2
@@ -80,7 +88,7 @@ func main() {
 		i = 0
 		for i < n && s.Scan() {
 			c[i], _ = Atoi(s.Text())
-		i++
+			i++
 		}
 		i = 0
 		for i < n {
@@ -88,7 +96,7 @@ func main() {
 			if m > x {
 				x = m
 			}
-		i++
+			i++
 		}
 		i = 0
 		for i < n-2 {
@@ -96,7 +104,7 @@ func main() {
 			if m > x {
 				x = m
 			}
-		i++
+			i++
 		}
 		i = 0
 		for i < n-1 {
@@ -116,15 +124,15 @@ func main() {
 			if m > x {
 				x = m
 			}
-		i++
+			i++
 		}
 		i = 0
 		for i < n {
 			a[i] = b[i]
 			b[i] = c[i]
-		i++
+			i++
 		}
-	j++ 
+		j++
 	}
-	Print(x)
+	P(x)
 }

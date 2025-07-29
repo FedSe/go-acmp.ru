@@ -2,8 +2,9 @@ package main
 import . "fmt"
 func main() {
 	var (
-		w                               [30000]int
+		w                               [3e4]int
 		n, s, a, b, c, d, x, y, r, i, j int
+		P                               = Println
 	)
 
 	Scan(&n, &a, &c, &b, &d)
@@ -22,9 +23,9 @@ func main() {
 		}
 	}
 
-	Println(s)
+	P(s)
 	for j < s {
-		Println(w[j])
+		P(w[j])
 		j++
 	}
 }

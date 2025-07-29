@@ -3,10 +3,10 @@ import . "fmt"
 func main() {
 	var (
 		a [26]int
-		k = 0
-		i = 0
+		k, i int
 		s = ""
 		c = 65
+		P = Println
 	)
 
 	Scan(&s)
@@ -21,7 +21,7 @@ func main() {
 		}
 
 		if t < 0 {
-			Print("NO")
+			P("NO")
 			return
 		}
 
@@ -31,9 +31,9 @@ func main() {
 		c++
 	}
 
-	Println("YES")
+	P("YES")
 	for i < 26 {
-		Println(a[i])
+		P(a[i])
 		i++
 	}
 }

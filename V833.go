@@ -5,10 +5,11 @@ import (
 )
 func main() {
 	var (
-		v []int
+		v          []int
 		n, r, l, j int
-		a = ""
-		b = a
+		a          = ""
+		b          = a
+		P          = Println
 	)
 
 	Scan(&a, &b)
@@ -25,16 +26,16 @@ func main() {
 			e := []byte(a)
 			e[l+i], e[r-i] = e[r-i], e[l+i]
 			a = string(e)
-		i++
+			i++
 		}
 	}
 
-	Println(n)
+	P(n)
 	n = len(v)
 	if n > 0 {
 		for j < n-1 {
-			Println(v[j]+1, v[j+1]+1)
-		j += 2
+			P(v[j]+1, v[j+1]+1)
+			j += 2
 		}
 	}
 }

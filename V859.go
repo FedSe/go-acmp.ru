@@ -5,8 +5,8 @@ import (
 )
 func main() {
 	var a, b Int
-
+	N := NewInt
 	Scan(&b)
 
-	Print(b.Div(b.Mul(&b, a.Add(&b, NewInt(1))), NewInt(2)))
+	Print(b.Div(b.Mul(&b, a.Add(&b, N(1))), N(2)))
 }

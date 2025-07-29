@@ -2,11 +2,13 @@ package main
 import . "fmt"
 func main() {
 	var (
-		p [1e6+1]int
+		p [2e6]int
 		i = 2
 		n = i
 		m = i
+		P = Println
 	)
+
 	Scan(&m, &n)
 	n++
 
@@ -25,13 +27,13 @@ func main() {
 
 	for m < n {
 		if p[m] < 1 {
-			Println(m)
+			P(m)
 			i = 0
 		}
 		m++
 	}
 
 	if i > 0 {
-		Print("Absent")
+		P("Absent")
 	}
 }

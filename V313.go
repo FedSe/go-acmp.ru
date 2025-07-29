@@ -9,12 +9,13 @@ func main() {
 		t          [202]int
 		z, n, a, m int
 		s          = b.NewReader(Stdin)
+		S = Fscan
 	)
 
-	Fscan(s, &n)
+	S(s, &n)
 	for n > 0 {
 		z++
-		Fscan(s, &a)
+		S(s, &a)
 		f := &t[a+101]
 		b := z - *f
 		if b > t[a] && *f > 0 {

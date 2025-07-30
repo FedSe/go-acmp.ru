@@ -1,15 +1,20 @@
 package main
 import (
-   . "fmt"
-   . "math/big"
+	. "fmt"
+	. "math/big"
 )
 func main() {
-	var n, i int64
+	var (
+		n, i int64
+		N    = NewInt
+		r    = N(1)
+	)
+
 	Scan(&n)
-	r := NewInt(1)
 	for i < n {
 		i++
-		r.Mul(r, NewInt(i))
+		r.Mul(r, N(i))
 	}
+
 	Print(r)
 }

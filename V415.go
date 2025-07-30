@@ -2,16 +2,12 @@ package main
 import (
 	. "fmt"
 	. "strings"
-	u "unicode"
 )
 func main() {
-	var (
-		a = ""
-		b = a
-		l = 2
-		L = ToLower
-		U = u.ToUpper
-	)
+	a := ""
+	b := a
+	l := 2
+	L := ToLower
 
 	Scan(&a, &b)
 
@@ -25,23 +21,23 @@ func main() {
 			c := 0
 			for c < 3 {
 				j := Index(w[k:], q)
-				if j < 0 {
-					break
+				if j > -1 {
+					k += j
+					e := []rune(w)
+					if e[i] > 90 {
+						e[i] -= 32
+					}
+					if e[k] > 90 {
+						e[k] -= 32
+					}
+					s := string(e)
+					r := len(s)
+					t := len(m)
+					if r < t || (r == t && s < m) {
+						m = s
+					}
+					k++
 				}
-				k += j
-
-				e := []rune(w)
-				e[i] = U(e[i])
-				e[k] = U(e[k])
-				s := string(e)
-
-				r := len(s)
-				t := len(m)
-				if r < t || (r == t && s < m) {
-					m = s
-				}
-
-				k++
 				c++
 			}
 			i++

@@ -1,19 +1,21 @@
 package main
 import . "fmt"
 func main() {
-	a := "NO"
-	s := a
+	s := ""
 	Scan(&s)
-	z := int(s[0])
-	if len(s) < 5 || s[2] != 45 ||
-		z < 65 || z > 72 ||
-		s[3] < 65 || s[3] > 72 ||
-		s[1] < 49 || s[1] > 56 ||
-		s[4] < 49 || s[4] > 56 {
-		a = "ERROR"
+	if len(s) == 5 && s[2] == 45 &&
+		s[0] > 64 && s[0] < 73 &&
+		s[3] > 64 && s[3] < 73 &&
+		s[1] > 48 && s[1] < 57 &&
+		s[4] > 48 && s[4] < 57 {
+		z := s[0] - s[3]
+		c := s[1] - s[4]
+		s = "NO"
+		if z*z+c*c == 5 {
+			s = "YES"
+		}
 	} else {
-		z = (z-int(s[3]))*(int(s[1])-int(s[4]))
-		if z == 2 || z == -2 { a = "YES" }
+		s = "ERROR"
 	}
-	Print(a)
+	Print(s)
 }

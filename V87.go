@@ -3,9 +3,9 @@ import . "fmt"
 func main() {
 	var (
 		k, i int
-		s = ""
-		v [240]string
-		m = make(map[string]int)
+		s    = ""
+		v    [240]string
+		m    = make(map[any]int)
 	)
 
 	Scan(&s)
@@ -17,15 +17,13 @@ func main() {
 	}
 
 	for _, t := range v {
-		for
 		i = 1
-		i < len(t)
-		{
-			if m[t[:i]] * m[t[i:]] > 0 {
+		for i < len(t) {
+			if m[t[:i]]*m[t[i:]] > 0 {
 				k++
 				break
 			}
-		i++
+			i++
 		}
 	}
 

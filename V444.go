@@ -1,5 +1,4 @@
 package main
-
 import (
 	. "fmt"
 	. "sort"
@@ -46,10 +45,10 @@ func main() {
 	)
 
 	Scan(&n)
-	a := make(map[int]bool)
+	a := make(map[int]int)
 	for 0 < n {
 		Scan(&t)
-		a[t] = true
+		a[t] = 1
 		n--
 	}
 

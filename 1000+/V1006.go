@@ -14,7 +14,7 @@ func main() {
 	)
 
 	Scan(&x, &c, &z)
-	t := map[string]string{
+	t := map[any]string{
 		"bbg": b + b + `GREEN`,
 		"bbG": b + y + b,
 		"byb": r + b + b,

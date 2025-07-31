@@ -5,7 +5,7 @@ func main() {
 		n, m, i int
 		v = "YES"
 		s = v
-		a = make(map[string]int)
+		a = make(map[any]int)
 	)
 
 	Scan(&n, &m, &s)

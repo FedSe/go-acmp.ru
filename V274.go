@@ -1,32 +1,33 @@
 package main
 import (
 	. "fmt"
-	. "reflect"
+	r "reflect"
 )
 func main() {
-	c:=""
-	v:=c
-	n:=0
+	c := ""
+	v := c
+	n := 0
 	Scan(&n)
 
 	for 0 < n {
 		Scan(&c, &v)
-
-		t := map[rune]bool{}
+		t := map[any]int{}
 		for _, c := range c {
-			t[c] = 1>0
+			t[c] = 1
 		}
 
-		e := map[rune]bool{}
+		e := map[any]int{}
 		for _, c := range v {
-			e[c] = 1>0
+			e[c] = 1
 		}
 
-		a:="NO"
-		if DeepEqual(t, e) {
-			a = "YES"
+		a := `NO
+`
+		if r.DeepEqual(t, e) {
+			a = `YES
+`
 		}
-		Println(a)
-	n--
+		Print(a)
+		n--
 	}
 }

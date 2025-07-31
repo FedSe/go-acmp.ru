@@ -3,26 +3,25 @@ import (
 	. "fmt"
 	. "sort"
 )
-
 func main() {
 	var (
-		t [12]int
+		t       [12]int
 		v, z, i int
-		s = make(map[int]bool)
-		a = "IMPOSSIBLE"
+		s       = make(map[int]int)
+		a       = "IMPOSSIBLE"
 	)
 
 	for i < 12 {
 		Scan(&t[i])
-		s[t[i]] = true
-	i++
+		s[t[i]] = 1
+		i++
 	}
 
 	for z < 11 {
 		if t[z] == t[z+1] {
 			v++
 		}
-	z += 2
+		z += 2
 	}
 
 	Ints(t[:])

@@ -16,7 +16,7 @@ func main() {
 	}
 
 	var (
-		h    = make(map[string]int)
+		h    = make(map[any]int)
 		u    []byte
 		l, r int
 		p    = F()

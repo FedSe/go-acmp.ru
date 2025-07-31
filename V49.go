@@ -30,11 +30,11 @@ func main() {
 		i = 0
 		C = Contains
 	)
+    
 	Scan(&x, &z)
-
 	for i < len(x) {
 		g := 0
-		d := '0'
+		d := 48
 		for d < 58 {
 			s := string(d)
 			if C(p[x[i]], s) && C(p[z[i]], s) {

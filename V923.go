@@ -1,22 +1,20 @@
 package main
 import . "fmt"
-var c = make(map[int]int)
-func f(x int) int {
-	if x < 3 {
-		return 0
+var m = map[int]int{3: 1}
+func f(n int) int {
+	a := 0
+	if n > 2 {
+		r, o := m[n]
+		a = r
+		if !o {
+			m[n] = f(n/2) + f(n-n/2)
+			a = m[n]
+		}
 	}
-	if x == 3 {
-		return 1
-	}
-
-	if _, o := c[x]; !o {
-		c[x] = f(x/2) + f(x-x/2)
-	}
-	return c[x]
+	return a
 }
-
 func main() {
-	var a int
-	Scan(&a)
-	Print(f(a))
+	n := 0
+	Scan(&n)
+	Print(f(n))
 }

@@ -1,33 +1,29 @@
 package main
-import (
-	. "fmt"
-	r "reflect"
-)
+import . "fmt"
 func main() {
-	c := ""
-	v := c
 	n := 0
 	Scan(&n)
-
-	for 0 < n {
-		Scan(&c, &v)
-		t := map[any]int{}
-		for _, c := range c {
-			t[c] = 1
-		}
-
-		e := map[any]int{}
-		for _, c := range v {
-			e[c] = 1
-		}
-
-		a := `NO
+	for n > 0 {
+		var (
+			v = `NO
 `
-		if r.DeepEqual(t, e) {
-			a = `YES
+			a    = v
+			b    = v
+			x, y [58]int
+		)
+
+		Scan(&a, &b)
+		for _, c := range a {
+			x[c] = 1
+		}
+		for _, c := range b {
+			y[c] = 1
+		}
+		if x == y {
+			v = `YES
 `
 		}
-		Print(a)
+		Print(v)
 		n--
 	}
 }

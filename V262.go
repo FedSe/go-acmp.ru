@@ -5,8 +5,9 @@ import (
 )
 func main() {
 	var n, x, t int
+	p := PQ{}
+
 	Scan(&n)
-	p := make(PQ, 0, n)
 	for n > 0 {
 		Scan(&x)
 		Push(&p, x)

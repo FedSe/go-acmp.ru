@@ -1,14 +1,16 @@
 package main
 import . "fmt"
 func main() {
-	var n, s, i int
-	S := Scan
+	var (
+		n, s int
+		a    [1e4]int
+		S    = Scan
+	)
 
 	S(&n)
-	a := make([]int, n)
-	for i < n {
-		S(&a[i])
-		i++
+	for 0 < n {
+		n--
+		S(&a[n])
 	}
 
 	S(&n)

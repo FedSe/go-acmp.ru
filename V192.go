@@ -1,11 +1,13 @@
 package main
 import . "fmt"
 func main() {
-	var n, i, j int
-	P := Println
+	var (
+		n, i, j, l int
+		p          [1e4]int
+		P          = Println
+	)
 
 	Scan(&n)
-	p := make([]int, n)
 	for i < n {
 		Scan(&p[i])
 		i++
@@ -32,6 +34,7 @@ func main() {
 	p[i], p[j] = p[j], p[i]
 
 	i++
+	j = n
 	n--
 	for i < n {
 		p[i], p[n] = p[n], p[i]
@@ -39,7 +42,8 @@ func main() {
 		n--
 	}
 
-	for _, v := range p {
-		P(v)
+	for l < j {
+		P(p[l])
+		l++
 	}
 }

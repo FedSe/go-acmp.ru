@@ -4,23 +4,24 @@ import (
 	. "sort"
 )
 func main() {
-	var n, m, s, i, j int
+	var (
+		n, m, s, i, j int
+		a             [1e3]int
+	)
 
 	Scan(&n, &m)
-	a := make([]int, n)
-
 	for i < n {
 		Scan(&a[i])
-	i++
+		i++
 	}
-	Ints(a)
-
+    
+	Ints(a[:n])
 	for j < m {
 		n--
 		if a[n] > 0 {
 			s += a[n]
 		}
-	j++
+		j++
 	}
 	Print(s)
 }

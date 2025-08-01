@@ -7,7 +7,7 @@ type R struct {
 }
 
 type U struct {
-	p, r []int
+	p, r [100]int
 }
 
 func H(x int, u *U) int {
@@ -18,10 +18,14 @@ func H(x int, u *U) int {
 }
 
 func main() {
-	var n, i, l, j, k int
-	Scan(&n)
+	var (
+		s             [100]R
+		t             [100]int
+		n, i, l, j, k int
+		c             = map[int]int{}
+	)
 
-	s := make([]R, n)
+	Scan(&n)
 	for l < n {
 		var x, y, z, c, r int
 		Scan(&x, &y, &z, &c, &r)
@@ -37,12 +41,11 @@ func main() {
 		l++
 	}
 
-	t := make([]int, n)
 	for k < n {
 		t[k] = k
 		k++
 	}
-	u := &U{t, make([]int, n)}
+	u := &U{t, [100]int{}}
 
 	for i < n {
 		l = i + 1
@@ -68,7 +71,6 @@ func main() {
 		i++
 	}
 
-	c := map[int]int{}
 	for j < n {
 		c[H(j, u)] = 1
 		j++

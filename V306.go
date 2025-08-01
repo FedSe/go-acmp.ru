@@ -3,17 +3,16 @@ import . "fmt"
 func main() {
 	n := 0
 	z := 0
+	c := 'B'
 	Scan(&n)
 
 	q := make([]int, n)
-	s := make([]byte, n)
+	s := make([]rune, n)
 
 	for z < n {
 		q[z] = z
-	z++
+		z++
 	}
-
-	c := byte(66)
 
 	for len(q) > 0 {
 		s[q[0]] = c

@@ -6,20 +6,20 @@ import (
 	. "sort"
 )
 func main() {
-	s := 0
-	i := 0
-	r := b.NewReader(Stdin)
+	var (
+		s, i int
+		h    [1e5][2]int
+		r    = b.NewReader(Stdin)
+		F    = Fscan
+	)
 
-	Fscan(r, &s, &i)
-
-	h := make([][2]int, i)
-
+	F(r, &s, &i)
 	for i > 0 {
 		i--
-		Fscan(r, &h[i][0], &h[i][1])
+		F(r, &h[i][0], &h[i][1])
 	}
 
-	Slice(h, func(i, j int) bool {
+	Slice(h[:], func(i, j int) bool {
 		return h[i][1] > h[j][1]
 	})
 

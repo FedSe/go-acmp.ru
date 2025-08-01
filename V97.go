@@ -68,7 +68,7 @@ func main() {
 		i++
 	}
 
-	c := make(map[int]int)
+	c := map[int]int{}
 	for j < n {
 		c[H(j, u)] = 1
 		j++

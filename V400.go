@@ -7,7 +7,7 @@ func main() {
 	var (
 		t       [12]int
 		v, z, i int
-		s       = make(map[int]int)
+		s       = map[int]int{}
 		a       = "IMPOSSIBLE"
 	)
 

@@ -42,10 +42,10 @@ func main() {
 		x       []int
 		n, t, i int
 		P       = Print
+		a       = map[int]int{}
 	)
 
 	Scan(&n)
-	a := make(map[int]int)
 	for 0 < n {
 		Scan(&t)
 		a[t] = 1

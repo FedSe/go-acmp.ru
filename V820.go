@@ -29,7 +29,7 @@ func main() {
 	i++
 	}
 
-	u := make(map[P]int)
+	u := map[P]int{}
 	q := []P{s}
 	u[s] = 0
 	for len(q) > 0 {
@@ -56,7 +56,8 @@ func main() {
 			j := 0
 			for j < 4 {
 				y := p.F(i, j)
-				if _, ok := u[y]; !ok {
+				if _, o := u[y]
+				!o {
 					u[y] = u[p] + 1
 					q = append(q, y)
 				}

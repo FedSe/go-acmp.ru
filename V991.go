@@ -2,44 +2,40 @@ package main
 import . "fmt"
 func main() {
 	var (
-		c, m [100][200]int
-		v, w, q, r, b [200]int
+		c, m       [100][200]int
+		v, w, r, b [200]int
 		n, k, t, i int
 	)
 
 	Scan(&n, &k)
-
 	for i < k {
 		m[0][i] = 1
-	i++
+		i++
 	}
 
 	w[0] = k
-
 	a := (n - 1) * k
-
 	for a > 0 {
 		for i := range v {
 			v[i] = -1
 		}
-		q = v
-
+		q := v
 		l := 0
 		for l < n {
-		u := -1
+			u := -1
 			i = 0
 			for i < k {
 				if m[l][i] < 1 && (v[l] < 0 || b[v[l]] > b[i]) {
 					v[l] = i
 				}
-			i++
+				i++
 			}
 			i = 0
 			for v[l] >= 0 && i < n {
 				if u < 0 || w[u] > w[i] && m[i][v[l]] > 0 {
 					u = i
 				}
-			i++
+				i++
 			}
 			if u >= 0 {
 				o := q[u]
@@ -49,9 +45,9 @@ func main() {
 					q[u] = l
 				}
 			}
-		l++
+			l++
 		}
-	t++
+		t++
 		i = 0
 		for i < n {
 			if q[i] >= 0 {
@@ -63,13 +59,13 @@ func main() {
 				m[l][v[l]] = 1
 				r[l] = t
 			}
-		i++
+			i++
 		}
 	}
 
 	i = 1
 	for i < n {
 		Println(r[i])
-	i++
+		i++
 	}
 }

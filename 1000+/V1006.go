@@ -23,8 +23,7 @@ func main() {
 		"bYb": b + `YELLOW
 ` + b,
 		"Rbb": `RED
-` + b + b,
-	}
+` + b + b}
 
 	x = t[string([]byte{x[0], c[0], z[0]})]
 	if x == "" {

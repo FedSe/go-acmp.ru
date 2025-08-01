@@ -6,7 +6,8 @@ func main() {
 	f := int(1e9)
 	Scan(&x, &y)
 
-	if x == f || x == -f || y == f || y == -f {
+	switch f {
+	case x, -x, y, -y:
 		Print("NO")
 		return
 	}

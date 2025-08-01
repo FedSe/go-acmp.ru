@@ -2,8 +2,8 @@ package main
 import . "fmt"
 func main() {
 	var (
-		h = make(map[any]int)
-		v = make(map[any][]string)
+		h = map[any]int{}
+		v = map[any][]string{}
 		i = 0
 		j = -1
 		a = ""

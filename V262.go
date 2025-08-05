@@ -3,9 +3,26 @@ import (
 	. "container/heap"
 	. "fmt"
 )
+
+type P []int
+
+func (p P) Len() int           { return len(p) }
+func (p P) Less(i, j int) bool { return p[i] < p[j] }
+func (p P) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+func (p *P) Push(x any)        { *p = append(*p, x.(int)) }
+func (p *P) Pop() any {
+	a := *p
+	n := len(a) - 1
+	x := a[n]
+	*p = a[:n]
+	return x
+}
+
 func main() {
-	var n, x, t int
-	p := PQ{}
+	var (
+		n, x, t int
+		p       P
+	)
 
 	Scan(&n)
 	for n > 0 {
@@ -21,18 +38,4 @@ func main() {
 	}
 
 	Printf("%.2f", float64(t)*0.05)
-}
-
-type PQ []int
-
-func (p PQ) Len() int           { return len(p) }
-func (p PQ) Less(i, j int) bool { return p[i] < p[j] }
-func (p PQ) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
-func (p *PQ) Push(x any)        { *p = append(*p, x.(int)) }
-func (p *PQ) Pop() any {
-	a := *p
-	n := len(a) - 1
-	x := a[n]
-	*p = a[:n]
-	return x
 }

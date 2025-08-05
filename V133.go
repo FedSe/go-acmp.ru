@@ -1,33 +1,11 @@
 package main
-import (
-	. "container/heap"
-	. "fmt"
-)
-
-type I struct{ n, d, i int }
-type P []*I
-
-func (p P) Len() int           { return len(p) }
-func (p P) Less(i, j int) bool { return 1 < 0 }
-func (p P) Swap(i, j int)      {}
-func (p *P) Push(x any) {
-	m := x.(*I)
-	m.i = len(*p)
-	*p = append(*p, m)
-}
-func (p *P) Pop() any {
-	o := *p
-	n := len(o)
-	t := o[n-1]
-	*p = o[:n-1]
-	return t
-}
-
+import . "fmt"
+type I struct{ n, d int }
 func main() {
 	var (
 		c, d    [100]int
 		N, M, l int
-		p       = &P{}
+		p       []I
 	)
 
 	Scan(&N)
@@ -44,8 +22,8 @@ func main() {
 		Scan(&l, &v)
 		l--
 		v--
-		g[l] = append(g[l], I{v, c[l], 0})
-		g[v] = append(g[v], I{l, c[v], 0})
+		g[l] = append(g[l], I{v, c[l]})
+		g[v] = append(g[v], I{l, c[v]})
 		M--
 	}
 
@@ -55,15 +33,17 @@ func main() {
 		l++
 	}
 
-	Push(p, &I{})
-	for p.Len() > 0 {
-		M = Pop(p).(*I).n
+	p = append(p, I{})
+	for len(p) > 0 {
+		n := len(p)
+		M = p[n-1].n
+		p = p[:n-1]
 		for _, e := range g[M] {
 			l = e.n
 			e := d[M] + e.d
 			if e < d[l] {
 				d[l] = e
-				Push(p, &I{l, e, 0})
+				p = append(p, I{l, e})
 			}
 		}
 	}

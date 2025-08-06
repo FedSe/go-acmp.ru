@@ -9,13 +9,12 @@ func main() {
 	s := b.NewScanner(Stdin)
 	s.Split(b.ScanWords)
 
-	F := func() int {
-		s.Scan()
-		v, _ := Atoi(s.Text())
-		return v
-	}
-
 	var (
+		F = func() int {
+			s.Scan()
+			v, _ := Atoi(s.Text())
+			return v
+		}
 		h    = map[any]int{}
 		u    []byte
 		l, r int
@@ -29,9 +28,6 @@ func main() {
 		u = u[:0]
 		i := 0
 		for i < p {
-			if i > 0 {
-				u = append(u, 32)
-			}
 			u = AppendInt(u, int64(F()), 10)
 			i++
 		}

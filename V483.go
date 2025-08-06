@@ -1,9 +1,5 @@
 package main
-import (
-	. "fmt"
-	. "strconv"
-)
-
+import . "fmt"
 func main() {
 	n := 0
 	o := 0
@@ -11,13 +7,19 @@ func main() {
 	Scan(&n, &s)
 
 	for 0 < n {
-	n--
+		n--
 		if s[n] > 48 {
 			o++
 		}
 	}
 
-	for _, q := range FormatInt(int64(o), 2) {
-		Print(q-48)
+	s = ""
+	for o > 0 {
+		s = Sprint(o&1) + s
+		o >>= 1
 	}
+	if s == "" {
+		s = "0"
+	}
+	Print(s)
 }

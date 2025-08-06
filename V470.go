@@ -1,38 +1,39 @@
 package main
 import (
 	b "bufio"
-	."fmt"
+	. "fmt"
 	. "os"
 	. "strconv"
 	. "strings"
 )
 func main() {
 	var (
-		a [4]int
-		f [101][101]int
+		a          [4]int
+		f          [101][101]int
 		h, w, n, i int
-		s = b.NewScanner(Stdin)
+		s          = b.NewScanner(Stdin)
 	)
 
 	Scan(&h, &w, &n)
 	for i < h {
-	i++
+		i++
 		x := 0
 		for x < w {
-		x++
+			x++
 			Scan(&f[i][x])
 			f[i][x] += f[i][x-1] + f[i-1][x] - f[i-1][x-1]
 		}
 	}
-s.Scan()
+	s.Scan()
 	for 0 < n {
 		s.Scan()
 		t := Split(s.Text(), " ")
 		for i, s := range t {
-			w, _ = Atoi(s)
-			a[i] = w
+			a[i], _ = Atoi(s)
 		}
-		Println(f[a[2]][a[3]] - f[a[2]][a[1]-1] - f[a[0]-1][a[3]] + f[a[0]-1][a[1]-1])
-	n--
+		v := f[a[0]-1]
+		w = a[1] - 1
+		Println(f[a[2]][a[3]] - f[a[2]][w] - v[a[3]] + v[w])
+		n--
 	}
 }

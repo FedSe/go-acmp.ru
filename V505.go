@@ -22,6 +22,7 @@ func main() {
 		p    = F()
 		o    = F()
 		w    = F()
+		P    = Println
 	)
 
 	H := func() {
@@ -45,13 +46,13 @@ func main() {
 
 	for w > 0 {
 		H()
-		v, x := h[string(u)]
-		if x {
+		v := h[string(u)]
+		if v > 0 {
 			l++
-			Println(v)
+			P(v)
 		} else {
 			r++
-			Println("-")
+			P("-")
 		}
 		w--
 	}

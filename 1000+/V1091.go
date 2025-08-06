@@ -4,7 +4,7 @@ func main() {
 	var (
 		n, i, l, v int
 		c          [100]string
-		s          = "Rumpelstiltskin"
+		s          = " Rumpelstiltskin"
 	)
 
 	Scan(&n)
@@ -26,8 +26,8 @@ func main() {
 		i++
 	}
 
-	if (v == n && n%2 > 0) || (v != n && (v+1)%2 < 1) {
-		s = "Shrek"
+	if (v == n && n%2 > 0) || (v != n && (v+1)&1 < 1) {
+		s = " Shrek"
 	}
-	Println(v, s)
+	Print(v, s)
 }

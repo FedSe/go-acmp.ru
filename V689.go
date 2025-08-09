@@ -2,60 +2,56 @@ package main
 import . "fmt"
 func main() {
 	var n, m, e int
+
 	Scan(&n)
 	for 0 < n {
 		Scan(&m)
-		t := 999999999
-		for
-		b := 2
-		b <= 36
-		{
+		t := 1 << 30
+		i := 2
+		for i < 37 {
 			var (
-				d [36]bool
+				d [36]int
 				x = m
 				c = 0
 			)
 
 			for x > 0 {
-				d[x%b] = 1>0
-				x /= b
+				d[x%i] = 1
+				x /= i
 				c++
 			}
 
 			for _, d := range d {
-				if d {
-					c++
-				}
+				c += d
 			}
 
 			if c < t {
 				t = c
-				e = b
+				e = i
 			}
-		b++
+			i++
 		}
 
 		s := ""
 		for m > 0 {
-			r := m % e
-			if r > 9 {
-				r += 7
+			t = m % e
+			if t > 9 {
+				t += 7
 			}
-			s += string(r + 48)
-		m /= e
+			s += string(t + 48)
+			m /= e
 		}
 
 		r := []rune(s)
-		for
-		i, j := 0, len(r)
-		i < j
-		{
-		j--
-			r[i], r[j] = r[j], r[i]
-		i++
+		i = 0
+		t = len(r)
+		for i < t {
+			t--
+			r[i], r[t] = r[t], r[i]
+			i++
 		}
 
 		Println(e, string(r))
-	n--
+		n--
 	}
 }

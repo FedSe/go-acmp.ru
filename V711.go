@@ -5,15 +5,15 @@ func main() {
 		n, m, a int
 		s       = ""
 		c       = s
-		p       = 999999
+		p       = 1 << 20
 		S       = Scan
 	)
 
 	S(&n, &m)
 	for 0 < n {
 		l := 0
-		S(&s)
 		j := 0
+		S(&s)
 		for j < m {
 			S(&a)
 			l += a

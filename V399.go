@@ -6,16 +6,13 @@ import (
 )
 func main() {
 	var (
-		R                   = 1
-		U                   = 2
-		L                   = 3
-		a                   [101][101]int
-		s                   [101]string
-		n, m, p, v, i, w, u int
-		r                   = b.NewScanner(Stdin)
-		x                   = 2
-		y                   = 2
-		o                   = 1
+		a                [101][101]int
+		s                [101]string
+		n, m, p, v, i, u int
+		r                = b.NewScanner(Stdin)
+		x                = 2
+		y                = 2
+		o                = 1
 	)
 
 	Scan(&n, &m)
@@ -28,47 +25,25 @@ func main() {
 	s[0] = s[0][1:]
 	a[2][2] = 1
 
-	for !(x == m-1 && y == n-1) {
+	for x != m-1 || y != n-1 {
 		var d, f, k int
-		z := 2000000
+		z := 1 << 19
 
-		if s[y+1][x] != 64 {
-			if a[y+1][x] < z {
-				z = a[y+1][x]
-				k = w
-				d = 0
-				f = 1
+		for l, v := range [][2]int{
+			{y + 1, x},
+			{y, x + 1},
+			{y - 1, x},
+			{y, x - 1}} {
+			q, g := v[0], v[1]
+			if s[q][g] != 64 && a[q][g] < z {
+				z = a[q][g]
+				k = l
+				d = g - x
+				f = q - y
 			}
 		}
 
-		if s[y][x+1] != 64 {
-			if a[y][x+1] < z {
-				z = a[y][x+1]
-				k = R
-				d = 1
-				f = 0
-			}
-		}
-
-		if s[y-1][x] != 64 {
-			if a[y-1][x] < z {
-				z = a[y-1][x]
-				k = U
-				f = -1
-				d = 0
-			}
-		}
-
-		if s[y][x-1] != 64 {
-			if a[y][x-1] < z {
-				z = a[y][x-1]
-				k = L
-				d = -1
-				f = 0
-			}
-		}
-
-		if p > 9999999 || z == 2000000 {
+		if p > 1<<24 || z == 1<<19 {
 			p = -1
 			break
 		}

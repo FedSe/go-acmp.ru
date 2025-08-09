@@ -4,7 +4,7 @@ func main() {
 	var (
 		a             [51][51]int
 		n, s, t, i, k int
-		F             = 99999999
+		F             = 1 << 30
 	)
 
 	Scan(&n, &s, &t)

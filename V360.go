@@ -45,13 +45,6 @@ func main() {
 	}
 
 	x := a[0] + a[1] + a[2]
-	for h < n-2 {
-		m = a[h] + a[h+1] + a[h+2]
-		if m > x {
-			x = m
-		}
-		h++
-	}
 	for j < n {
 		S(&b[j])
 		j++
@@ -62,25 +55,6 @@ func main() {
 			x = m
 		}
 		l++
-	}
-	for i < n-1 {
-		m = b[i] + b[i+1] + a[i+1]
-		if m > x {
-			x = m
-		}
-		m = a[i] + b[i] + b[i+1]
-		if m > x {
-			x = m
-		}
-		m = a[i] + b[i+1] + a[i+1]
-		if m > x {
-			x = m
-		}
-		m = b[i] + a[i] + a[i+1]
-		if m > x {
-			x = m
-		}
-		i++
 	}
 
 	j = 2
@@ -108,21 +82,16 @@ func main() {
 		}
 		i = 0
 		for i < n-1 {
-			m = c[i] + c[i+1] + b[i+1]
-			if m > x {
-				x = m
-			}
-			m = b[i] + c[i] + c[i+1]
-			if m > x {
-				x = m
-			}
-			m = b[i] + c[i+1] + b[i+1]
-			if m > x {
-				x = m
-			}
-			m = c[i] + b[i] + b[i+1]
-			if m > x {
-				x = m
+			q := c[i+1]
+			g := b[i+1]
+			for _, v := range [4]int{
+				c[i] + q + g,
+				b[i] + c[i] + q,
+				b[i] + g + q,
+				b[i] + g + c[i]} {
+				if v > x {
+					x = v
+				}
 			}
 			i++
 		}

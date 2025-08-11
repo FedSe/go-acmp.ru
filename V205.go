@@ -1,18 +1,17 @@
 package main
 import (
 	. "fmt"
-	. "strconv"
 	. "strings"
 )
 func main() {
 	var (
-		q, w, e, h, m int
-		s             = ""
-		A             = Atoi
-		P             = Printf
-		f             = `%02d:%02d:%02d`
-		k             = 3600
-		u             = 86400
+		q, w, e, h, m, c int
+		s                = ""
+		S                = Sscan
+		P                = Printf
+		f                = `%02d:%02d:%02d`
+		k                = 3600
+		u                = k * 24
 	)
 
 	Scanf(f+`
@@ -20,18 +19,18 @@ func main() {
 
 	p := Split(s, ":")
 
-	c, _ := A(p[0])
+	S(p[0], &c)
 	if len(p) > 1 {
 		m = c
-		c, _ = A(p[1])
+		S(p[1], &c)
 	}
 	if len(p) > 2 {
-		h = m
+		h = m * k
 		m = c
-		c, _ = A(p[2])
+		S(p[2], &c)
 	}
 
-	c += q*k + w*60 + e + h*k + m*60
+	c += q*k + w*60 + e + h + m*60
 	q = c % u
 	c /= u
 

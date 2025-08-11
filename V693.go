@@ -8,22 +8,22 @@ func main() {
 	s := "No"
 	a := s
 	b := s
-	L := ToLower
+	i := 0
 
-	Scan(&a, &b)
+	for i < 2 {
+		Scan(&a)
+		A := []byte(ToLower(a))
+		Slice(A, func(i, j int) bool {
+			return A[i] < A[j]
+		})
+		a = string(A)
 
-	c := []byte(L(a))
-	d := []byte(L(b))
+		if a == b {
+			s = "Yes"
+		}
 
-	Slice(c, func(i, j int) bool {
-		return c[i] < c[j]
-	})
-	Slice(d, func(i, j int) bool {
-		return d[i] < d[j]
-	})
-
-	if string(c) == string(d) {
-		s = "Yes"
+		b = a
+		i++
 	}
 
 	Print(s)

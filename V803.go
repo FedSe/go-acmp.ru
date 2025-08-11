@@ -5,9 +5,8 @@ func main() {
 	Scan(&a, &b, &k)
 
 	for 0 < k {
-		a %= b
-		a *= 10
-	k--
+		a = a % b * 10
+		k--
 	}
 
 	Print(a / b)

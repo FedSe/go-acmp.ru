@@ -1,47 +1,23 @@
 package main
 import . "fmt"
 func main() {
-	var x, y, k, a int
-	s := ""
+	var k, x, y, a int
 
 	Scan(&k)
-	z := -1
-A:
-z++
-	for z < int(k) {
+	for 0 < k {
 		Scan(&x, &y, &a)
-		f := "0"
-		if a == 1 || a == 2 {
-			s += "1"
-			goto A
-		}
-		if a > x || a > y {
-			s += f
-			goto A
-		}
-		if x%a < 1 {
-			if (y-2)%a < 1 {
-				f = "1"
+		f := 1
+		if a > 2 {
+			f = 0
+			q := (y - 2) % a
+			x %= a
+			if x+q < 1 ||
+				(x == 1 && (y-1)%a < 1 || y%a+q < 1) ||
+				(x == 2 && y%a < 1) {
+				f = 1
 			}
-			s += f
-			goto A
 		}
-		if x%a == 1 {
-			if  y % a + (y-2)%a + (y-1)% a < 1 {
-				f = "1"
-			}
-			s += f
-			goto A
-		}
-		if x%a == 2 {
-			if y%a < 1 {
-				f = "1"
-			}
-			s += f
-			goto A
-		}
-		s += "0"
-	z++
+		Print(f)
+		k--
 	}
-	Print(s)
 }

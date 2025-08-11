@@ -4,7 +4,7 @@ import (
 	. "strings"
 )
 var n, m, v, h, o, i, j, u, k int
-func F(q[]int, g [][]byte, z *int) [][]byte {
+func F(q []int, g [][]byte, z *int) [][]byte {
 	for len(q) > 0 {
 		h = q[0]
 		o = q[1]
@@ -14,22 +14,12 @@ func F(q[]int, g [][]byte, z *int) [][]byte {
 			*z = j
 		}
 		j++
-		if g[h-1][o] == 46 {
-			g[h-1][o] = 42
-			q = append(q, h-1, o, j)
-		}
-		if g[h+1][o] == 46 {
-			g[h+1][o] = 42
-			q = append(q, h+1, o, j)
-		}
-		if g[h][o-1] == 46 {
-			g[h][o-1] = 42
-			q = append(q, h, o-1, j)
-		}
-		o++
-		if g[h][o] == 46 {
-			g[h][o] = 42
-			q = append(q, h, o, j)
+		for _, v := range [][2]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}} {
+			a, b := h+v[0], o+v[1]
+			if g[a][b] == 46 {
+				g[a][b] = 42
+				q = append(q, a, b, j)
+			}
 		}
 	}
 	return g
@@ -46,7 +36,7 @@ func main() {
 			h = i
 			o = j
 		}
-	i++
+		i++
 	}
 
 	q := []int{h, o, 0}
@@ -65,9 +55,9 @@ func main() {
 			if g[i][j] != 35 {
 				g[i][j] = 46
 			}
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	q = []int{1, 1, 0}

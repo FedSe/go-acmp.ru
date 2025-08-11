@@ -22,16 +22,15 @@ func main() {
 		o    = F()
 		w    = F()
 		P    = Println
-	)
-
-	H := func() {
-		u = u[:0]
-		i := 0
-		for i < p {
-			u = AppendInt(u, int64(F()), 10)
-			i++
+		H    = func() {
+			u = u[:0]
+			i := 0
+			for i < p {
+				u = AppendInt(u, int64(F()), 10)
+				i++
+			}
 		}
-	}
+	)
 
 	for o > 0 {
 		k := F()

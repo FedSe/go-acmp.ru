@@ -1,15 +1,18 @@
 package main
 import . "fmt"
 func main() {
-	var n, k, i int
+	n := 0
+	k := 0
+	s := ""
+
 	Scan(&n)
-	s:=""
-	for i < n {
+	for 0 < n {
 		Scan(&s)
-		if s[0] == s[3] { k++ }
-	i++
+		if s[0] == s[3] {
+			k++
+		}
+		n--
 	}
 
 	Print(k)
-	
 }

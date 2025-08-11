@@ -1,28 +1,15 @@
 package main
 import . "fmt"
-
-func F(s string) string {
-	e := []rune(s)
-	i := 0
-	j := len(e)
-	for i < j {
-	j--
-		e[i], e[j] = e[j], e[i]
-	i++
-	}
-	return string(e)
-}
-
 func main() {
 	var (
-		r [260]int
-		a = ""
-		b = a
-		w = a
-		i, j, u int
+		r          [260]int
+		a          = ""
+		b          = a
+		w          = a
+		i, j, u, q int
 	)
-	Scan(&a, &b)
 
+	Scan(&a, &b)
 	if b > a {
 		a, b = b, a
 	}
@@ -31,20 +18,29 @@ func main() {
 		Print(0)
 		return
 	}
-	a = F(a)
-	b = F(b)
 
-	for j < len(a) {
-		if a[j] == 49 {
-			r[j]++
+	for q < 2 {
+		e := []rune(a)
+		j = 0
+		k := len(e)
+		for j < k {
+			k--
+			e[j], e[k] = e[k], e[j]
+			j++
 		}
-	j++
+		a, b = b, string(e)
+		q++
 	}
-	for i < len(b) {
-		if b[i] == 49 {
+
+	for i, v := range a {
+		if v == 49 {
 			r[i]++
 		}
-	i++
+	}
+	for i, v := range b {
+		if v == 49 {
+			r[i]++
+		}
 	}
 
 	for u < 1 {
@@ -70,13 +66,13 @@ func main() {
 				r[i+1]--
 				r[i+2]++
 			}
-		i++
+			i++
 		}
-		q := 1
+		q = 1
 		j = 0
 		for j < 255 {
 			q = q | r[j]
-		j++
+			j++
 		}
 		if q < 2 {
 			u = 1
@@ -85,7 +81,7 @@ func main() {
 				if r[j]+r[j+1] > 1 {
 					u = 0
 				}
-			j++
+				j++
 			}
 		}
 	}
@@ -97,7 +93,7 @@ func main() {
 
 	for i >= 0 {
 		w += Sprint(r[i])
-	i--
+		i--
 	}
 
 	Print(w)

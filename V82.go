@@ -7,7 +7,7 @@ import (
 )
 func main() {
 	var (
-		a, c    [300000]int
+		a, c    [3e5]int
 		n, m, i int
 		s       = b.NewScanner(Stdin)
 	)

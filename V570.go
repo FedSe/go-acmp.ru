@@ -9,10 +9,10 @@ func main() {
 	var (
 		p          [1e3]string
 		n, m, i, k int
-		a          = 1001
+		c          = 1000
+		a          = c + 1
 		v          = -1
 		d          = v
-		c          = 1000
 		u          = "CIRCLE"
 		o          = u
 		s          = b.NewScanner(Stdin)
@@ -49,7 +49,7 @@ func main() {
 				for y <= v+1 {
 					z := d - 1
 					for z <= d+1 {
-						if y-k == z-l && y-k >= 2 && k >= 0 && y <= m && l >= 0 && z <= n {
+						if y-k == z-l && y-k > 1 && k >= 0 && y <= m && l >= 0 && z <= n {
 							a += 2
 							for a < v-1 {
 								x := c + 2

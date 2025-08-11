@@ -1,20 +1,20 @@
 package main
 import . "fmt"
 func main() {
-	n:=0
+	n := 0
 	Scan(&n)
 
-	m := n/2 - 2
-	d := 4
+	m := n / 2
+	d := 2
 
 	if n%2 > 0 {
-		m = n / 2
-		d = 1
+		m += 2
+		d -= 3
 	}
 	if n%4 < 1 {
-		m = n/2 - 1
-		d = 2
+		m++
+		d -= 2
 	}
 
-	Print(m, m+d)
+	Print(m-2, m+d)
 }

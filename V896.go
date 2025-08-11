@@ -7,9 +7,7 @@ func main() {
 	Scan(&n, &m)
 	p := n + m
 	for n > 0 {
-		r := m % n
-		m = n
-		n = r
+		m, n = n, m%n
 	}
 
 	Print(p - m)

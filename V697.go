@@ -1,15 +1,7 @@
 package main
 import . "fmt"
-func main(){
-	var a, b, c, i int
+func main() {
+	var a, b, c int
 	Scan(&a, &b, &c)
-
-	c*=a+b
-
-	for c > 0 {
-		c-=8
-	i++
-	}
-
-	Print(i)
+	Print((c*(a+b) + 7) / 8)
 }

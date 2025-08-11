@@ -9,6 +9,7 @@ func main() {
 		c       []float64
 		e       []string
 		o       []int
+		a       = ""
 		r       = .0
 		S       = Scan
 	)
@@ -17,11 +18,8 @@ func main() {
 	for 0 < n {
 		S(&u)
 		for 0 < u {
-			S(&r)
+			S(&r, &a)
 			c = append(c, r)
-
-			a := ""
-			S(&a)
 			e = append(e, a)
 			o = append(o, len(o))
 			u--

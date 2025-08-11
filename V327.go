@@ -1,35 +1,28 @@
 package main
 import . "fmt"
 func L(n int) int {
-	l := n / 1e3
-	r := n % 1e3
-
-	s := 0
+	l, r, s := n/1e3, n%1e3, 0
 	for l+r > 0 {
-		s += l % 10
+		s += l%10 - r%10
 		l /= 10
-		s -= r % 10
 		r /= 10
 	}
-
 	return s
 }
 
 func main() {
 	k := 0
-	Scan(&k)
 
-	for 0 < k {
+	Scan(&k)
+	for k > 0 {
 		a := "No"
 		s := a
 		t := 0
-		w := 100000
 		Scan(&s)
-		for _, i := range s {
-			t += w * int(i-48)
-			w /= 10
+		for _, c := range s {
+			t = t*10 + int(c-48)
 		}
-		if L(t-1) * L(t+1) == 0 {
+		if L(t-1)*L(t+1) < 1 {
 			a = "Yes"
 		}
 		Println(a)

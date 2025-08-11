@@ -21,7 +21,8 @@ func main() {
 		for x < w {
 			x++
 			Scan(&f[i][x])
-			f[i][x] += f[i][x-1] + f[i-1][x] - f[i-1][x-1]
+			q := f[i-1]
+			f[i][x] += f[i][x-1] + q[x] - q[x-1]
 		}
 	}
 	s.Scan()
@@ -33,7 +34,8 @@ func main() {
 		}
 		v := f[a[0]-1]
 		w = a[1] - 1
-		Println(f[a[2]][a[3]] - f[a[2]][w] - v[a[3]] + v[w])
+		q := f[a[2]]
+		Println(q[a[3]] - q[w] - v[a[3]] + v[w])
 		n--
 	}
 }

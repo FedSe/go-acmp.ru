@@ -2,17 +2,17 @@ package main
 import . "fmt"
 func main() {
 	var (
-		p [30002]int
+		p       [4e4]int
 		n, m, a int
-		o = 1
-		r = 30000
+		o       = 1
+		r       = 30000
 	)
-	Scan(&n, &m)
 
+	Scan(&n, &m)
 	for 0 < n {
 		Scan(&a)
 		p[a]++
-	n--
+		n--
 	}
 
 	for p[o] < 1 {
@@ -25,14 +25,16 @@ func main() {
 	for m > 0 {
 		if m <= p[o] {
 			n = o + 1
-			if m < p[o] { n-- }
+			if m < p[o] {
+				n--
+			}
 			break
 		}
 		m -= p[o]
 		p[o+1] += p[o]
 		o++
 		if o >= r {
-			n = o + m / p[o]
+			n = o + m/p[o]
 			break
 		}
 	}

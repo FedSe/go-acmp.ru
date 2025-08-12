@@ -8,7 +8,6 @@ func main() {
 	s := "Imp"
 
 	Scan(&x, &y, &a, &b)
-
 	if x < y {
 		x, y = y, x
 	}
@@ -19,9 +18,9 @@ func main() {
 	d := (x*x + y*y) / 4
 	v := a/2 - Sqrt(d-b*b/4)
 	d = b/2 - Sqrt(d-a*a/4)
-	if (x <= a && y <= b) || v*v+d*d >= y*y {
+	if x <= a && y <= b || v*v+d*d >= y*y {
 		s = "P"
 	}
 
-	Print(s+"ossible")
+	Print(s + "ossible")
 }

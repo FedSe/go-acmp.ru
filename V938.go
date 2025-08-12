@@ -2,28 +2,27 @@ package main
 import . "fmt"
 func main() {
 	var n, r, d, a int
+
 	Scan(&n)
 	for 0 < n {
 		Scan(&a)
-
 		k := 0
 		f := a
 		i := 2
 		for f > 1 {
-			if f % i < 1 {
+			if f%i < 1 {
 				k++
 			}
-			for f % i < 1 {
+			for f%i < 1 {
 				f /= i
 			}
-		i++
+			i++
 		}
-
-		if d < k || (d == k && a < r) {
+		if d < k || d == k && a < r {
 			r = a
 			d = k
 		}
-	n--
+		n--
 	}
 
 	Print(r)

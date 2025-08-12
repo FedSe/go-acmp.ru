@@ -3,13 +3,11 @@ import . "fmt"
 func main() {
 	var (
 		n, x, y, i int
-		a          [100][100]int
+		a         = [100][100]int{{1}}
 		j          = 1
 	)
+	
 	Scan(&n)
-
-	a[0][0] = 1
-
 	for j < n*n {
 		if x < n-1 {
 			x++

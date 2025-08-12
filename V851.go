@@ -3,23 +3,18 @@ import . "fmt"
 func main() {
 	b := 0
 	g := 0
-	s := ""
 
 	Scan(&b, &g)
 	for b > 0 || g > 0 {
+		i := 2
 		if b > 0 {
-			s += "B"
+			Print("B")
 			b--
 		}
-		if g > 0 {
-			s += "G"
+		for g*i > 0 {
+			Print("G")
 			g--
-		}
-		if g > 0 {
-			s += "G"
-			g--
+			i--
 		}
 	}
-
-	Print(s)
 }

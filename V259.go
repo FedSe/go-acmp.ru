@@ -2,12 +2,12 @@ package main
 import . "fmt"
 func main() {
 	var (
-		r          [400000]int
+		r          [4e5]int
 		l, v, n, i int
 		s          = ""
 	)
-	Scan(&n, &s)
 
+	Scan(&n, &s)
 	u := []rune(s)
 	j := n
 	for i < j {
@@ -17,7 +17,6 @@ func main() {
 	}
 
 	s += string(u)
-
 	m := n * 2
 	i = 1
 	for i < m {

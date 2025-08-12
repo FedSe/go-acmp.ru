@@ -25,12 +25,13 @@ func main() {
 			if p%2 == 1 {
 				l += "B"
 			}
-			if p == 2 || p == 3 || p == 6 || p == 7 {
+			switch p {
+			case 2, 3, 6, 7:
 				l += "G"
 			}
 			f := 0
 			for f < len(l) {
-				if []byte(e[i])[j] == l[f] {
+				if e[i][j] == l[f] {
 					p = 9
 				}
 				f++

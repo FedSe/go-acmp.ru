@@ -2,8 +2,8 @@ package main
 import . "fmt"
 func main() {
 	var a, b, d, e, f, i int
-	Scan(&a, &b)
 
+	Scan(&a, &b)
 	for i < a {
 		i++
 		j := 0
@@ -19,8 +19,11 @@ func main() {
 		}
 	}
 
-	Printf(`RED : %d
-GREEN : %d
-BLUE : %d
-BLACK : %d`, d, e, f, a*b-d-e-f)
+	Print(`RED :`, d,
+		`
+GREEN : `, e,
+		`
+BLUE : `, f,
+		`
+BLACK : `, a*b-d-e-f)
 }

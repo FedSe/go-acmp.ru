@@ -1,12 +1,7 @@
 package main
 import . "fmt"
-func main(){
-	k:=1
-	s:="VGC"
+func main() {
+	k := 0
 	Scan(&k)
-	k %= 3
-	if k < 1 { s="GCV" }
-	if k > 1 { s="CVG" }
-
-	Print(s)
+	Print([]any{"GCV", "VGC", "CVG"}[k%3])
 }

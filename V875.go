@@ -2,15 +2,15 @@ package main
 import . "fmt"
 func main() {
 	var (
-		n, m, k, i, j int
-		a, b [100]string
+		n, m, k, i int
+		a, b       [100]string
 	)
-	Scan(&n, &m, &k)
 
+	Scan(&n, &m, &k)
 	for i < n {
 		Scan(&a[i])
 		b[i] = a[i]
-	i++
+		i++
 	}
 
 	for 0 < k {
@@ -22,19 +22,14 @@ func main() {
 				u = n
 			}
 			u--
-
-			for
 			j := 0
-			j < m
-			{
+			for j < m {
 				l := j
 				if l < 1 {
 					l = m
 				}
 				l--
-
 				r := (j + 1) % m
-
 				t := a[u][l] + a[u][j] + a[u][r] + a[i][l] + a[i][r] + a[d][l] + a[d][j] + a[d][r]
 				if t != 104 {
 					s := "."
@@ -43,21 +38,20 @@ func main() {
 					}
 					b[i] = b[i][:j] + s + b[i][j+1:]
 				}
-			j++
+				j++
 			}
-		i++
+			i++
 		}
-
 		i = 0
 		for i < n {
 			a[i] = b[i]
-		i++
+			i++
 		}
-	k--
+		k--
 	}
 
-	for j < n {
-		Println(b[j])
-	j++
+	for k < n {
+		Println(b[k])
+		k++
 	}
 }

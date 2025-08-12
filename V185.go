@@ -1,19 +1,17 @@
 package main
 import . "fmt"
-
 var (
-	a                [101][101]int
-	b                [101]int
+	a,b                [101][101]int
 	k, n, s, l, i, j int
 	w                = "No"
 	S                = Scan
 )
 
 func F(j int) {
-	if b[j] > 0 {
+	if b[0][j] > 0 {
 		return
 	}
-	b[j] = 1
+	b[0][j] = 1
 	k++
 	i := 1
 	for i <= n {

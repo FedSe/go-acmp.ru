@@ -6,14 +6,12 @@ func main() {
 
 	a := -1
 	e := n*m*k - n*m - n*k - k*m
-
 	if e > 0 {
-		d = (d * n * m * k) / e
-		if !(d%k != 0 || d%n != 0 || d%m != 0) {
+		d = d * n * m * k / e
+		if d%k+d%n+d%m < 1 {
 			a = d
 		}
 	}
 
 	Print(a)
-
 }

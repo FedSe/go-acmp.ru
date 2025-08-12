@@ -1,19 +1,17 @@
 package main
-import (
-	. "fmt"
-	. "math"
-)
+import . "fmt"
 func main() {
-	n := 0.
-	z := 26.
+	n := 0
+	z := 26
+
 	Scan(&n)
-	for z > 0 && n > 1 {
-	z--
-		a := Pow(2, z)
-		if n > a {
-			n -= a - 1
+	for n > 1 {
+		z--
+		if n > 1<<z {
+			n -= 1<<z - 1
 		}
 		n--
 	}
-	Printf("%c", 96+int(z))
+
+	Printf("%c", 96+z)
 }

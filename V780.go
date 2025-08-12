@@ -4,7 +4,7 @@ import (
 	. "math"
 )
 func main() {
-	s:=.0
+	s := .0
 	Scan(&s)
-	Printf("%.f", Sqrt(s*8) / 2)
+	Printf("%.f", Sqrt(s*2))
 }

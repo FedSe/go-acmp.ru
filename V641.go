@@ -4,20 +4,19 @@ func main() {
 	n := ""
 	a := n
 	i := 0
-	Scan(&n)
 
-	for i < len(n) {
-		for
-		j := i + 1
-		j < len(n)
-		{
-			m := n[:i] + n[i+1:j] + n[j+1:]
+	Scan(&n)
+	k := len(n)
+	for i < k {
+		i++
+		j := i
+		for j < k {
+			m := n[:i-1] + n[i:j] + n[j+1:]
 			if m > a {
 				a = m
 			}
-		j++
+			j++
 		}
-	i++
 	}
 
 	Print(a)

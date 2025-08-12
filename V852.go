@@ -2,19 +2,18 @@ package main
 import . "fmt"
 func main() {
 	s := ""
-	Scan(&s)
-
-	for
 	i := 0
-	i < len(s)
-	{
-		o := s[i:i+1]
+
+	Scan(&s)
+	for i < len(s) {
+		o := s[i : i+1]
 		for _, n := range "</>abcdefghijklmnopqrstuvwxyz" {
 			s = s[:i] + string(n) + s[i+1:]
 			j := 0
-			if s[0] == 60 || s[len(s)-1] == 62 {
+			q := len(s)
+			if s[0] == 60 || s[q-1] == 62 {
 				var e []string
-				for j != len(s) {
+				for j < q {
 					if s[j] != 60 {
 						j = 0
 						break
@@ -29,10 +28,10 @@ func main() {
 						j = 0
 						break
 					}
-					t := s[j:j+1]
+					t := s[j : j+1]
 					j++
 					for s[j] > 96 {
-						t += s[j:j+1]
+						t += s[j : j+1]
 						j++
 					}
 					if s[j] != 62 {
@@ -40,7 +39,7 @@ func main() {
 						break
 					}
 					j++
-					if g>0 {
+					if g > 0 {
 						e = append(e, t)
 					} else {
 						w := len(e)
@@ -59,6 +58,6 @@ func main() {
 			}
 		}
 		s = s[:i] + o + s[i+1:]
-	i++
+		i++
 	}
 }

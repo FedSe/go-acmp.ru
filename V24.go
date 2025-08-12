@@ -1,28 +1,26 @@
 package main
 import . "fmt"
 func main() {
-	var n, m, u, r, v int
+	var n, m, c int
 
 	Scan(&n, &m)
-	if m < 1 || n == m {
-		u = 1
-		goto A
+	if m > n {
+		n = 0
+	}
+	if m == n || m < 1 {
+		c = 1
+		n = -1
 	}
 	if m == 1 {
-		u = n
-		goto A
-	}
-	if n < 1 || n < m {
-		goto A
+		c = n
+		n = 0
 	}
 
-	for m+m*r-r <= n {
-		v++
-		r++
-	}
-
+	d := 1
 	m--
-	u = v*n - v*(v+1)/2*m
-A:
-	Print(u)
+	for m*d < n {
+		c += n - m*d
+		d++
+	}
+	Print(c)
 }

@@ -2,19 +2,18 @@ package main
 import . "fmt"
 func main() {
 	var (
-		s, x, w [1002]int
+		s, x, w [2e3]int
 		n, z, j int
+		i       = 1
 	)
-	Scan(&n)
 
+	Scan(&n)
 	for z < n {
 		z++
 		Scan(&s[z])
 	}
-    
+
 	x[1] = s[1]
-	i := 1
-    
 	for i < n {
 		i++
 		z = x[i-1] + s[i]
@@ -23,11 +22,10 @@ func main() {
 			x[i] = z
 		}
 	}
-    
+
 	e := x[n]
 	b := n
 	w[0] = b
-    
 	for b > 1 {
 		b--
 		if e == x[b]+s[b+1] {
@@ -46,7 +44,6 @@ func main() {
 
 	j++
 	w[j] = x[n]
-    
 	for j > -1 {
 		Println(w[j])
 		j--

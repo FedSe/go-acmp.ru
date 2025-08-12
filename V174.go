@@ -28,7 +28,8 @@ func main() {
 	S(&s)
 	for i < n {
 		if s < a[i] {
-			s = (s + a[i]) / 2
+			s += a[i]
+			s /= 2
 		}
 		i++
 	}

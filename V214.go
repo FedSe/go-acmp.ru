@@ -5,6 +5,6 @@ func main() {
 	b := 0
 
 	Scan(&a, &b)
-
-	Print(2 - ((a | b) & 1))
+	a |= b
+	Print(2 - a&1)
 }

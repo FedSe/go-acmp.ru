@@ -2,34 +2,27 @@ package main
 import . "fmt"
 func main() {
 	var (
-		c, b [63001]int
-		n, i, j int
+		d          [251]int
+		N, c, i, j int
 	)
 
-	Scan(&n)
-
-	for i < n {
-		for
-		j = i
-		j < n
-		{
+	Scan(&N)
+	for j < N {
 		j++
-			Scan(&c[i*251+j])
-		}
-	i++
-		b[i] = 5000
-
-		for
-		j = 0
-		j < i
-		{
-			x := b[j]+c[j*251+i]
-			if x < b[i] {
-				b[i] = x
-			}
-		j++
-		}
+		d[j] = 1e7
 	}
 
-	Print(b[n])
+	for i < N {
+		j = i
+		for j < N {
+			j++
+			Scan(&c)
+			if d[i]+c < d[j] {
+				d[j] = d[i] + c
+			}
+		}
+		i++
+	}
+
+	Print(d[N])
 }

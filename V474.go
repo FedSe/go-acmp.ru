@@ -1,49 +1,44 @@
 package main
 import . "fmt"
 func main() {
-    n := ""
-    b := 0
-    
-    Scan(&n)
-    
-    w := len(n) - 1
-    r := []rune(n)
-    
-    i := w
-    for i >= 0 {
-        if r[i] > 48 {
-            r[i]--
-            break
-        }
-        r[i] = 57
-    i--
-    }
+	s := ""
+	i := 0
 
-    i = 0
-    for i < w && r[i] == 48 {
-        i++
-    }
-    
-    n = string(r[i:])
-    for len(n) > 1 || n[0] != 48 {
-        a := 0
-        r = []rune(n)
-        for i := range r {
-            a = a*10 + int(r[i]-48)
-            r[i] = rune(a/3 + 48)
-            a %= 3
-        }
+	Scan(&s)
+	n := []byte(s)
+	for i < len(s) {
+		n[i] -= 48
+		i++
+	}
 
-        i = 0
-        for i < len(r)-1 && r[i] < 49 {
-            i++
-        }
-        n = string(r[i:])
+	i = len(n)
+	for i > 0 {
+		i--
+		if n[i] > 0 {
+			n[i]--
+			break
+		} else {
+			n[i] = 9
+		}
+	}
 
-        if a > 1 {
-            b ^= 1
-        }
-    }
-    
-    Print(b)
+	i = 0
+	for len(n) > 0 {
+		r := 0
+		var t []byte
+		for _, d := range n {
+			r = r*10 + int(d)
+			q := r / 3
+			r %= 3
+			if q > 0 || len(t) > 0 {
+				t = append(t, byte(q))
+			}
+		}
+		if r == 2 {
+			i = 1 - i
+		}
+		n = t
+	}
+
+	Print(i)
 }

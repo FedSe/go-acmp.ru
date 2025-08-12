@@ -6,7 +6,7 @@ import (
 )
 func main() {
 	var (
-		a, p       [131071]int
+		a, p       [2e5]int
 		n, m, q, i int
 		s          = b.NewReader(Stdin)
 		S          = Fscan

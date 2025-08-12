@@ -22,7 +22,7 @@ func main() {
 		}
 		j++
 	}
-    
+
 	for 0 < m {
 		S(&s)
 		x := 0
@@ -60,7 +60,5 @@ func main() {
 		return v[i] < v[j]
 	})
 
-	for _, z := range v {
-		Print(string(z))
-	}
+	Print(string(v))
 }

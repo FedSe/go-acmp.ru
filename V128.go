@@ -3,42 +3,36 @@ import . "fmt"
 func main() {
 	var (
 		n, i, a, b, c, e int
-		d [441][441]int
-		x = []int{-2, -2, -1, -1, 1, 1, 2, 2}
-		y = []int{-1, 1, -2, 2, -2, 2, -1, 1}
+		d                [441][441]int
+		x                = []int{-2, -2, -1, -1, 1, 1, 2, 2, -1, 1, -2, 2, -2, 2, -1, 1}
 	)
 
 	Scan(&n, &a, &b, &c, &e)
 	for i <= n {
-		for
 		v := 0
-		v <= n
-		{
+		for v <= n {
 			d[i][v] = 999
-		v++
+			v++
 		}
-	i++
+		i++
 	}
 
 	d[a][b] = 0
-	q := [][2]int{[2]int{a, b}}
+	q := [][2]int{{a, b}}
 
 	for len(q) > 0 {
 		a = q[0][0]
 		b = q[0][1]
 		q = q[1:]
-
-		for
 		i = 0
-		i < 8
-		{
-			u := a+x[i]
-			v := b+y[i]
-			if u * v > 0 && u <= n && v <= n && d[u][v] > d[a][b]+1 {
+		for i < 8 {
+			u := a + x[i]
+			v := b + x[i+8]
+			if u*v > 0 && u <= n && v <= n && d[u][v] > d[a][b]+1 {
 				d[u][v] = d[a][b] + 1
 				q = append(q, [2]int{u, v})
 			}
-		i++
+			i++
 		}
 	}
 

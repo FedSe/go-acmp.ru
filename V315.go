@@ -1,8 +1,8 @@
 package main
 import (
+	b "bufio"
 	. "fmt"
 	. "os"
-	b "bufio"
 )
 func main() {
 	a := -1
@@ -15,12 +15,12 @@ func main() {
 		if c > m {
 			m = c
 		}
-		if !( (c > 64 && c < 91) || (c > 47 && c < 58) ) {
+		if !(c > 64 && c < 91 || (c > 47 && c < 58)) {
 			goto A
 		}
 	}
 
-	a = int(m-54)
+	a = int(m - 54)
 	if m > 47 && m < 58 {
 		a += 7
 		if m == 48 {

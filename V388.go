@@ -7,7 +7,7 @@ import (
 func main() {
 	var (
 		n, m, c, x, i, f, j, a int
-		R, C, D                [564001]int
+		R, C, D                [6e5]int
 		s                      = b.NewReader(Stdin)
 		S                      = Fscan
 	)

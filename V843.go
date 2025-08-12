@@ -1,9 +1,8 @@
 package main
 import . "fmt"
 func main() {
-	var n, m, k, f, l int
+	var n, m, f, l int
 	Scan(&n, &m, &f, &l)
-	k = m+f+l-n
-
-	Print(k, m-k, f-k)
+	n = m + f + l - n
+	Print(n, m-n, f-n)
 }

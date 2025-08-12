@@ -6,17 +6,16 @@ import (
 func main() {
 	var n [5]int
 	a := 0
-	s := "Nothing"
 
 	for a < 5 {
 		Scan(&n[a])
-	a++
+		a++
 	}
 	Ints(n[:])
 
 	a = n[0]
-
 	var (
+		s = "Nothing"
 		b = n[1]
 		c = n[2]
 		d = n[3]

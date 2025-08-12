@@ -1,14 +1,16 @@
 package main
 import . "fmt"
-func main(){
-	var n, b, a, i int
-	Scan(&n)
+func main() {
+	n := 0
+	b := 0
 
-	for i < n {
+	Scan(&n)
+	a := 1 - n
+	for 0 < n {
 		Scan(&b)
 		a += b
-	i++
+		n--
 	}
 
-	Print(a-n+1)
+	Print(a)
 }

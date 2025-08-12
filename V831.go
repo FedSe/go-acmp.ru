@@ -2,9 +2,9 @@ package main
 import . "fmt"
 func main() {
 	var a, b, s int
-	Scan(&a, &b)
 	n := -1
 
+	Scan(&a, &b)
 	for a <= b {
 		c := a
 		u := 0
@@ -12,23 +12,20 @@ func main() {
 			u += c % 10
 			c /= 10
 		}
-
 		d := 2
-		f := 0 > 1
+		c = 0
 		for d*d <= a {
-			if a % d < 1 {
-				f = 1 > 0
+			if a%d < 1 {
+				c = 1
 			}
-		d++
+			d++
 		}
-
-		if !(f || a < 2) && u >= s {
+		if c < 1 && a > 1 && u >= s {
 			s = u
 			n = a
 		}
-	a++
+		a++
 	}
 
 	Print(n)
-
 }

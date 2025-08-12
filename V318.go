@@ -1,15 +1,12 @@
 package main
-import (
-	. "fmt"
-	. "math"
-)
+import . "fmt"
 func main() {
 	var (
-		r [32]int
+		r                [32]int
 		n, i, k, s, z, j int
 	)
-	Scan(&n)
 
+	Scan(&n)
 	if n > 0 {
 		for n > 0 {
 			r[i] = n % 2
@@ -31,12 +28,14 @@ func main() {
 		r[k] = 1
 		for j < s {
 			r[j] = 1
-		j++
+			j++
 		}
 
 		for z < 32 {
-			n += r[z] * int(Pow(2, float64(z)))
-		z++
+			if r[z] > 0 {
+				n |= 1 << z
+			}
+			z++
 		}
 	}
 

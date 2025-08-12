@@ -1,27 +1,29 @@
 package main
 import (
-    . "fmt"
-    . "sort"
+	. "fmt"
+	. "sort"
 )
 func main() {
-    var n, t, z, c, i int
-    
-    Scan(&n)
-    s := make([]string, n)
-    for i < n {
-        Scan(&s[i])
-    i++
-    }
+	var (
+		s             [1e4]string
+		n, t, z, c, i int
+	)
 
-    Strings(s)
-    for z < n {
-        i = len(s[t])
-        for z < n && len(s[z]) >= i && s[z][:i] == s[t] {
-            z++
-        }
-        t = z 
-        c++
-    }
+	Scan(&n)
+	for i < n {
+		Scan(&s[i])
+		i++
+	}
 
-    Print(c)
+	Strings(s[:n])
+	for z < n {
+		i = len(s[t])
+		for z < n && len(s[z]) >= i && s[z][:i] == s[t] {
+			z++
+		}
+		t = z
+		c++
+	}
+
+	Print(c)
 }

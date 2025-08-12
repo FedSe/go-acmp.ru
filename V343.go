@@ -24,17 +24,12 @@ func main() {
 	S(&n)
 	for n > 0 {
 		S(&m, &y, &x)
-		a, b, c, d := &s[y+1][x+1], &s[y][x+1], &s[y+1][x], &s[y][x]
-		w := []*int{a, b, c}
-		if m == 2 {
-			w = []*int{a, c, d}
-		}
-		if m == 3 {
-			w = []*int{a, b, d}
-		}
-		if m > 3 {
-			w = []*int{b, c, d}
-		}
+		d, b, c, a := &s[y][x], &s[y][x+1], &s[y+1][x], &s[y+1][x+1]
+		w := [][]*int{
+			{a, b, c},
+			{a, c, d},
+			{a, b, d},
+			{b, c, d}}[m-1]
 		if *w[0]+*w[1]+*w[2] < 1 {
 			*w[0] = 1
 			*w[1] = 1

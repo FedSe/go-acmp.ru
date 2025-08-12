@@ -1,14 +1,10 @@
 package main
 import . "fmt"
-
-func P(a int) {
-	Println(a)
-}
-
 func main() {
 	n := 0
-	Scan(&n)
+	P := Println
 
+	Scan(&n)
 	if n > 8 {
 		P(n - 8)
 	}

@@ -2,27 +2,27 @@ package main
 import . "fmt"
 func main() {
 	var n, i, r, j int
-	Scan(&n)
 	s := ""
 
+	Scan(&n)
 	for n > 0 {
-		s = string(n % 2 + 48) + s
+		s = Sprint(n%2) + s
 		n /= 2
 	}
 
 	m := s
 	for i < len(s) {
-		s = s[len(s)-1:] + s[0:len(s)-1]
+		n = len(s) - 1
+		s = s[n:] + s[:n]
 		if s > m {
 			m = s
 		}
-	i++
+		i++
 	}
 
 	for j < len(m) {
-		r *= 2
-		r += int(m[j] - 48)
-	j++
+		r = r*2 + int(m[j]-48)
+		j++
 	}
 
 	Print(r)

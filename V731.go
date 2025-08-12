@@ -2,8 +2,7 @@ package main
 import . "fmt"
 func main() {
 	var (
-		g, o                   [31]int
-		p                      [31]byte
+		g, o, p                [31]int
 		n, u, v, m, k, i, l, z int
 	)
 
@@ -30,7 +29,7 @@ func main() {
 		z++
 	}
 	for l < n {
-		if k < 100 && ((p[l] == 45 && u < v) || p[l] < 44) {
+		if k < 100 && (p[l] == 45 && u < v || p[l] < 44) {
 			o[l]++
 			k++
 			if p[l] < 44 {

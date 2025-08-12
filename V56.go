@@ -44,7 +44,7 @@ func main() {
 		}
 	}
 
-	for _, v := range [3]string{`Friends: `, `
+	for _, v := range []string{`Friends: `, `
 Mutual Friends: `, `
 Also Friend of: `} {
 		Strings(a)

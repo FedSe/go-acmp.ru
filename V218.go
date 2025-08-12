@@ -2,17 +2,15 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [8][8]byte
+		a          [8][8]byte
 		n, i, z, j int
-		s = ""
+		s          = ""
 	)
-	Scan(&n)
 
+	Scan(&n)
 	for i < 8 {
-		for
-		j = i%2
-		j < 8
-		{
+		j = i % 2
+		for j < 8 {
 			a[i][j] = 45
 			if i < 3 {
 				a[i][j] = 119
@@ -20,9 +18,9 @@ func main() {
 			if i > 4 {
 				a[i][j] = 98
 			}
-		j += 2
+			j += 2
 		}
-	i++
+		i++
 	}
 
 	for z < n {
@@ -31,12 +29,16 @@ func main() {
 			y := int(s[0] - 97)
 			x := int(s[1] - 49)
 			b := a[x][y]
-			g := int(s[3] - 97)
+			i = int(s[3] - 97)
 			j = int(s[4] - 49)
 			v := -1
-			if g - y > 0 { v = 1 }
+			if i-y > 0 {
+				v = 1
+			}
 			w := -1
-			if j - x > 0 { w = 1 }
+			if j-x > 0 {
+				w = 1
+			}
 			o := x
 			p := j
 			if o > j {
@@ -45,8 +47,8 @@ func main() {
 			}
 			for o <= x && x <= p {
 				a[x][y] = 45
-			y += v
-			x += w
+				y += v
+				x += w
 			}
 			s = s[3:]
 			if j == 7 && b == 119 {
@@ -55,22 +57,22 @@ func main() {
 			if j < 1 && b == 98 {
 				b = 66
 			}
-			a[j][g] = b
+			a[j][i] = b
 		}
-	z++
+		z++
 	}
 
 	i = 8
 	for i > 0 {
-	i--
-		for
+		i--
 		j = 0
-		j < 8
-		{
+		for j < 8 {
 			b := a[i][j]
-			if b < 1 { b = 46 }
+			if b < 1 {
+				b = 46
+			}
 			Printf("%c", b)
-		j++
+			j++
 		}
 		Println()
 	}

@@ -1,14 +1,14 @@
 package main
 import . "fmt"
-
 type H struct {
 	p, q []int
 }
-
 func N(x int) H {
-	var f H
-	d := 2
-	g := x
+	var (
+		f H
+		d = 2
+		g = x
+	)
 	for x > 1 && d*d <= g {
 		if x%d < 1 {
 			f.p = append(f.p, d)
@@ -28,13 +28,15 @@ func N(x int) H {
 }
 
 func main() {
-	a := 0
-	i := 0
-	n := 1
+	var (
+		c H
+		a = 0
+		i = 0
+		n = 1
+	)
 
 	Scan(&a)
 	b := N(a)
-	var c H
 	for i < len(b.p) {
 		n *= b.p[i]
 		i++
@@ -60,5 +62,6 @@ func main() {
 		}
 		n += m
 	}
+
 	Print(n)
 }

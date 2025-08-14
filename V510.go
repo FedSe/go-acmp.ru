@@ -1,19 +1,18 @@
 package main
 import . "fmt"
 func main() {
-	var c, s [33]int
+	b := 0
+	a := 1
 	n := 0
-	z := 2
-	c[0] = 1
-	s[0] = 1
 
 	Scan(&n)
-	for z <= n {
-		i := s[z-2]
-		c[z] = c[z-2] + 2*i
-		s[z] = i + c[z]
-	z++
+	if n&1 < 1 {
+		b = 3
+		for 2 < n {
+			b, a = 4*b-a, b
+			n -= 2
+		}
 	}
 
-	Print(c[n])
+	Print(b)
 }

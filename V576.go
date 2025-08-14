@@ -1,23 +1,20 @@
 package main
 import . "fmt"
 func main() {
-	n:=0
-	s:=0
+	n := 0
+	i := 2
+
 	Scan(&n)
-	for 
-	i := 1
-	i < n
-	{
-		a := i
-		b := n
-		for a * b > 1 {
-			if a > b { a, b = b, a }
-			b %= a
+	r := n
+	for i*i < n {
+		if n%i < 1 {
+			r -= r / i
 		}
-		if a + b < 2 {
-			s++
+		for n%i < 1 {
+			n /= i
 		}
-	i++
+		i++
 	}
-	Print(s)
+
+	Print(r - r/n)
 }

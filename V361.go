@@ -1,53 +1,33 @@
 package main
-import . "fmt"
+import (
+	. "fmt"
+	. "sort"
+)
 func main() {
 	s := ""
+	q := 0
+
 	Scan(&s)
-	var (
-		a [27][101]int
-		v, t bool
-		i = 0
-		n = len(s)
-		l = n
-	)
-	for i < n {
-		for
-		j := i + 1
-		j <= n
-		{
-			a[s[i]-96][j]++
-		j++
-		}
-	i++
-	}
-
-	for !t && l > 1 {
-		l--
-		for
-		i = 0
-		i < n-l
-		{
-			for
-			j := i + 1
-			j <= n-l
-			{
-				v = 1 > 0
-				for
-				c := 1
-				c <= 26
-				{
-					v = v && ((a[c][i+l]-a[c][i]) == (a[c][j+l]-a[c][j]))
-				c++
-				}
-				if v {
-					t = 1 > 0
-				}
-			j++
+	n := len(s)
+	L := n - 1
+	for L > 0 {
+		e := map[any]int{}
+		i := 0
+		for i <= n-L {
+			r := []rune(s[i : i+L])
+			Slice(r, func(i, j int) bool {
+				return r[i] < r[j]
+			})
+			h := string(r)
+			if e[h] > 0 {
+				q = L
+				goto A
 			}
-		i++
+			e[h] = 1
+			i++
 		}
+		L--
 	}
-
-	if !t { l = 0 }
-	Print(l)
+A:
+	Print(q)
 }

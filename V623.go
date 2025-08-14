@@ -1,15 +1,14 @@
 package main
-import ."fmt"
+import . "fmt"
 func main() {
-	n:=0
-	Scan(&n)
-	f, g, h := 1, 1, 1
+	n := 0
+	g := 1
+	h := 1
 
+	Scan(&n)
 	for 0 < n {
-		f = (h+g) % 10
-		h = g
-		g = f
-	n--
+		g, h = (h+g)%10, g
+		n--
 	}
 
 	Print(h)

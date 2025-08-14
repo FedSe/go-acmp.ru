@@ -1,23 +1,19 @@
 package main
 import . "fmt"
-func P(n int) {
-	l := n % 3
-	if l < 1 {
-		l = 3
-	}
-
-	n -= l
-	n /= 3
-
-	if n > 0 {
-		P(n)
-	}
-
-	Print(l)
-}
-
 func main() {
-	n:=0
+	n := 0
+	s := ""
+
 	Scan(&n)
-	P(n)
+	for n > 0 {
+		l := n % 3
+		if l < 1 {
+			l = 3
+		}
+		s = Sprint(l) + s
+		n -= l
+		n /= 3
+	}
+
+	Print(s)
 }

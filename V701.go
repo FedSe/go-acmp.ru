@@ -5,22 +5,19 @@ func main() {
 	r := 0
 	p := 1
 	s := ""
+
 	Scan(&n, &s)
-	n = n%10+2
-
-	for
-	i := len(s) - 1
-	i >= 0
-	{
-		a := p * (int(s[i]) - 55)
-
+	n = n%10 + 2
+	i := len(s)
+	for i > 0 {
+		i--
+		q := int(s[i] - 48)
+		a := p * (q - 7)
 		if s[i] > 47 && s[i] < 58 {
-			a = p * int(s[i]-48)
+			a = p * q
 		}
 		r += a
-
 		p *= n
-	i--
 	}
 
 	Print(r)

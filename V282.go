@@ -1,19 +1,17 @@
 package main
 import . "fmt"
 func main() {
-	var w, h, s, i int
+	var w, h, s int
+    
 	Scan(&w, &h)
-	
-	for i != w {
-	i++
-		for
-		j := 1
-		j != h+1
-		{
-			s += i * j
-		j++
+	for w > 0 {
+		j := 0
+		for j < h {
+			j++
+			s += w * j
 		}
+		w--
 	}
-
+    
 	Print(s)
 }

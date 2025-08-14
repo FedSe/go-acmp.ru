@@ -1,13 +1,16 @@
 package main
 import . "fmt"
 func main() {
-	a:=0
-	b:=0
+	a := 0
+	b := 0
+
 	Scan(&a, &b)
-	c := a % 10
-	for 1 < b {
+	a %= 10
+	c := a
+	for b > 1 {
 		a = a * c % 10
-	b--
+		b--
 	}
-	Print(a % 10)
+
+	Print(a)
 }

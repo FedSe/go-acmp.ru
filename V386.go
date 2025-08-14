@@ -3,18 +3,16 @@ import (
 	. "fmt"
 	. "math/rand"
 )
-
 type P struct{ x, y int }
-
 func main() {
 	N := 0
-	p := []P{}
+	var p []P
 
 	Scan(&N)
 	for 0 < N {
 		for {
-			x := Intn(20001) - 1e4
-			y := Intn(20001) - 1e4
+			x := Intn(2e4) - 1e4
+			y := Intn(2e4) - 1e4
 			v := 1
 			for _, i := range p {
 				if i.x == x && i.y == y {

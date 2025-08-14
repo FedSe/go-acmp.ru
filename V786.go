@@ -2,16 +2,12 @@ package main
 import . "fmt"
 func main() {
 	n := 0
-	a := 0
-	t := 2
+	t := 1
 
 	Scan(&n)
-	for t < n {
+	for t <= n/2 {
 		t *= 2
 	}
-	if n > 2 && t != n {
-		a = n - t/2
-	}
 
-	Print(a)
+	Print(n - t)
 }

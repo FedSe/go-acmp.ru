@@ -5,16 +5,16 @@ import (
 )
 func main() {
 	n := 0
-	Scan(&n)
-
 	d := 1
 	q := 2
-	for q < int(Trunc(Sqrt(float64(n)))) + 2 {
+
+	Scan(&n)
+	for q < int(Sqrt(float64(n)))+2 {
 		if n%q < 1 {
 			d = n / q
 			break
 		}
-	q++
+		q++
 	}
 
 	Print(d, n-d)

@@ -1,24 +1,18 @@
 package main
 import . "fmt"
 func main() {
-	var s, n, a int
-	p := 3
+	var n, s, x int
+	c := 3
 
 	Scan(&n)
-	for 0 < n {
-		Scan(&a)
-
-		if a > 0 {
-			s += p
-			p += 4
+	for n > 0 {
+		Scan(&x)
+		s += c * x
+		c += 4*x - 3
+		if c < 3 {
+			c = 3
 		}
-
-		p -= 3
-
-		if p < 4 {
-			p = 3
-		}
-	n--
+		n--
 	}
 
 	Print(s)

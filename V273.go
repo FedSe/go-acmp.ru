@@ -2,12 +2,11 @@ package main
 import . "fmt"
 func main() {
 	s := ""
-	Scan(&s)
 	u := 0
-	for
 	m := 100
-	m < 1000
-	{
+
+	Scan(&s)
+	for m < 1e3 {
 		t := Sprint(m)
 		i := 0
 		for _, c := range s {
@@ -19,7 +18,8 @@ func main() {
 				}
 			}
 		}
-	m++
+		m++
 	}
+
 	Print(u)
 }

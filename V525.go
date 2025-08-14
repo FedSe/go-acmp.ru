@@ -1,7 +1,6 @@
 package main
 import . "fmt"
-var a [1001]int
-
+var a [2e3]int
 func F(n int) int {
 	if n > 2 {
 		if a[n] > 0 {

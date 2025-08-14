@@ -49,7 +49,7 @@ func main() {
 
 	for i < n {
 		if d[i] < 1 {
-			o := []int{}
+			var o []int
 			q := []int{i}
 			d[i] = 1
 			for len(q) > 0 {

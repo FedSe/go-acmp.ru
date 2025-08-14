@@ -3,7 +3,6 @@ import . "fmt"
 type P struct {
 	r, b, e int
 }
-
 func main() {
 	var (
 		n, e, t, h, m, v, l int
@@ -47,7 +46,7 @@ func main() {
 				Printf(u+u, c.b/3600%24, c.b/60%60, c.b%60,
 					c.e/3600%24, c.e/60%60, c.e%60)
 			}
-			p = []*P{}
+			p = p[:0]
 		}
 		n--
 	}

@@ -3,23 +3,25 @@ import (
 	. "fmt"
 	. "sort"
 )
-func F(a []rune ) string {
-	Slice(a, func(i, j int) bool { return a[i] < a[j] })
-	return string (a)
+func F(a string) string {
+	A := []rune(a)
+	Slice(A, func(i, j int) bool { return A[i] < A[j] })
+	return string(A)
 }
 func main() {
 	s := "YES"
 	c := s
 	d := s
+
 	Scan(&c, &d)
 
 	i := len(c)
-	if F([]rune(c)) != F([]rune(d)) || i != len(d) {
+	if F(c) != F(d) {
 		s = "NO"
 	}
 
 	for 0 < i {
-	i--
+		i--
 		if c[i] == d[i] {
 			s = "NO"
 		}

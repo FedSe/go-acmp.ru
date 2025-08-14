@@ -1,10 +1,8 @@
 package main
-
 import (
 	. "fmt"
 	. "sort"
 )
-
 func main() {
 	var n, d, l, i, s int
 
@@ -12,12 +10,11 @@ func main() {
 	p := make([]int, n)
 	for l < n {
 		Scan(&p[l])
-	l++
+		l++
 	}
 
 	n--
 	Ints(p)
-
 	for i != n {
 		if p[i]+p[n] <= d {
 			i++
@@ -25,10 +22,10 @@ func main() {
 		s++
 		n--
 		if i > n {
-			goto A
+			s--
+			i = n
 		}
 	}
-	s++
-A:
-	Print(s)
+
+	Print(s+1)
 }

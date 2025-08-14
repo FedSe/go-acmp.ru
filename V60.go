@@ -2,7 +2,7 @@ package main
 import . "fmt"
 func main() {
 	var (
-		f = [9999]int{2, 3}
+		f = [1e4]int{2, 3}
 		v = 0
 		k = 2
 		i = 5
@@ -10,34 +10,29 @@ func main() {
 	)
 
 	Scan(&v)
-
 	for v > 1 {
-		for
 		j := 0
-		j < k
-		{
+		for j < k {
 			if f[j]*f[j] > i {
 				break
 			}
 			if i%f[j] < 1 {
 				goto A
 			}
-		j++
+			j++
 		}
 
 		f[k] = i
 		k++
-		for
-		z := 1
-		z < k
-		{
-			if k == f[z] {
+		j = 1
+		for j < k {
+			if k == f[j] {
 				v--
 				break
 			}
-		z++
+			j++
 		}
-A:
+	A:
 		if i == p*6-1 {
 			i = p*6 + 1
 			p++

@@ -2,37 +2,38 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [104][104]int
-		d = []int{0, 1, 0, -1, 1, 0, -1, 0}
-		s = ""
+		a       [104][104]int
+		d       = []int{0, 1, 0, -1, 0}
+		s       = ""
 		m, r, i int
-		x = 51
-		y = x
-		w = -1
+		x       = 51
+		y       = x
+		w       = -1
 	)
 	a[x][y] = 1
 
 	Scan(&s)
 	for i < len(s) {
-		if s[i] == 82 {
+		q := s[i]
+		if q == 82 {
 			r += 5
 			r %= 4
 		}
-		if s[i] < 77 {
+		if q < 77 {
 			r += 3
 			r %= 4
 		}
-		if s[i] > 82 {
+		if q > 82 {
 			x += d[r]
-			y += d[r+4]
-		m++
+			y += d[r+1]
+			m++
 			if a[x][y] == 1 {
 				w = m
 				break
 			}
 			a[x][y] = 1
 		}
-	i++
+		i++
 	}
 
 	Print(w)

@@ -1,23 +1,16 @@
 package main
 import . "fmt"
 func main() {
-	var (
-		a [52]int
-		n, m, i int
-	)
+	var n, m, i int
+	a := [51]int{1}
+
 	Scan(&m, &n)
-
 	for i < n {
-		a[i]++
-	i++
-	}
-
-	for
-	i = m
-	i <= n
-	{
-		a[i] = a[i-1] + a[i-m]
-	i++
+		i++
+		a[i] = a[i-1]
+		if i >= m {
+			a[i] += a[i-m]
+		}
 	}
 
 	Print(a[n])

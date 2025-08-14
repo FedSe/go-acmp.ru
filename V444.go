@@ -15,26 +15,10 @@ func G(a int) string {
 		a = -a
 	}
 	for a > 0 {
-		s = string(a%10+48) + s
-		a = a / 10
+		s = Sprint(a%10) + s
+		a /= 10
 	}
-	s = w + s
-	return s
-}
-
-func F(x []int, a int, b int) string {
-	w := G(x[a]) + ", ..., " + G(x[b])
-	v := ""
-	z := a
-	for z <= b {
-		v = v + G(x[z]) + ", "
-		z++
-	}
-	v = v[:len(v)-2]
-	if len(w) <= len(v) {
-		return w
-	}
-	return v
+	return w + s
 }
 
 func main() {
@@ -43,6 +27,7 @@ func main() {
 		n, t, i int
 		P       = Print
 		a       = map[int]int{}
+		U       = ", "
 	)
 
 	Scan(&n)
@@ -58,26 +43,36 @@ func main() {
 
 	Ints(x)
 	n = len(x)
-
 	for i < n-2 && n > 2 {
 		if x[i]+1 == x[i+1] && x[i+1]+1 == x[i+2] {
 			k := i + 1
 			for k <= n-2 && x[k]+1 == x[k+1] {
 				k++
 			}
-			P(F(x, i, k))
+			w := G(x[i]) + ", ..., " + G(x[k])
+			v := ""
+			z := i
+			for z <= k {
+				v = v + G(x[z]) + U
+				z++
+			}
+			v = v[:len(v)-2]
+			if len(w) <= len(v) {
+				v = w
+			}
+			P(v)
 			i = k + 1
 			if i < n {
-				P(", ")
+				P(U)
 			}
 		} else {
-			P(x[i], ", ")
+			P(x[i], U)
 			i++
 		}
 	}
 	n--
 	if i < n {
-		P(x[i], ", ")
+		P(x[i], U)
 		i++
 	}
 	if i == n {

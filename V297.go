@@ -6,8 +6,7 @@ func main() {
 
 	Scan(&s)
 	for _, n := range s {
-		if n < 49 || n == 54 || n > 55 { c++ }
-		if n == 56 { c++ }
+		c += int("1000001021"[n-48] - 48)
 	}
 
 	Print(c)

@@ -2,24 +2,21 @@ package main
 import . "fmt"
 func main() {
 	var (
-		f [21]int
+		f       = [21]int{0, 1, 1}
 		x, y, b int
+		z       = 2
 	)
+
 	Scan(&x, &y)
-
-	f[1] = 1
-	f[2] = 1
-
-	z := 2
 	for z < x {
-	z++
+		z++
 		f[z] = f[z-2] + f[z-1]
 	}
 
 	z = f[x-2]
-	for (y-f[x-1]*b) % z > 0 {
+	for (y-f[x-1]*b)%z > 0 {
 		b++
-	} 
+	}
 
-	Print((y - f[x-1]*b) / z, b)
+	Print((y-f[x-1]*b)/z, b)
 }

@@ -2,21 +2,18 @@ package main
 import . "fmt"
 func main() {
 	n := 0
-	c := 0
-	a := 1
+	r := 0
+    
 	Scan(&n)
-
-	for a*2 < n {
-		a *= 2
-	}
-
 	for n > 1 {
-		if n > a {
-			n -= a
-			c++
+		k := 1
+		for k < n {
+			k <<= 1
 		}
-		a /= 2
+		n -= k >> 1
+		r++
+		r %= 3
 	}
 
-	Print(c % 3)
+	Print(r)
 }

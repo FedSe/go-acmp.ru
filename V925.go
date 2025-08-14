@@ -1,18 +1,23 @@
 package main
-import (
-   . "fmt"
-   . "sort"
-)
+import . "fmt"
 func main() {
 	var k, n, a, b, c int
 	Scan(&k, &n, &a, &b, &c)
 
-	A := []int{a, b, c}
-	Ints(A)
+	if b < a {
+		a, b = b, a
+	}
+	if c < a {
+		a, c = c, a
+	}
 
-	n = a+b+c-2*n
-	if n < 0 { n = 0 }
-	if k > 1 { n = A[0] }
+	b += a + c - 2*n
+	if b < 0 {
+		b = 0
+	}
+	if k > 1 {
+		b = a
+	}
 
-	Print(n)
+	Print(b)
 }

@@ -1,13 +1,13 @@
 package main
 import . "fmt"
 func main() {
-	n:=""
-	m:=n
+	n := ""
+	m := n
 	Scan(&n, &m)
-	if m == "0" {
+	if m < "1" {
 		Print("NO")
 	} else {
-		l := len(n)-1
-		Printf("%s%c", n[:l], n[l] + 1)
+		l := len(n) - 1
+		Print(n[:l], n[l]-47)
 	}
 }

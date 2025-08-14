@@ -1,10 +1,10 @@
 package main
 import . "fmt"
 func main() {
-	var n, a, b int
+	var b, a, n int
 
 	Scan(&n)
-	for n%2 < 1 {
+	for n&1 < 1 {
 		n /= 2
 		a++
 	}
@@ -13,13 +13,14 @@ func main() {
 		b++
 	}
 
-	if a > b { b = a }
+	if a > b {
+		b = a
+	}
+
 	a = 1
 	k := 10 % n
-
 	for k > 1 {
-		k *= 10
-		k %= n
+		k = k * 10 % n
 		a++
 	}
 

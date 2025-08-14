@@ -1,15 +1,12 @@
 package main
 import . "fmt"
 func main() {
-	b:=1
-	p:=0
-	s:=""
+	b := 1
+	p := 1
+	s := ""
 	Scan(&s)
-
-	for p+b <= len(s) {
-		a := p + b
-		Print(s[a-1:a])
-		p = b
-		b = a
+	for b <= len(s) {
+		Print(s[b-1 : b])
+		p, b = b, p+b
 	}
 }

@@ -7,14 +7,14 @@ func main() {
 	var (
 		x, y, r [10]float64
 		n, c, i int
-		v = 200.
-		t = v
+		v       = 2e2
+		t       = v
 	)
-	Scan(&n, &t)
 
+	Scan(&n, &t)
 	for c < n {
 		Scan(&x[c], &y[c], &r[c])
-	c++
+		c++
 	}
 	if n > 1 {
 		for i < n-1 {
@@ -29,12 +29,12 @@ func main() {
 				if w < v {
 					v = w
 				}
-			c++
+				c++
 			}
-		i++
+			i++
 		}
 		if v/2 < t {
-			t = v/2
+			t = v / 2
 		}
 	}
 A:

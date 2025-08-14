@@ -2,13 +2,20 @@ package main
 import . "fmt"
 func main() {
 	var a, m, l int
-	s:=""
+	s := ""
+
 	Scan(&s)
- 
 	for _, r := range s {
-		if r > 49 { a++ } else { a-- }
-		if a < m { m = a }
-		if a > l { l = a }
+		a--
+		if r > 49 {
+			a += 2
+		}
+		if a < m {
+			m = a
+		}
+		if a > l {
+			l = a
+		}
 	}
 
 	Print(l - m + 1)

@@ -3,11 +3,14 @@ import . "fmt"
 type N struct {
 	o, t int
 }
+
 var (
-	u, d [2005]int
-	g [2005][]N
-	h int = 1e9
+	u, d                   [3e3]int
+	g                      [3e3][]N
+	h                      int = 1e9
+	n, m, f, o, c, l, e, i int
 )
+
 func F(v int) {
 	u[v] = 1
 	for _, w := range g[v] {
@@ -18,28 +21,25 @@ func F(v int) {
 	}
 }
 func main() {
-	var n, m, f, o, c, l, e, i int
-
 	Scan(&n, &m)
 	for i < m {
-	i++
+		i++
 		Scan(&f, &o, &c)
 		g[f] = append(g[f], N{o, c})
 	}
 	i = 1
 	for i < n {
-	i++
+		i++
 		d[i] = -h
 	}
-	d[1] = 0
 
 	for l < n {
-	l++
+		l++
 		j := 0
 		for j < n {
-		j++
+			j++
 			for _, k := range g[j] {
-				w := d[j]+k.t
+				w := d[j] + k.t
 				if d[j] > -h && d[k.o] < w {
 					d[k.o] = w
 				}
@@ -48,7 +48,7 @@ func main() {
 	}
 
 	for e < n {
-	e++
+		e++
 		for _, j := range g[e] {
 			i = j.o
 			if d[e] > -h && d[i] < d[e]+j.t && u[i] < 1 {

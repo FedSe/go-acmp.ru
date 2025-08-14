@@ -1,35 +1,21 @@
 package main
 import . "fmt"
-
 type P struct {
-	a [4] string
+	a [4]string
 }
-
-func (p P) F(i, j int) P {
-	r := p
-	for _, d := range []int{-1, 0, 1} {
-		for _, w := range []int{-1, 0, 1} {
-			if d*d+w*w < 2 {
-				h := i + d
-				g := j + w
-				if 0 <= h && h < 4 && 0 <= g && g < 4 {
-					r.a[h] = r.a[h][:g] + string(217 - r.a[h][g]) + r.a[h][g+1:]
-				}
-			}
-		}
-	}
-	return r
-}
-
 func main() {
-	var s P
-	i := 0
+	var (
+		s P
+		i = 0
+		u = map[P]int{}
+		W = Print
+	)
+
 	for i < 4 {
 		Scan(&s.a[i])
-	i++
+		i++
 	}
 
-	u := map[P]int{}
 	q := []P{s}
 	u[s] = 0
 	for len(q) > 0 {
@@ -42,12 +28,12 @@ func main() {
 				if p.a[i][j] != p.a[0][0] {
 					e = 0
 				}
-			j++
+				j++
 			}
-		i++
+			i++
 		}
 		if e > 0 {
-			Print(u[p])
+			W(u[p])
 			return
 		}
 		q = q[1:]
@@ -55,17 +41,33 @@ func main() {
 		for i < 4 {
 			j := 0
 			for j < 4 {
-				y := p.F(i, j)
-				if _, o := u[y]
-				!o {
+				y := p
+				z := -1
+				for z < 2 {
+					l := -1
+					for l < 2 {
+						w := l
+						if z*z+w*w < 2 {
+							h := i + z
+							g := j + w
+							if 0 <= h && h < 4 && 0 <= g && g < 4 {
+								y.a[h] = y.a[h][:g] + string(217-y.a[h][g]) + y.a[h][g+1:]
+							}
+						}
+						l++
+					}
+					z++
+				}
+				_, o := u[y]
+				if !o {
 					u[y] = u[p] + 1
 					q = append(q, y)
 				}
-			j++
+				j++
 			}
-		i++
+			i++
 		}
 	}
 
-	Print("Impossible")
+	W("Impossible")
 }

@@ -6,13 +6,9 @@ import (
 	. "strings"
 )
 func main() {
-	var (
-		e = "=+-'\""
-		f = "{}[]<>"
-		r = b.NewScanner(Stdin)
-		q = 0
-		I = IndexByte
-	)
+	r := b.NewScanner(Stdin)
+	q := 0
+	I := IndexByte
 
 	for r.Scan() {
 		s := r.Text()
@@ -42,13 +38,13 @@ func main() {
 			if s[i] == 44 {
 				q += 2
 			}
-			if I(e, s[i]) != -1 {
+			if I("=+-'\"", s[i]) != -1 {
 				q += 3
 			}
 			if s[i] == 40 || s[i] == 41 {
 				q++
 			}
-			if I(f, s[i]) != -1 {
+			if I("{}[]<>", s[i]) != -1 {
 				q += 8
 			}
 			i++

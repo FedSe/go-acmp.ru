@@ -1,20 +1,19 @@
 package main
 import . "fmt"
 func main() {
-	var n, m, i int
-	Scan(&n, &m)
+	n := 0
+	m := 0
 
+	Scan(&n, &m)
 	for n != m {
 		if n > m {
-			n -= m
-		} else {
-			m -= n
+			n, m = m, n
 		}
+		m -= n
 	}
 
-	for i < n {
+	for 0 < n {
 		Print(1)
-	i++
+		n--
 	}
-
 }

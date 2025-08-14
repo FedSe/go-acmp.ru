@@ -1,41 +1,32 @@
 package main
-import (. "fmt"
-. "strings"
+import (
+	. "fmt"
+	. "strings"
 )
-var (n, m, k, i int
-	a []string
-)
-
-func A(){
-	a = append(a, "." + Repeat(".", m) + ".")
-}
-
 func main() {
+	var n, m, k, i, j int
+	R := Repeat
+
 	Scan(&n, &m)
+	a := [103]string{R(".", m+2)}
 
-	A()
-	for i < n {
-		t:=""
+	for j < n {
+		t := ""
 		Scan(&t)
-		a = append(a, "." + t + ".")
-	i++
+		j++
+		a[j] = "." + t + "."
 	}
-	A()
+	a[j+1] = R(".", m+2)
 
-	for
-	i := 1
-	i < n+1
-	{
-		for
-		j := 1
-		j < m+1
-		{
-			if a[i-1][j] + a[i][j+1] + a[i+1][j] + a[i][j-1] + a[i][j] == 230 {
+	for i < n {
+		i++
+		j = 0
+		for j < m {
+			j++
+			if a[i-1][j]+a[i][j+1]+a[i+1][j]+a[i][j-1]+a[i][j] == 230 {
 				k++
 			}
-		j++
 		}
-	i++
 	}
 
 	Print(k)

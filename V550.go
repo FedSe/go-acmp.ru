@@ -1,11 +1,11 @@
 package main
 import . "fmt"
 func main() {
-	n:=0
-	s:=3
+	n := 0
+	s := 3
+	
 	Scan(&n)
-
-	if n%400 < 1 || (n%4 < 1 && n%100 > 0) {
+	if n%400 < 1 || n%4 < 1 && n%100 > 0 {
 		s--
 	}
 

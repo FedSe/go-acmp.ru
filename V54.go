@@ -2,45 +2,39 @@ package main
 import . "fmt"
 func main() {
 	var (
-		n, m, x, i, j, l int
-		w, c [100]int
+		n, m, i, j, x int
+		q = 1001
+		r             = -q
+		a             [100]int
 	)
+
 	Scan(&n, &m)
-
 	for i < n {
-		w[i] = 1001
-		for
-		j := 0
-		j < m
-		{
+		s := q
+		l := 0
+		for l < m {
 			Scan(&x)
-			if i == 0 {
-				c[j] = -1001
+			if x < s {
+				s = x
 			}
-			if w[i] > x { w[i] = x }
-			if c[j] < x { c[j] = x }
-		j++
+			if x > a[l] || i < 1 {
+				a[l] = x
+			}
+			l++
 		}
-	i++
+		if s > r {
+			r = s
+		}
+		i++
 	}
 
-	a := c[0]
+	n = q
 	for j < m {
-		x = c[j]
-		if x < a {
-			a = x
+		if a[j] < n {
+			n = a[j]
 		}
-	j++
+		j++
 	}
 
-	k := w[0]
-	for l < n {
-		x = w[l]
-		if x > k {
-			k = x
-		}
-	l++
-	}
-
-	Print(k, a)
+	Print(r, n)
 }

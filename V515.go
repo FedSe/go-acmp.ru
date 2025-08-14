@@ -3,11 +3,10 @@ import (
 	. "fmt"
 	. "math"
 )
-
 func main() {
 	var a, b, z, c, s, n, i float64
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
 		Scan(&z, &c)
 		a -= z
@@ -17,8 +16,6 @@ func main() {
 		b = c
 	i++
 	}
-	
-	s += Sqrt(z*z + c*c)
 
-	Printf("%.3f", s)
+	Print(s+Sqrt(z*z + c*c))
 }

@@ -2,34 +2,23 @@ package main
 import . "fmt"
 func main() {
 	var a, b, c, d, t int
-	s := "YES"
-
 	Scan(&t)
 	for 0 < t {
 		Scan(&a, &b, &c, &d)
-		g:="NO"
-
+		g := "NO "
 		if a == c && b == d {
-			g=s
+			g = "YES "
 		}
-		for b > 0 {
-			if b > a {
+		for a > 0 && b > 0 {
+			if a < b {
 				a, b = b, a
-				if a == c && b == d {
-					g=s
-				}
 			}
-			if b > 0 {
-				O := a-c
-				a -= a / b * b
-				if b == d && a <= c && 0 <= O && O%b == 0 {
-					g=s
-				}
+			if b == d && a >= c && (a-c)%b < 1 {
+				g = "YES "
 			}
+			a %= b
 		}
-
-	Println(g)
-	t--
+		Print(g)
+		t--
 	}
-
 }

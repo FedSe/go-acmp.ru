@@ -20,7 +20,8 @@ func main() {
 
 	o := make([]R, 0, k)
 	for 0 < k {
-		Scanf("%d %d %c\n", &x, &y, &d)
+		Scanf(`%d %d %c
+`, &x, &y, &d)
 		o = append(o, R{x - 1, y - 1, h[d][0], h[d][1]})
 		k--
 	}

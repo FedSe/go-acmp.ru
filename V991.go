@@ -40,8 +40,7 @@ func main() {
 			if u >= 0 {
 				o := q[u]
 				p := c[u]
-				f := p[l]
-				if o < 0 || p[o] < f || (p[o] == f && w[o] > w[l]) {
+				if o < 0 || p[o] < p[l] || p[o] == p[l] && w[o] > w[l] {
 					q[u] = l
 				}
 			}
@@ -50,7 +49,7 @@ func main() {
 		t++
 		i = 0
 		for i < n {
-			if q[i] >= 0 {
+			if q[i] > 0 {
 				a--
 				l = q[i]
 				c[l][i]++

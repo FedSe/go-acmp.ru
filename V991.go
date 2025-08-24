@@ -1,9 +1,10 @@
 package main
 import . "fmt"
+type A [200]int
 func main() {
 	var (
-		c, m       [100][200]int
-		v, w, r, b [200]int
+		c, m       [100]A
+		v, w, r, b A
 		n, k, t, i int
 	)
 

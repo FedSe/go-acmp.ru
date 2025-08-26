@@ -1,8 +1,9 @@
 package main
 import . "fmt"
+type T []int
 func main() {
 	var (
-		g = []int{-2, -2, -1, -1, 1, 1, 2, 2, -1, 1, -2, 2, -2, 2, -1, 1}
+		g = T{-2, -2, -1, -1, 1, 1, 2, 2, -1, 1, -2, 2, -2, 2, -1, 1}
 		v = map[int]int{}
 		a = ""
 		b = a
@@ -15,11 +16,11 @@ func main() {
 
 	if a != b {
 		d--
-		q := [][]int{{j, l, 0}}
+		q := []T{{j, l, 0}}
 		v[j*10+l] = 1
 		for len(q) > 0 {
 			var (
-				z [][]int
+				z []T
 				c = q[0][0]
 				r = q[0][1]
 				m = q[0][2]
@@ -38,7 +39,7 @@ func main() {
 							if s < 0 || s > 8 || k < 0 || k > 8 {
 								break
 							}
-							z = append(z, []int{s, k})
+							z = append(z, T{s, k})
 							i++
 						}
 						y += 2
@@ -47,7 +48,7 @@ func main() {
 				}
 			} else {
 				for i < 8 {
-					z = append(z, []int{c + g[i+8], r + g[i]})
+					z = append(z, T{c + g[i+8], r + g[i]})
 					i++
 				}
 			}
@@ -62,7 +63,7 @@ func main() {
 				}
 				if i >= 0 && r >= 0 && v[c] < 1 {
 					v[c] = 1
-					q = append(q, []int{i, r, m + 1})
+					q = append(q, T{i, r, m + 1})
 				}
 			}
 		}

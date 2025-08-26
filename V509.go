@@ -1,13 +1,16 @@
 package main
 import . "fmt"
+type T string
 type R struct {
-	s string
+	s T
 	i int
 }
 func main() {
-	var a, b, c, d string
-	k := 0
-	D := []int{0, 0, -1, 1}
+	var (
+		a, b, c, d T
+		k          = 0
+		D          = []int{0, 0, -1, 1}
+	)
 
 	Scan(&a, &b, &c, &d)
 	a += b
@@ -35,7 +38,7 @@ func main() {
 					n := x*4 + y
 					w := []byte(t.s)
 					w[p], w[n] = w[n], w[p]
-					b = string(w)
+					b = T(w)
 					if b == c {
 						k = t.i + 1
 						goto A

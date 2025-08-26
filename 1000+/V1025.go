@@ -6,7 +6,7 @@ func main() {
 			N, M, l, i int
 			P          = Print
 			q, z       [3e4]int
-			G          = int(1e9)
+			G          int = 1e9
 		)
 
 		Scan(&N, &M)

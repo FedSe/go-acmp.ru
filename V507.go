@@ -1,13 +1,15 @@
 package main
 import . "fmt"
+type T [4]int
+type M = map[any]int
 func main() {
 	var (
 		n, i, l, j, z int
-		v             = map[any]int{}
-		m             = map[any]int{}
-		t, u          [][4]int
-		b             [4][4]int
-		a             [4]int
+		v             = M{}
+		m             = M{}
+		t, u          []T
+		b             [4]T
+		a             T
 		P             = Println
 		S             = Scan
 	)
@@ -26,7 +28,7 @@ func main() {
 		i++
 	}
 
-	q := [][4]int{a}
+	q := []T{a}
 	for len(q) > 0 {
 		s := q[0]
 		q = q[1:]

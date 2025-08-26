@@ -1,9 +1,10 @@
 package main
 import . "fmt"
+type T [101]int
 func main() {
 	var (
-		s, d             [101]int
-		h                [101][101]int
+		s, d             T
+		h                [101]T
 		n, S, F, x, l, i int
 		q                = 1 << 30
 	)
@@ -54,5 +55,6 @@ func main() {
 	if l == q {
 		l = -1
 	}
+
 	Print(l)
 }

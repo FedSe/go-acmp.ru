@@ -1,6 +1,8 @@
 package main
 import . "fmt"
 type R struct{ x, y, a, b int }
+type A [2]int
+type T map[A]int
 func main() {
 	var (
 		g                   [100]string
@@ -36,29 +38,29 @@ func main() {
 				w = append(w, R{k, i, r.a, r.b})
 			}
 		}
-		z := map[any]int{}
+		z := T{}
 		for _, r := range w {
-			z[[2]int{r.x, r.y}]++
+			z[A{r.x, r.y}]++
 		}
 		j := w[:0]
 		for _, r := range w {
-			if z[[2]int{r.x, r.y}] == 1 {
+			if z[A{r.x, r.y}] == 1 {
 				j = append(j, r)
 			}
 		}
 		v := make([]R, 0, len(j))
-		e := map[any]int{}
+		e := T{}
 		for _, r := range j {
 			k = r.x + r.a
 			i = r.y + r.b
 			for k >= 0 && k < m && i >= 0 && i < n && g[i][k] < 88 {
-				e[[2]int{k, i}] = 1
+				e[A{k, i}] = 1
 				k += r.a
 				i += r.b
 			}
 		}
 		for _, r := range j {
-			if e[[2]int{r.x, r.y}] < 1 {
+			if e[A{r.x, r.y}] < 1 {
 				v = append(v, r)
 			}
 		}

@@ -3,7 +3,7 @@ import . "fmt"
 func main() {
 	var (
 		n, m, u, v int
-		e          = map[[2]int]int{}
+		e          = map[any]int{}
 		s          = "YES"
 	)
 
@@ -20,5 +20,6 @@ func main() {
 	if len(e) < n {
 		s = "NO"
 	}
+    
 	Print(s)
 }

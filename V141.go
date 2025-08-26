@@ -1,48 +1,44 @@
 package main
 import . "fmt"
 var (
-    a [100][100]int
-    b, p [100]int
-    k, n, i int
-    f = 1>0
+	b, p, a [1e4]int
+	k, n, i int
+	f       = 1 > 0
 )
 
-func d(j int) {
+func F(j int) {
 	b[j] = 1
 	k++
-	for
 	i := 0
-	f && i < n
-	{
-		if a[j][i] > 0 {
+	for f && i < n {
+		if a[j+i*100] > 0 {
 			if b[i] < 1 {
 				p[i] = j
-				d(i)
+				F(i)
 			} else {
 				f = p[j] == i
 			}
 		}
-	i++
+		i++
 	}
 }
 
 func main() {
-	s:="NO"
+	s := "NO"
 	Scan(&n)
 	for i < n {
-		for
 		j := 0
-		j < n
-		{
-			Scan(&a[i][j])
-		j++
+		for j < n {
+			Scan(&a[i+j*100])
+			j++
 		}
-	i++
+		i++
 	}
 
-	d(0)
+	F(0)
 	if f && k == n {
-		s="YES"
+		s = "YES"
 	}
+
 	Print(s)
 }

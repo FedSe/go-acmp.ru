@@ -1,10 +1,11 @@
 package main
 import . "fmt"
+type M map[int]int
 func main() {
 	var (
 		n, m, i, t int
-		a          = map[int]int{}
-		b          = map[int]int{}
+		a          = M{}
+		b          = M{}
 	)
 
 	Scan(&n, &m)

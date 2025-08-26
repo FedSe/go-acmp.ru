@@ -1,10 +1,11 @@
 package main
 import . "fmt"
+type T float64
 func main() {
-	var A, B, C [3]float64
+	var A, B, C [3]T
 	Scan(&A[0], &A[1], &A[2], &B[0], &B[1], &B[2], &C[0], &C[1], &C[2])
 
-	F := func(u, v [3]float64) (float64, float64) {
+	F := func(u, v [3]T) (T, T) {
 		d := u[0]*v[1] - v[0]*u[1]
 		return (u[2]*v[1] - v[2]*u[1]) / d, (u[0]*v[2] - v[0]*u[2]) / d
 	}

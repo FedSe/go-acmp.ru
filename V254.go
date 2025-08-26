@@ -3,8 +3,7 @@ import . "fmt"
 func main() {
 	var (
 		n, m, i, f, t int
-		p             [201]int
-		o             [5e3]int
+		o, p          [5e3]int
 		S             = Scan
 	)
 

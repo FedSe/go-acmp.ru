@@ -1,6 +1,7 @@
 package main
 import . "fmt"
 const M = 1e9 + 9
+type T [100]int
 func F(n int) int {
 	if n < 3 {
 		return n - 1
@@ -24,7 +25,7 @@ func main() {
 		N, t int
 		i    = 4
 		n    = 100
-		m    = make([]int, 100)
+		m    T
 	)
 
 	Scan(&N)
@@ -47,7 +48,7 @@ func main() {
 	}
 
 	for i <= N {
-		w := make([]int, 100)
+		var w T
 		q := 0
 		for q < 100 {
 			a := q / 10

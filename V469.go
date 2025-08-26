@@ -1,12 +1,11 @@
 package main
+
 import (
 	. "container/heap"
 	. "fmt"
 )
 
-type S struct {
-	a, b, c int
-}
+type S struct { a, b, c int }
 
 type P []*S
 
@@ -28,7 +27,7 @@ func (p *P) Pop() any {
 	o := *p
 	n := len(o) - 1
 	e := o[n]
-	*p = o[0:n]
+	*p = o[:n]
 	return e
 }
 
@@ -36,7 +35,6 @@ func main() {
 	var (
 		g, d    [50][50]int
 		n, m, i int
-		D       = []int{-1, 0, 1, 0}
 		y       P
 	)
 
@@ -56,8 +54,8 @@ func main() {
 		z := Pop(&y).(*S)
 		i = 0
 		for i < 4 {
-			h := z.b + D[i]
-			u := z.c + D[3-i]
+			h := z.b + i%2 - i/3*2
+			u := z.c + 1 - i + i/3*2
 			if h >= 0 && u >= 0 {
 				l := z.a + g[h][u]
 				if l < d[h][u] {

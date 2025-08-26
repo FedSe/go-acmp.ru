@@ -1,9 +1,10 @@
 package main
 import . "fmt"
+type T [101]int
 func main() {
 	var (
-		a       [101][101]int
-		d       [101]int
+		a       [101]T
+		d       T
 		n, i, f int
 		S       = Scan
 	)

@@ -4,13 +4,14 @@ import (
 	. "fmt"
 	. "os"
 )
+type A []int
 func main() {
 	var (
-		d, y                [2e5][]int
+		d, y                [2e5]A
 		p, x, z             [2e5]int
 		n, k, t, l, i, e, f int
-		q                   = []int{1}
-		o, h                []int
+		q                   = A{1}
+		o, h                A
 		r                   = b.NewReader(Stdin)
 		P                   = Println
 		S                   = Fscan
@@ -26,7 +27,7 @@ func main() {
 	for i < n {
 		i++
 		S(r, &k)
-		d[i] = make([]int, k)
+		d[i] = make(A, k)
 		l = 0
 		for l < k {
 			S(r, &d[i][l])

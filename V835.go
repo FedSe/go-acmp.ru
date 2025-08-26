@@ -17,7 +17,7 @@ func main() {
 	for d < 1<<n {
 		var e, f, g, l, k int
 		for l < n {
-			if (d>>l)&1 > 0 {
+			if d>>l&1 > 0 {
 				e += w[l]
 				f += p[l]
 				g++
@@ -26,8 +26,8 @@ func main() {
 		}
 		y := 1 > 0
 		for k < n {
-			o := (d >> k) & 1
-			p := (b >> k) & 1
+			o := d>>k&1
+			p := b>>k&1
 			if o != p {
 				y = o > p
 				break
@@ -41,7 +41,7 @@ func main() {
 	}
 
 	for i < n {
-		if (b>>i)&1 > 0 {
+		if b>>i&1 > 0 {
 			s = append(s, i+1)
 		}
 		i++

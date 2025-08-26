@@ -1,10 +1,11 @@
 package main
 import . "fmt"
 type R struct{ a, b, c, d int }
+type A [101]int
 func main() {
 	var (
-		d             [25]int
-		w             [25][25]int
+		d             A
+		w             [25]A
 		n, m, j, l, i int
 	)
 
@@ -37,8 +38,8 @@ func main() {
 				c = b.d
 			}
 			if y < x && z < c ||
-				(y == x && z < c) ||
-				(z == c && y < x) {
+				y == x && z < c ||
+				z == c && y < x {
 				w[l][j] = 1
 				w[j][l] = 1
 			}
@@ -66,7 +67,7 @@ func main() {
 					j++
 				}
 			}
-			g := [101][101]int{}
+			g := [101]A{}
 			for _, i := range o {
 				r := s[i]
 				j = r.a

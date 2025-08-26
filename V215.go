@@ -1,9 +1,9 @@
 package main
 import . "fmt"
+type T [100]int
 func main() {
 	var (
-		d, g          [100][100]int
-		D             = []int{-1, 0, 1, 0, -1}
+		d, g          [100]T
 		n, m, c, j, i int
 	)
 
@@ -21,7 +21,7 @@ func main() {
 		j = 0
 		for j < m {
 			if d[i][j] < 1 {
-				s := [][2]int{{i, j}}
+				s := []T{{i, j}}
 				h := g[i][j]
 				o := 0
 				d[i][j] = 1
@@ -32,14 +32,14 @@ func main() {
 					s = s[:k]
 					k = 0
 					for k < 4 {
-						e := x + D[k]
-						b := y + D[k+1]
+						e := x + k%2 - k/3*2
+						b := y + 1 - k + k/3*2
 						a := 10001
 						if e >= 0 && e < n && b >= 0 && b < m {
 							a = g[e][b]
 							if d[e][b] < 1 && a == h {
 								d[e][b] = 1
-								s = append(s, [2]int{e, b})
+								s = append(s, T{e, b})
 							}
 						}
 						if a < h {

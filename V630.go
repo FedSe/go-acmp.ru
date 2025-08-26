@@ -14,7 +14,7 @@ func main() {
 		var (
 			C, D, E             [2e4]int
 			n, a, v, w, t, z, j int
-			o                   = int(9e18)
+			o                   = 9 << 50
 			s                   = "Accepted"
 		)
 		S(r, &n)

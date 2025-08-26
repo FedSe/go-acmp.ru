@@ -5,22 +5,24 @@ import (
 	. "os"
 	. "strings"
 )
+type T map[any]int
 func main() {
 	var (
 		N, M int
-		y    = map[any]int{}
-		z    = map[any]int{}
+		y    = T{}
+		z    = T{}
 		w    []string
 		s    = b.NewScanner(Stdin)
 		a    = "Everything is going to be OK."
 		o    = ""
 		q    = o
 		L    = ToLower
+		S    = Scanln
 	)
 
-	Scanln(&N, &M)
+	S(&N, &M)
 	for 0 < N {
-		Scanln(&o)
+		S(&o)
 		z[L(o)] = 1
 		w = append(w, L(o))
 		N--
@@ -34,11 +36,9 @@ func main() {
 					v += 32
 				}
 				q += string(v)
-			} else {
-				if len(q) > 0 {
-					y[q] = 1
-					q = ""
-				}
+			} else if len(q) > 0 {
+				y[q] = 1
+				q = ""
 			}
 		}
 		M--

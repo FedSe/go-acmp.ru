@@ -6,14 +6,15 @@ func main() {
 		d          [1e6 + 1]int
 		n, k, l, i int
 		f          = 1 << 30
+		S          = Scan
 	)
 
-	Scan(&n)
+	S(&n)
 	for l < n {
-		Scan(&o[l])
+		S(&o[l])
 		l++
 	}
-	Scan(&k)
+	S(&k)
 
 	for i < k {
 		i++
@@ -35,5 +36,6 @@ func main() {
 	if k == f {
 		k = -1
 	}
+    
 	Print(k)
 }

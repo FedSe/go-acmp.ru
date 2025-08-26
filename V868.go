@@ -5,10 +5,11 @@ import (
 	. "os"
 	. "sort"
 )
+type T [400]int
 func main() {
 	var (
-		a, c                [400][400]int
-		t                   [400]int
+		a, c                [400]T
+		t                   T
 		n, m, w, i, l, j, z int
 		s                   = b.NewReader(Stdin)
 	)
@@ -63,7 +64,7 @@ func main() {
 			}
 			k++
 		}
-		return 1<0
+		return 1 < 0
 	})
 
 	Print(c[n-1][m-1])

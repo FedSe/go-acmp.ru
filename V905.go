@@ -4,12 +4,13 @@ import (
 	. "fmt"
 	. "os"
 )
+type T map[byte]byte
 func main() {
 	s := b.NewScanner(Stdin)
 	var (
 		e []string
 		i = 0
-		p = map[byte]byte{}
+		p = T{}
 		x = -1
 		a = "the quick brown fox jumps over the lazy dog"
 		P = Println
@@ -24,8 +25,8 @@ func main() {
 
 	for i, l := range e {
 		if len(l) == len(a) {
-			o := map[byte]byte{}
-			u := map[byte]int{}
+			o := T{}
+			u := T{}
 			v := 1
 			j := 0
 			for j < len(l) {

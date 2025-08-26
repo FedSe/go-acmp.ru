@@ -1,11 +1,12 @@
 package main
 import . "fmt"
+type T [2][11][11]int
 func main() {
 	var (
-		p       [2][11][11]int
+		p       T
 		C       = ""
 		z, l, i int
-		M       = 1000000007
+		M       int = 1e9 + 7
 	)
 
 	Scan(&C)
@@ -18,7 +19,7 @@ func main() {
 
 	p[0][10][10] = 1
 	for i < n {
-		var w [2][11][11]int
+		var w T
 		l = 0
 		for l < 2 {
 			o := 0
@@ -31,15 +32,13 @@ func main() {
 						for a < 10 {
 							b := 0
 							for b < 10 {
-								if (i != n-1 || (a != 0 && b != 0)) &&
-									(o == 10 || a != o) &&
-									(h == 10 || b != h) {
-									t := a + b + l
-									if t%10 == int(v[i]-48) {
-										e := &w[t/10][a][b]
-										*e += r
-										*e %= M
-									}
+								t := a + b + l
+								if (i < n-1 || a*b > 0) &&
+									a != o && b != h &&
+									t%10 == int(v[i]-48) {
+									e := &w[t/10][a][b]
+									*e += r
+									*e %= M
 								}
 								b++
 							}
@@ -62,5 +61,6 @@ func main() {
 			z %= M
 		}
 	}
+
 	Print(z)
 }

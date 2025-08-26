@@ -22,20 +22,20 @@ func main() {
 		i = 0
 		for i < n {
 			if p[i][v] < 1 {
-				a[v] |= (1 << i)
+				a[v] |= 1 << i
 			}
 			i++
 		}
 		v++
 	}
 
-	n = (1 << n) - 1
+	n = 1<<n - 1
 	v = m + 1
 	i = 1
-	for i < (1 << m) {
+	for i < 1<<m {
 		var j, o, e int
 		for j < m {
-			if i&(1<<j) > 0 {
+			if 1<<j&i > 0 {
 				e |= a[j]
 				o++
 			}
@@ -55,7 +55,7 @@ func main() {
 
 	P(v)
 	for q < m {
-		if b&(1<<q) > 0 {
+		if 1<<q&b > 0 {
 			P(q + 1)
 		}
 		q++

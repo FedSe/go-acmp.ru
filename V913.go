@@ -1,5 +1,6 @@
 package main
 import . "fmt"
+type T = float64
 func main() {
 	var n, m, t, i, z int
 
@@ -16,10 +17,10 @@ func main() {
 	n = 1
 	i = 1
 	for i <= m {
-		k := float64(t) / float64(i)
+		k := T(t) / T(i)
 		for _, g := range s {
 			if i > g.L {
-				k += float64(g.H)
+				k += T(g.H)
 			}
 		}
 		if k < w || (k == w && i > n) {

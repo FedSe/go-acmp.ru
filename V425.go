@@ -1,5 +1,6 @@
 package main
 import . "fmt"
+type A float64
 func main() {
 	var N, w, e, q, i int
 	Scan(&N, &w, &e)
@@ -24,9 +25,9 @@ func main() {
 				k := v[2] - x
 				m := v[3] - p
 				p -= w
-				h := float64(n*m - e*k)
-				t := float64(x*m-p*k) / h
-				u := float64(x*e-p*n) / h
+				h := A(n*m - e*k)
+				t := A(x*m-p*k) / h
+				u := A(x*e-p*n) / h
 				if t >= 0 && t <= 1 && u >= 0 && u <= 1 {
 					q++
 					break

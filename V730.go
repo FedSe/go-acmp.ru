@@ -1,75 +1,71 @@
 package main
 import . "fmt"
-type S struct{ u, v, c, i int }
+type A int16
 func main() {
 	var (
-		h                   []int
-		n, m, u, v, c, l, o int
-		q                   = int16(1 << 14)
-		P                   = Println
+		h                []int
+		Y, V, C, I       [22]int
+		n, m, u, v, l, o int
+		q                A = 1 << 14
+		a                A
+		P                = Println
 	)
 
 	Scan(&n, &m)
-	if n < 2 {
-		P(0, 0)
-		return
-	}
+	if n > 1 {
+		for l < m {
+			Scan(&u, &v, &C[l])
+			Y[l] = u - 1
+			V[l] = v - 1
+			I[l] = l + 1
+			l++
+		}
 
-	y := make([]S, m)
-	for l < m {
-		Scan(&u, &v, &c)
-		y[l] = S{u - 1, v - 1, c, l + 1}
-		l++
-	}
+		z := 1 << n
+		d := make([]A, z)
+		for i := range d {
+			d[i] = q
+		}
+		d[1] = 0
 
-	z := 1 << n
-	d := make([]int16, z)
-	for i := range d {
-		d[i] = q
-	}
-	d[1] = 0
-
-	for o < z {
-		if d[o] != q {
-			for _, e := range y {
-				if (o>>e.u)&1 > (o>>e.v)&1 {
-					m = o | (1 << e.v)
-					x := d[o] + int16(e.c)
-					if x < d[m] {
-						d[m] = x
+		for o < z {
+			if d[o] != q {
+				for i, e := range Y {
+					if o>>e&1 > 0 {
+						m = o | 1<<V[i]
+						x := d[o] + A(C[i])
+						if x < d[m] {
+							d[m] = x
+						}
 					}
 				}
 			}
+			o++
 		}
-		o++
-	}
 
-	z--
-	c = z
-	for c != 1 {
-		l = 0
-		m = 0
-		n = 0
-		for _, e := range y {
-			if (c>>e.v)&1 > 0 {
-				u = c ^ (1 << e.v)
-				if (u>>e.u)&1 == 1 && d[u]+int16(e.c) == d[c] {
-					l = e.i
+		z--
+		c := z
+		for c != 1 {
+			l = 0
+			m = 0
+			n = 0
+			for i := range Y {
+				u = c ^ 1<<V[i]
+				if d[u]+A(C[i]) == d[c] {
+					l = I[i]
 					m = u
 					n = 1
 					break
 				}
 			}
+			h = append(h, l)
+			c = m
 		}
-		if n < 1 {
-			break
-		}
-		h = append(h, l)
-		c = m
+		a = d[z]
+		l = len(h)
 	}
 
-	l = len(h)
-	P(d[z], l)
+	P(a, l)
 	for l > 0 {
 		l--
 		P(h[l])

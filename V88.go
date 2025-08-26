@@ -1,34 +1,31 @@
 package main
 import . "fmt"
+type T map[int]int
 func main() {
 	var (
-		a [101][101]int
+		a       [101][101]int
 		n, l, i int
-		s = "Incorrect"
+		s       = "Incorrect"
 	)
 
 	Scan(&n)
-	p:=n*n
+	p := n * n
 
 	for l < p {
-		for
 		j := 0
-		j < p
-		{
+		for j < p {
 			Scan(&a[l][j])
-		j++
+			j++
 		}
-	l++
+		l++
 	}
 
 	l = 1
 	for i < p {
-		r := map[int]int{}
-		c := map[int]int{}
-		for
+		r := T{}
+		c := T{}
 		j := 0
-		j < p
-		{
+		for j < p {
 			w := a[i][j]
 			if w < 1 || w > p {
 				l = 0
@@ -36,41 +33,35 @@ func main() {
 			r[w]++
 			c[a[j][i]]++
 
-			if i % n < 1 && j % n < 1 {
-				s := map[int]int{}
-				for 
+			if i%n < 1 && j%n < 1 {
+				s := T{}
 				r := 0
-				r < n
-				{
-					for
+				for r < n {
 					v := 0
-					v < n
-					{
+					for v < n {
 						s[a[i+r][j+v]]++
-					v++
+						v++
 					}
-				r++
+					r++
 				}
 				if len(s) != p {
 					l = 0
 				}
 			}
 
-		j++
+			j++
 		}
 
 		if len(r) != p || len(c) != p {
 			l = 0
 		}
 
-	i++
+		i++
 	}
-
 
 	if l > 0 {
 		s = "Correct"
 	}
 
 	Print(s)
-
 }

@@ -1,17 +1,18 @@
 package main
 import . "fmt"
 type H struct{ a, b int }
+type T [2e5 + 2]int
 func main() {
 	var (
-		w    = 131
-		z    = 1313
-		o    = 1000000007
-		d    = 998244353
-		k, g [2e5 + 1]int
-		q, i int
-		a    = ""
-		b    = a
-		h    = map[H]bool{}
+		w                    = 13
+		z                    = 131
+		o                int = 1e9 + 7
+		d                    = 9
+		k, g, x, m, y, c T
+		q, i, l, I, j, u int
+		a                = ""
+		b                = a
+		h                = map[H]int{}
 	)
 
 	k[0] = 1
@@ -26,35 +27,29 @@ func main() {
 	A := len(a)
 	B := len(b)
 	if B <= A {
-		var (
-			x, m, y, c [2e5 + 2]int
-			F          = func(l, r int) H {
-				return H{(m[r] - m[l]*k[r-l]%o + o) % o,
-					(x[r] - x[l]*g[r-l]%d + d) % d}
-			}
-			l, j, I, i int
-		)
 		for l < A {
 			m[l+1] = (m[l]*w + int(a[l])) % o
 			x[l+1] = (x[l]*z + int(a[l])) % d
 			l++
 		}
-		s := b + b
-		for j < len(s) {
-			y[j+1] = (y[j]*w + int(s[j])) % o
-			c[j+1] = (c[j]*z + int(s[j])) % d
+		b += b
+		for j < len(b) {
+			y[j+1] = (y[j]*w + int(b[j])) % o
+			c[j+1] = (c[j]*z + int(b[j])) % d
 			j++
 		}
 		for I < B {
 			h[H{(y[I+B] - y[I]*k[B]%o + o) % o,
-				(c[I+B] - c[I]*g[B]%d + d) % d}] = 1 > 0
+				(c[I+B] - c[I]*g[B]%d + d) % d}] = 1
 			I++
 		}
-		for i <= A-B {
-			if h[F(i, i+B)] {
+		for u <= A-B {
+			i = u + B
+			if h[H{(m[i] - m[u]*k[i-u]%o + o) % o,
+				(x[i] - x[u]*g[i-u]%d + d) % d}] > 0 {
 				q++
 			}
-			i++
+			u++
 		}
 	}
 

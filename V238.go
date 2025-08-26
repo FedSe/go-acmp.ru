@@ -3,12 +3,11 @@ import . "fmt"
 type A struct{ x, y int }
 func main() {
 	var (
-		d, g                   [100][100]int
-		D                      = []int{-1, 0, 1, 0, -1}
-		t                      = map[A]A{}
-		n, m, k, h, x, y, j, i int
-		S                      = Scan
-		r                      = "Impossible"
+		d, g                      [100][100]int
+		t                         = map[A]A{}
+		n, m, k, h, x, y, j, i, p int
+		S                         = Scan
+		r                         = "Impossible"
 	)
 
 	S(&n, &m, &k, &h)
@@ -51,7 +50,7 @@ func main() {
 		}
 		i = 0
 		for i < 4 {
-			v := A{z.x + D[i], z.y + D[i+1]}
+			v := A{z.x + i%2 - i/3*2, z.y + 1 - i + i/3*2}
 			if v.x >= 0 && v.x < n && v.y >= 0 && v.y < m && g[v.x][v.y] < 1 && d[v.x][v.y] < 0 {
 				d[v.x][v.y] = k
 				q = append(q, v)
@@ -60,12 +59,11 @@ func main() {
 		}
 	}
 
-	x = -1
 	for _, v := range e {
 		i = d[v.x][v.y]
-		if i > 0 && (x < 0 || i < x) {
-			x = i
-			r = Sprint(x)
+		if i > 0 && (p < 1 || i < p) {
+			p = i
+			r = Sprint(p)
 		}
 	}
 

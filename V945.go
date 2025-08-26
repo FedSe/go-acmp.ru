@@ -7,12 +7,12 @@ import (
 func main() {
 	var (
 		n, k, x int
+		m       = map[any]int{}
 		w       = b.NewReader(Stdin)
 		S       = Fscan
 	)
 
 	S(w, &n, &k)
-	m := map[any]int{}
 	for 0 < n {
 		S(w, &x)
 		m[x] = 1

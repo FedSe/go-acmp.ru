@@ -1,10 +1,16 @@
 package main
+
 import (
 	. "fmt"
 	. "strings"
 )
+
 var n, m, v, h, o, i, j, u, k int
-func F(q []int, g [][]byte, z *int) [][]byte {
+
+type A []byte
+type B []int
+
+func F(q B, g []A, z *int) []A {
 	for len(q) > 0 {
 		h = q[0]
 		o = q[1]
@@ -14,7 +20,7 @@ func F(q []int, g [][]byte, z *int) [][]byte {
 			*z = j
 		}
 		j++
-		for _, v := range [][2]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}} {
+		for _, v := range []B{{-1, 0}, {1, 0}, {0, -1}, {0, 1}} {
 			a, b := h+v[0], o+v[1]
 			if g[a][b] == 46 {
 				g[a][b] = 42
@@ -27,10 +33,10 @@ func F(q []int, g [][]byte, z *int) [][]byte {
 func main() {
 	s := ""
 	Scan(&n, &m)
-	g := make([][]byte, n)
+	g := make([]A, n)
 	for i < n {
 		Scan(&s)
-		g[i] = []byte(s)
+		g[i] = A(s)
 		j = Index(s, "T")
 		if j > 0 {
 			h = i
@@ -39,7 +45,7 @@ func main() {
 		i++
 	}
 
-	q := []int{h, o, 0}
+	q := B{h, o, 0}
 	g[h][o] = 42
 
 	g = F(q, g, &v)
@@ -60,7 +66,7 @@ func main() {
 		i++
 	}
 
-	q = []int{1, 1, 0}
+	q = B{1, 1, 0}
 	g[1][1] = 42
 
 	g = F(q, g, &u)

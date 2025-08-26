@@ -1,9 +1,12 @@
 package main
 import . "fmt"
+type A map[int]int
 func main() {
-	var m, n, t, j int
-	i := 1
-	q := map[int]int{}
+	var (
+		m, n, t, j int
+		i          = 1
+		q          = A{}
+	)
 
 	Scan(&m, &n)
 	if m > n {
@@ -15,7 +18,7 @@ func main() {
 		j++
 	}
 	for i < n {
-		o := map[int]int{}
+		o := A{}
 		p := 0
 		for p < e {
 			h := 0

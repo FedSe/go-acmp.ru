@@ -1,8 +1,9 @@
 package main
 import . "fmt"
+type T [100]int
 func main() {
 	var (
-		a          [100][100]int
+		a          [100]T
 		n, m, i, l int
 	)
 
@@ -18,7 +19,7 @@ func main() {
 
 	q := a[0][0]
 	for l < n {
-		var p [100]int
+		var p T
 		i = l
 		for i < n {
 			j := 0

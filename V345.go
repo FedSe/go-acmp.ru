@@ -4,13 +4,14 @@ import (
 	. "fmt"
 	. "os"
 )
+type T = string
 func main() {
 	var (
 		n, k, i int
 		r       = b.NewReader(Stdin)
-		p       = []string{}
-		g       = map[string][]string{}
-		F       func(string) int
+		p       = []T{}
+		g       = map[T][]T{}
+		F       func(T) int
 	)
 
 	Scanln(&n)
@@ -19,7 +20,7 @@ func main() {
 		p = append(p, a)
 		Fscan(r, &k)
 		r.ReadString('\n')
-		var c []string
+		var c []T
 		for 0 < k {
 			b, _ := r.ReadString('\n')
 			c = append(c, b)
@@ -33,7 +34,7 @@ func main() {
 	h := make([]int, n)
 	for i, z := range p {
 		e := map[any]int{}
-		F = func(u string) int {
+		F = func(u T) int {
 			if u == z {
 				return 1
 			}

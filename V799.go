@@ -43,7 +43,7 @@ func main() {
 		x--
 	}
 
-	u = int(1e9)
+	u = 1e9
 	for i < n-1 {
 		l = a[i]
 		if l%10 == 5 && a[i+1] < l && i > 0 && p[i-1] >= o {
@@ -55,7 +55,7 @@ func main() {
 		i++
 	}
 
-	if u == int(1e9) {
+	if u == 1e9 {
 		u = 0
 	}
 

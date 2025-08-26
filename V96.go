@@ -1,47 +1,27 @@
 package main
 import . "fmt"
 func main() {
-	var (
-		Y, X, g, v, w, y, i int
-		a = []int{1, 0, -1, 0, 0, 1, 0, -1}
-		o = 1
-		p [102][102]int
-	)
+	var n, m, y, x, i, j, d, c, t, l int
 
-	Scan(&y, &i, &Y, &X)
-
-	for 0 < y {
-		for
-		x := 1
-		x <= i
-		{
-			p[y][x] = 1
-		x++
+	Scan(&n, &m, &y, &x)
+A:
+	for i != y-1 || j != x-1 {
+		q := i + d%2 - d/3*2
+		w := j + 1 - d + d/3*2
+		if q >= t && q < n && w >= l && w < m {
+			i = q
+			j = w
+			c++
+			goto A
 		}
-	y--
+		t += 1 >> d
+		m -= d >> 1 & d
+		n -= d / 2 & d
+		l += d / 3
+
+		d++
+		d %= 4
 	}
 
-	p[Y][X] = 2
-	X = 1
-	Y = 1
-	for p[Y][X] != 2 {
-		if p[Y][X] < 1 {
-			X -= o
-			Y -= w
-			g = (g + 5) % 4
-			o = a[g]
-			w = a[g+4]
-			X += o
-			Y += w
-		}
-		if p[Y][X] != 2 {
-			v++
-			p[Y][X] = 0
-			X += o
-			Y += w
-		}
-	}
-	v++
-
-	Print(v)
+	Print(c + 1)
 }

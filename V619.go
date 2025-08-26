@@ -1,13 +1,14 @@
 package main
 import . "fmt"
+type A [4e3]float64
 func main() {
-	d := [4e3]float64{1}
+	d := A{1}
 	N := 0
 	Q := 0
 
 	Scan(&N, &Q)
 	for 0 < N {
-		var w [4e3]float64
+		var w A
 		s := 0
 		for s <= Q {
 			if d[s] > 0 {

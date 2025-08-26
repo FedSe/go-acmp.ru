@@ -3,18 +3,19 @@ import (
 	. "fmt"
 	. "math"
 )
+type A = float64
 func main() {
 	n := 0
 	i := 0
 
 	Scan(&n)
-	p := make([][2]float64, n)
+	p := make([][2]A, n)
 	for i < n {
 		Scan(&p[i][0], &p[i][1])
-	i++
+		i++
 	}
 
-	F := func (g float64) float64 {
+	F := func(g A) A {
 		u := 0.
 		for _, o := range p {
 			u += Sqrt(Pow(o[0]-g, 2) + Pow(o[1], 2))
@@ -35,5 +36,5 @@ func main() {
 		}
 	}
 
-	Print((l+r)/2)
+	Print((l + r) / 2)
 }

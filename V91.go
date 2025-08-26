@@ -1,8 +1,9 @@
 package main
 import . "fmt"
+type T [1e4]int
 func main() {
-	a := [1e4]int{2, 3, 4, 7, 13}
-	b := [1e4]int{1, 5, 6, 8, 9, 10, 11, 12}
+	a := T{2, 3, 4, 7, 13}
+	b := T{1, 5, 6, 8, 9, 10, 11, 12}
 	n := 0
 	j := 8
 	i := 5
@@ -20,5 +21,5 @@ func main() {
 	}
 
 	n--
-	Println(a[n], b[n])
+	Print(a[n], b[n])
 }

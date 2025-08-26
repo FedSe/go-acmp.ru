@@ -3,7 +3,6 @@ import . "fmt"
 func main() {
 	var (
 		g, p          [103][103]int
-		D             = []int{-1, 0, 1, 0, -1}
 		n, k, x, l, o int
 	)
 
@@ -27,8 +26,8 @@ func main() {
 			for j < n {
 				d := 0
 				for d < 4 {
-					f := l + D[d]
-					z := j + D[d+1]
+					f := l + d%2 - d/3*2
+					z := j + 1 - d + d/3*2
 					if f >= 0 && z >= 0 && p[f][z] > 0 {
 						e := p[f][z] + g[l][j]
 						if e > u[l][j] {

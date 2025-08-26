@@ -1,18 +1,21 @@
 package main
+
 import (
 	. "fmt"
 	. "math"
 )
 
+type T = float64
+
 var (
-	a, b, c, d, x, y, r float64
+	a, b, c, d, x, y, r T
 	A                   = Acos
 	L                   = Min
 	G                   = Max
 	Q                   = Sqrt
 )
 
-func F(x, y, m, l float64) float64 {
+func F(x, y, m, l T) T {
 	x -= m
 	y -= l
 	return Q(x*x + y*y)

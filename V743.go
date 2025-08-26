@@ -1,9 +1,10 @@
 package main
 import . "fmt"
+type A []string
 func main() {
 	var (
 		h = map[any]int{}
-		v = map[any][]string{}
+		v = map[any]A{}
 		i = 0
 		j = -1
 		a = ""
@@ -19,7 +20,7 @@ func main() {
 	}
 	Scan(&a, &w)
 
-	q := []string{a}
+	q := A{a}
 	for len(q) > 0 {
 		a = q[0]
 		q = q[1:]

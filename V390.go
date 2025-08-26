@@ -1,14 +1,18 @@
 package main
+
 import (
 	. "fmt"
 	. "math"
 )
-var x, y, a, d, b, e, c, f float64
 
-func F(a, d, b, e float64) float64 {
-	b-=a
-	e-=d
-	return Abs(b*(y-d) - (x-a)*e) / Sqrt(b*b + e*e)
+type A = float64
+
+var x, y, a, d, b, e, c, f A
+
+func F(a, d, b, e A) A {
+	b -= a
+	e -= d
+	return Abs(b*(y-d)-(x-a)*e) / Sqrt(b*b+e*e)
 }
 
 func main() {

@@ -3,16 +3,15 @@ import . "fmt"
 func main() {
 	var (
 		n, m, w, t, l, i int
-		q                [100]struct{ a, b int }
-		d                [9e4]int
+		d, q, h          [4e4]int
 		M                = 9 << 30
 	)
 
 	Scan(&n, &m)
 	for t < m {
-		Scan(&q[t].a, &q[t].b)
-		if q[t].a > w {
-			w = q[t].a
+		Scan(&q[t], &h[t])
+		if q[t] > w {
+			w = q[t]
 		}
 		t++
 	}
@@ -24,13 +23,14 @@ func main() {
 	}
 
 	for i < w {
-		if d[i] < M {
-			for _, p := range q[:m] {
-				l = i + p.a
-				if l < w && d[i]+p.b < d[l] {
-					d[l] = d[i] + p.b
-				}
+		j := 0
+		for j < m {
+			l = i + q[j]
+			t = d[i] + h[j]
+			if t < d[l] {
+				d[l] = t
 			}
+			j++
 		}
 		i++
 	}

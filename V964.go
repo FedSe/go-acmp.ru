@@ -6,11 +6,13 @@ import (
 	. "sort"
 	. "strings"
 )
+type M map[string]int
+type T map[any]M
 func main() {
 	var (
 		n = 0
-		q = map[any]map[any]int{}
-		w = map[any]map[string]int{}
+		q = T{}
+		w = T{}
 		I = b.NewReader(Stdin)
 		J = Join
 		P = Print
@@ -27,11 +29,11 @@ func main() {
 			z := J(p[4:], " ")
 			_, e := q[z]
 			if !e {
-				q[z] = map[any]int{}
+				q[z] = M{}
 			}
 			_, e = w[d]
 			if !e {
-				w[d] = map[string]int{}
+				w[d] = M{}
 			}
 			if q[z][d] > 0 {
 				P(`Already exists
@@ -48,11 +50,11 @@ func main() {
 			z := J(p[4:], " ")
 			_, e := q[z]
 			if !e {
-				q[z] = map[any]int{}
+				q[z] = M{}
 			}
 			_, e = w[d]
 			if !e {
-				w[d] = map[string]int{}
+				w[d] = M{}
 			}
 			if q[z][d] < 1 {
 				P(`Not found

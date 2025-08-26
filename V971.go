@@ -3,10 +3,9 @@ import . "fmt"
 func main() {
 	x := 0
 	y := 0
-	f := int(1e9)
 	Scan(&x, &y)
 
-	switch f {
+	switch int(1e9) {
 	case x, -x, y, -y:
 		Print("NO")
 		return

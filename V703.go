@@ -1,13 +1,14 @@
 package main
 import . "fmt"
+type B string
 type A struct {
-	a string
+	a B
 	b int
 }
 func main() {
 	var (
 		D                = []int{-2, -2, -1, -1, 1, 1, 2, 2, -1, 1, -2, 2, -2, 2, -1, 1}
-		a, b, z, w, h, g string
+		a, b, z, w, h, g B
 		P                = Print
 	)
 
@@ -34,7 +35,7 @@ func main() {
 						v := []byte(z)
 						v[i*3+j] = 46
 						v[p*3+c] = z[i*3+j]
-						b = string(v)
+						b = B(v)
 						if b == w {
 							P(m + 1)
 							return

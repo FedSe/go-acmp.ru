@@ -5,7 +5,6 @@ func main() {
 	var (
 		g          [50][50]string
 		d          [50][50][50]int
-		D          = []int{-1, 0, 1, 0, -1}
 		x, o       A
 		h, m, n, i int
 		S          = Scan
@@ -45,8 +44,8 @@ func main() {
 		q = q[1:]
 		i = 0
 		for i < 4 {
-			r := u.b + D[i]
-			v := u.c + D[i+1]
+			r := u.b + i%2 - i/3*2
+			v := u.c + 1 - i + i/3*2
 			if r >= 0 && r < m && v >= 0 && v < n &&
 				g[u.a][r][v] != 'o' && d[u.a][r][v] < 0 {
 				d[u.a][r][v] = d[u.a][u.b][u.c] + 5

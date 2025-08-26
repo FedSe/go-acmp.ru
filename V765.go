@@ -1,11 +1,12 @@
 package main
 import . "fmt"
+type A [20]int
 func main() {
 	var (
-		v          [20][20]int
+		v          [20]A
 		a          [20]string
 		N, o, i, j int
-		q          = [5]int{0, 1, 0, -1, 0}
+		q          = A{0, 1, 0, -1}
 	)
 
 	Scan(&N)
@@ -17,8 +18,8 @@ func main() {
 		j = 0
 		for j < N {
 			if a[i][j] == 66 && v[i][j] < 1 {
-				z := [][2]int{{i, j}}
-				e := map[[2]int]int{}
+				z := []A{{i, j}}
+				e := map[A]int{}
 				v[i][j] = 1
 				for len(z) > 0 {
 					d := len(z) - 1
@@ -31,7 +32,7 @@ func main() {
 						f := y + q[d+1]
 						if h >= 0 && f >= 0 && h < N && f < N {
 							w := a[h][f]
-							p := [2]int{h, f}
+							p := A{h, f}
 							if w == 66 && v[h][f] < 1 {
 								v[h][f] = 1
 								z = append(z, p)
@@ -51,5 +52,6 @@ func main() {
 		}
 		i++
 	}
+
 	Print(o)
 }

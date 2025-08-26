@@ -10,12 +10,12 @@ func main() {
 		f    = map[int]int{}
 		n, i int
 		s    = b.NewReader(Stdin)
-		S    = Fscan
+		P    = Println
 	)
 
-	S(s, &n)
+	Scan(&n)
 	for i < n {
-		S(s, &a[i])
+		Fscan(s, &a[i])
 		i++
 	}
 
@@ -27,7 +27,7 @@ func main() {
 	i = a[0]
 	n = f[i]
 	for u, c := range f {
-		if c > n || (c == n && u < i) {
+		if c > n || c == n && u < i {
 			n = c
 			i = u
 		}
@@ -35,13 +35,13 @@ func main() {
 
 	for _, x := range A {
 		if x != i {
-			Println(x)
+			P(x)
 		}
 	}
 
 	for _, x := range A {
 		if x == i {
-			Println(x)
+			P(x)
 		}
 	}
 }

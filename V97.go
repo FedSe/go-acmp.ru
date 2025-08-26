@@ -1,79 +1,52 @@
 package main
-
 import . "fmt"
 
-type R struct {
-	x, y, z, c int
-}
+var (
+	t, X, Y, Z, C          [100]int
+	n, i, l, x, y, z, p, k int
+	c                      = map[int]int{}
+)
 
-type U struct {
-	p, r [100]int
-}
-
-func H(x int, u *U) int {
-	if u.p[x] != x {
-		u.p[x] = H(u.p[x], u)
+func H(x int) int {
+	if t[x] != x {
+		t[x] = H(t[x])
 	}
-	return u.p[x]
+	return t[x]
 }
 
 func main() {
-	var (
-		s             [100]R
-		t             [100]int
-		n, i, l, j, k int
-		c             = map[int]int{}
-	)
-
 	Scan(&n)
 	for l < n {
-		var x, y, z, c, r int
-		Scan(&x, &y, &z, &c, &r)
-
+		Scan(&x, &y, &z, &p, &k)
 		if x > z {
 			x, z = z, x
 		}
-		if y > c {
-			y, c = c, y
+		if y > p {
+			y, p = p, y
 		}
+		X[l] = x - k
+		Y[l] = y - k
+		Z[l] = z + k
+		C[l] = p + k
 
-		s[l] = R{x - r, y - r, z + r, c + r}
+		t[l] = l
 		l++
 	}
 
-	for k < n {
-		t[k] = k
-		k++
-	}
-	u := &U{t, [100]int{}}
-
 	for i < n {
-		l = i + 1
+		l = i
 		for l < n {
-			w := s[i]
-			v := s[l]
-			if w.x <= v.z && v.x <= w.z && w.y <= v.c && v.y <= w.c {
-				p := H(i, u)
-				k = H(l, u)
-				if p != k {
-					if u.r[p] < u.r[k] {
-						u.p[p] = k
-					} else {
-						u.p[k] = p
-						if u.r[p] > u.r[k] {
-							u.r[p]++
-						}
-					}
-				}
+			if X[i] <= Z[l] && X[l] <= Z[i] && Y[i] <= C[l] && Y[l] <= C[i] {
+				t[H(l)] = H(i)
 			}
 			l++
 		}
 		i++
 	}
 
-	for j < n {
-		c[H(j, u)] = 1
-		j++
+	for 0 < n {
+		n--
+		c[H(n)] = 1
 	}
 
 	Print(len(c))

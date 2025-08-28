@@ -14,14 +14,12 @@ func main() {
 	}
 
 	a := C(s, "_")
-	if a {
-		for i < len(s) {
-			if s[i] < 91 {
-				Print("Error!")
-				return
-			}
-			i++
+	for a && i < len(s) {
+		if s[i] < 91 {
+			Print("Error!")
+			return
 		}
+		i++
 	}
 
 	i = 0

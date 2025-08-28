@@ -3,46 +3,43 @@ import (
 	. "fmt"
 	. "math"
 )
-
-type P struct {
-	x, y float64
-}
-
-func F(p1 P, p2 P) float64 {
-	return Sqrt((p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y))
-}
-
 func main() {
 	var (
-		a             [1e3]P
+		x, y          [1e3]float64
 		n, p, r, i, j int
 		q             = 1
 		s             = 1
 	)
+
 	Scan(&n)
 	for j < n {
-		Scan(&a[j].x, &a[j].y)
+		Scan(&x[j], &y[j])
 		j++
 	}
 
-	z := F(a[0], a[1])
-	x := z
+	a := x[0] - x[1]
+	b := y[0] - y[1]
+	z := Sqrt(a*a + b*b)
+	w := z
+	n--
 
-	for i < n-1 {
-		j = i + 1
+	for i < n {
+		j = i
 		for j < n {
-			c := F(a[i], a[j])
+			j++
+			a = x[i] - x[j]
+			b = y[i] - y[j]
+			c := Sqrt(a*a + b*b)
 			if c < z {
 				z = c
 				p = i
 				q = j
 			}
-			if c > x {
-				x = c
+			if c > w {
+				w = c
 				r = i
 				s = j
 			}
-			j++
 		}
 		i++
 	}

@@ -2,7 +2,7 @@ package main
 import . "fmt"
 func main() {
 	var (
-		x                   [1001]int
+		x                   [2e3]int
 		j, i, N, A, B, C, D int
 	)
 

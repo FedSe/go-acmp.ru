@@ -2,41 +2,26 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [100][100]int
-		n, m, i, l int
+		a       [100][100]int
+		n, m, i int
 	)
 
 	Scan(&n, &m)
 	for i < n {
-		for
 		j := 0
-		j < m
-		{
+		for j < m {
 			Scan(&a[i][j])
-		j++
+			j++
 		}
-	i++
-	}
-
-	for l < n {
-		for
-		i = 0
-		i < m/2
-		{
-			a[l][i], a[n-l-1][i] = a[n-l-1][i], a[l][i]
 		i++
-		}
-	l++
 	}
 
 	for n > 0 {
-	n--
-		for
+		n--
 		i = 0
-		i < m
-		{
+		for i < m {
 			Println(a[n][i])
-		i++
+			i++
 		}
 	}
 }

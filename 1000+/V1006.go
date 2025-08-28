@@ -1,5 +1,6 @@
 package main
 import . "fmt"
+type S = string
 func main() {
 	var (
 		b = `black
@@ -8,13 +9,12 @@ func main() {
 `
 		r = `red
 `
-		x = b
-		c = x
-		z = x
+		x, c, z S
 	)
 
 	Scan(&x, &c, &z)
-	t := map[any]string{
+
+	x = map[any]S{
 		"bbg": b + b + `GREEN`,
 		"bbG": b + y + b,
 		"byb": r + b + b,
@@ -23,9 +23,7 @@ func main() {
 		"bYb": b + `YELLOW
 ` + b,
 		"Rbb": `RED
-` + b + b}
-
-	x = t[string([]byte{x[0], c[0], z[0]})]
+` + b + b}[S([]byte{x[0], c[0], z[0]})]
 	if x == "" {
 		x = "error"
 	}

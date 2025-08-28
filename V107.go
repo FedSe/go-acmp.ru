@@ -1,16 +1,12 @@
 package main
-import (
-	. "fmt"
-	. "strings"
-)
+import . "fmt"
 func main() {
 	var (
 		e, q [8]int
-		p    []string
 		s    = ""
+		w    = s
 		o    = 7
 		i    = 1
-		j    = 0
 	)
 
 	Scan(&s)
@@ -27,13 +23,13 @@ func main() {
 			t := s[z:i]
 			n := len(t)
 			x := 0
-			if n == 2 {
-				if t[0] == t[1] {
-					x = 2
-				}
+			a := t[0]
+			b := t[1]
+			if n == 2 && a == b {
+				x = 2
 			}
 			if n == 3 {
-				a, b, c := t[0], t[1], t[2]
+				c := t[2]
 				if a == b || b == c || a == c {
 					x = 2
 				}
@@ -42,21 +38,19 @@ func main() {
 				}
 			}
 			if n == 4 {
-				a, b, c, d := t[0], t[1], t[2], t[3]
+				c, d := t[2], t[3]
 				if a == c && a != b && a != d && b != d ||
 					b == d && a != b && b != c && a != c {
 					x = 2
 				}
 				if a == b && c == d && a != c ||
 					a == b && b == c && a != d ||
+					a == c && b == d && a != b ||
 					b == c && c == d && a != b {
 					x = 3
 				}
 				if a == d && b == c && a != b {
 					x = 4
-				}
-				if a == c && b == d && a != b {
-					x = 3
 				}
 				if a == b && b == c && c == d {
 					x = 5
@@ -73,16 +67,9 @@ func main() {
 
 	for o > 0 {
 		l := q[o]
-		p = append(p, s[o-l:o])
+		w = s[o-l:o] + "-" + w
 		o -= l
 	}
 
-	o = len(p)
-	for j < o/2 {
-		i = o - 1 - j
-		p[j], p[i] = p[i], p[j]
-		j++
-	}
-
-	Println(Join(p, "-"), e[7])
+	Println(w[:len(w)-1], e[7])
 }

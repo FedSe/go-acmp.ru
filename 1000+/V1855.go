@@ -4,17 +4,17 @@ func main() {
 	var a, b, c int
 	Scan(&a, &b, &c)
 
-	s := F(a + c - b, c + b - a, a + b - c)
+	A := a + c - b
+	C := a + b - c
+	b += c - a
+
+	s := C
+	if b < A && b < C {
+		s = b
+	}
+	if A < b && A < C {
+		s = A
+	}
 
 	Print(s)
-}
-
-func F(a, b, c int) int {
-	if a <= b && a <= c {
-		return a
-	}
-	if b <= a && b <= c {
-		return b
-	}
-	return c
 }

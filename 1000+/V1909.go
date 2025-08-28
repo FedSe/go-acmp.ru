@@ -8,23 +8,24 @@ func main() {
 	)
 
 	S(&n)
-	if n == 1 {
+	if n < 2 {
 		P("No")
-	} else {
-		S(&v)
-		i := 1
-		for i < n {
-			i++
-			S(&m)
-			s += i * m
-		}
-		P(`
+		return
+	}
+
+	S(&v)
+	i := 1
+	for i < n {
+		i++
+		S(&m)
+		s += i * m
+	}
+	P(`
 Yes
 `, -s)
-		i = 1
-		for i < n {
-			i++
-			P(" ", i*v)
-		}
+	i = 1
+	for i < n {
+		i++
+		P(" ", i*v)
 	}
 }

@@ -1,15 +1,13 @@
 package main
 import . "fmt"
-func main(){
+func main() {
 	var a, b, h, d, c int
 	Scan(&h, &a, &b)
 
-	for {
+	for c < h-a {
 		d++
-		c += a
-		if c >= h { break }
-		c -= b
+		c += a - b
 	}
 
-	Print(d)
+	Print(d + 1)
 }

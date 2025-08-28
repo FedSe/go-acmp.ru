@@ -2,11 +2,11 @@ package main
 import . "fmt"
 func main() {
 	var (
-		d       [100020][7]int
-		k, r, i int
-		h           = 10
-		M       int = 1e6
+		d          [7 << 14][7]int
+		k, r, i, M int
+		h          = 10
 	)
+	M = 1e6
 	d[h][0] = 1
 	d[h][3] = 1
 

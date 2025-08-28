@@ -3,11 +3,11 @@ import . "fmt"
 type T [2][11][11]int
 func main() {
 	var (
-		p       T
-		C       = ""
-		z, l, i int
-		M       int = 1e9 + 7
+		p          T
+		C          = ""
+		z, l, i, M int
 	)
+	M = 1e9 + 7
 
 	Scan(&C)
 	n := len(C)

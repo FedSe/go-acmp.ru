@@ -1,25 +1,26 @@
 package main
 import . "fmt"
-func main(){
-	var l, u, d bool
-	a:="No"
-	s:=a
+func main() {
+	var l, u, d int
+	a := "No"
+	s := a
 
 	Scan(&s)
-	for _,t := range s {
-		if t >= 'a' && t <= 'z' {
-			l = true
+	for _, t := range s {
+		if t > 96 {
+			l = 1
 		}
-		if t >= 'A' && t <= 'Z' {
-			u = true
+		if t > 64 && t < 91 {
+			u = 1
 		}
-		if t >= '0' && t <= '9' {
-			d = true
+		if t < 58 {
+			d = 1
 		}
-
 	}
 
-	if l && u && d && len(s) > 11 { a = "Yes"}
-	Print(a)
+	if l+u+d > 2 && len(s) > 11 {
+		a = "Yes"
+	}
 
+	Print(a)
 }

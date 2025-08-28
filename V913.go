@@ -2,28 +2,29 @@ package main
 import . "fmt"
 type T = float64
 func main() {
-	var n, m, t, i, z int
+	var (
+		s             [1e3][2]int
+		n, m, t, i, z int
+		w             = 1e18
+	)
 
 	Scan(&n, &m)
-	s := make([]struct{ L, H int }, n)
-
 	for i < n {
-		Scan(&z, &s[i].L, &s[i].H)
+		Scan(&z, &s[i][0], &s[i][1])
 		t += z
 		i++
 	}
 
-	w := 1e18
 	n = 1
 	i = 1
 	for i <= m {
 		k := T(t) / T(i)
 		for _, g := range s {
-			if i > g.L {
-				k += T(g.H)
+			if i > g[0] {
+				k += T(g[1])
 			}
 		}
-		if k < w || (k == w && i > n) {
+		if k < w || k == w && i > n {
 			w = k
 			n = i
 		}

@@ -1,14 +1,11 @@
 package main
 import . "fmt"
-type N struct {
-	o, t int
-}
+type N struct { o, t int }
 
 var (
-	u, d                   [3e3]int
-	g                      [3e3][]N
-	h                      int = 1e9
-	n, m, f, o, c, l, e, i int
+	u, d                      [3e3]int
+	g                         [3e3][]N
+	n, m, f, o, c, l, e, i, h int
 )
 
 func F(v int) {
@@ -20,7 +17,9 @@ func F(v int) {
 		}
 	}
 }
+
 func main() {
+	h = 1e9
 	Scan(&n, &m)
 	for i < m {
 		i++
@@ -64,5 +63,6 @@ func main() {
 	if u[n] == 1 {
 		a = ":)"
 	}
+
 	Print(a)
 }

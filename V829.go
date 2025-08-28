@@ -1,19 +1,20 @@
 package main
 import . "fmt"
-type H struct{ a, b int }
+type H [2]int
 type T [2e5 + 2]int
 func main() {
 	var (
-		w                    = 13
-		z                    = 131
-		o                int = 1e9 + 7
-		d                    = 9
+		w                = 13
+		z                = 131
+		o                = 7
+		d                = 9
 		k, g, x, m, y, c T
 		q, i, l, I, j, u int
 		a                = ""
 		b                = a
 		h                = map[H]int{}
 	)
+	o += 1e9
 
 	k[0] = 1
 	g[0] = 1

@@ -23,7 +23,7 @@ func main() {
 		q := v
 		l := 0
 		for l < n {
-			u := -1
+			u := 0
 			i = 0
 			for i < k {
 				if m[l][i] < 1 && (v[l] < 0 || b[v[l]] > b[i]) {
@@ -33,7 +33,7 @@ func main() {
 			}
 			i = 0
 			for v[l] >= 0 && i < n {
-				if u < 0 || w[u] > w[i] && m[i][v[l]] > 0 {
+				if w[u] > w[i] && m[i][v[l]] > 0 {
 					u = i
 				}
 				i++

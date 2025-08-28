@@ -3,44 +3,40 @@ import (
 	. "fmt"
 	. "sort"
 )
-
-type A struct {
-	a, b int
-}
-
 func main() {
-	n := 0
-	i := 0
-	Scan(&n)
+	var (
+		s    [1e4][2]int
+		n, l int
+		i    = 3
+	)
 
-	s := make([]A, n)
-	for i < n {
-		Scan(&s[i].a, &s[i].b)
-		i++
+	Scan(&n)
+	for l < n {
+		Scan(&s[l][0], &s[l][1])
+		l++
 	}
 
-	Slice(s, func(i, j int) bool {
-		return s[i].a < s[j].a
+	Slice(s[:n], func(i, j int) bool {
+		return s[i][0] < s[j][0]
 	})
 
-	e := s[1].b
-	f := e
+	e := s[1][1]
+	l = e
 
 	if n > 2 {
-		f += s[2].b
+		l += s[2][1]
 	}
 
-	i = 3
 	for i < n {
 		g := e
-		if e > f {
-			g = f
+		if e > l {
+			g = l
 		}
-		g += s[i].b
-		e = f
-		f = g
+		g += s[i][1]
+		e = l
+		l = g
 		i++
 	}
 
-	Print(f)
+	Print(l)
 }

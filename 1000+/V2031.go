@@ -4,32 +4,34 @@ import (
 	. "fmt"
 	. "os"
 )
-func main() {
-	var (
-		a    [3e5]int
-		s, i int
-		r    = b.NewReader(Stdin)
-		w    = b.NewWriter(Stdout)
-		F    = func() int {
-			x := 0
-			p := 1
-			h, _ := r.ReadByte()
-			for h < 48 || h > 57 {
-				if h == 45 {
-					p = -p
-				}
-				h, _ = r.ReadByte()
-			}
-			for h > 47 && h < 58 {
-				x = x*10 + int(h-48)
-				h, _ = r.ReadByte()
-			}
-			return x * p
-		}
-		n = F()
-		m = F()
-	)
 
+var (
+	a    [3e5]int
+	s, i int
+	r    = b.NewReader(Stdin)
+	w    = b.NewWriter(Stdout)
+	n    = F()
+	m    = F()
+)
+
+func F() int {
+	x := 0
+	p := 1
+	h, _ := r.ReadByte()
+	for h < 48 || h > 57 {
+		if h == 45 {
+			p = -p
+		}
+		h, _ = r.ReadByte()
+	}
+	for h > 47 && h < 58 {
+		x = x*10 + int(h-48)
+		h, _ = r.ReadByte()
+	}
+	return x * p
+}
+
+func main() {
 	for i < n {
 		i++
 		a[i] = F()

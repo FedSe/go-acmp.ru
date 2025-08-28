@@ -3,31 +3,32 @@ import (
 	. "fmt"
 	. "math/big"
 )
-func main() {
-	var (
-		x, y *Int
-		b    = 1
-		s    = ""
-		c    = func(q **Int) {
-			Scan(&s)
-			i := 0
-			for i < len(s) {
-				h := s[i:] + s[:i]
-				if h[0] > 48 || len(h) < 2 {
-					u := new(Int)
-					u.SetString(h, 10)
-					if *q == nil || u.Cmp(*q)*b > 0 {
-						*q = u
-					}
-				}
-				i++
+
+var (
+	x, y *Int
+	b    = 1
+	s    = ""
+)
+
+func F(q **Int) {
+	Scan(&s)
+	i := 0
+	for i < len(s) {
+		h := s[i:] + s[:i]
+		if h[0] > 48 {
+			var u Int
+			u.SetString(h, 10)
+			if *q == nil || u.Cmp(*q)*b > 0 {
+				*q = &u
 			}
-			b = -b
 		}
-	)
+		i++
+	}
+	b = -b
+}
 
-	c(&x)
-	c(&y)
-
+func main() {
+	F(&x)
+	F(&y)
 	Print(y.Sub(x, y))
 }

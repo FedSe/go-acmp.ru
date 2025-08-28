@@ -5,7 +5,7 @@ func main() {
 	Scan(&n)
 
 	k := n - 1
-	r := 540 + 45*n + 20*(k/2) + 5*(k%2)
+	k = 540 + 45*n + k/2*20 + k%2*5
 
-	Println(r/60, r%60)
+	Print(k/60, k%60)
 }

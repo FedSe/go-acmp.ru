@@ -1,15 +1,15 @@
 package main
 import . "fmt"
-type S struct {
-	u, y int
-}
+type T [100]int
 var (
-	w [100][100]S
-	a [100]int
+	w, y [100]T
+	a    T
+	e, n int
 )
 func H(t, h, p int) int {
 	f := &w[t][h]
-	if f.y < 1 {
+	g := &y[t][h]
+	if *g < 1 {
 		k := a[t]
 		if p < 1 {
 			k = -k
@@ -24,19 +24,16 @@ func H(t, h, p int) int {
 			k = -k
 		}
 		z := H(t, h-1, -p) + k
-		f.y = 1
-		f.u = z
+		*g = 1
+		*f = z
 		if p == 1 == (x > z) {
-			f.u = x
+			*f = x
 		}
 	}
-	return f.u
+	return *f
 }
 
 func main() {
-	n := 0
-	e := 0
-
 	Scan(&n)
 	for e < n {
 		Scan(&a[e])
@@ -50,5 +47,6 @@ func main() {
 	if e < 0 {
 		e = 2
 	}
+
 	Print(e)
 }

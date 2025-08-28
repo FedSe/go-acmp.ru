@@ -1,16 +1,55 @@
 package main
 import . "fmt"
-type R []string
-func main() {
-	var (
-		x, y    R
-		n, m, I int
-		s       = "No"
-	)
+type S string
+type R []S
 
+var (
+	x, y    R
+	n, m, I int
+	s       = "No"
+)
+
+func F(d R) R {
+	n = len(d)
+	m = len(d[0])
+	r := make(R, m)
+	I = 0
+	for I < m {
+		o := make([]byte, n)
+		j := 0
+		for j < n {
+			o[j] = d[n-1-j][I]
+			j++
+		}
+		r[I] = S(o)
+		I++
+	}
+	return r
+}
+
+func P(d R) R {
+	m = len(d)
+	r := make(R, m)
+	I = 0
+	for I < m {
+		s := []rune(d[I])
+		j := 0
+		n = len(s) - 1
+		for j < n {
+			s[j], s[n] = s[n], s[j]
+			j++
+			n--
+		}
+		r[I] = S(s)
+		I++
+	}
+	return r
+}
+
+func main() {
 	for I < 2 {
 		var (
-			s          [500]string
+			s          [500]S
 			f, b, i, j int
 		)
 		y = x
@@ -53,43 +92,6 @@ func main() {
 			i++
 		}
 		I++
-	}
-
-	F := func(d R) R {
-		n = len(d)
-		m = len(d[0])
-		r := make(R, m)
-		I = 0
-		for I < m {
-			o := make([]byte, n)
-			j := 0
-			for j < n {
-				o[j] = d[n-1-j][I]
-				j++
-			}
-			r[I] = string(o)
-			I++
-		}
-		return r
-	}
-
-	P := func(d R) R {
-		m = len(d)
-		r := make(R, m)
-		I = 0
-		for I < m {
-			s := []rune(d[I])
-			j := 0
-			n = len(s) - 1
-			for j < n {
-				s[j], s[n] = s[n], s[j]
-				j++
-				n--
-			}
-			r[I] = string(s)
-			I++
-		}
-		return r
 	}
 
 	for _, V := range []func(R) R{

@@ -1,15 +1,14 @@
 package main
 import . "fmt"
-func main(){
-	c:=""
-	Scan(&c)
-	a:=c[0]
-	if c >= "a" && c <= "z" {
-		a = c[0] + 'A' - 'a'
-	}
-	if c >= "A" && c <= "Z" {
-		a = c[0] + 'a' - 'A'
+func main() {
+	c := ' '
+	Scanf("%c", &c)
+
+	if c > 64 && c < 91 {
+		c += 32
+	} else if c > 96 && c < 123 {
+		c -= 32
 	}
 
-	Printf("%c", a)
+	Printf("%c", c)
 }

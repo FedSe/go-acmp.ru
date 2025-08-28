@@ -26,7 +26,7 @@ func main() {
 		}
 	}
 	for len(a) > 0 {
-		b := []int{}
+		var b []int
 		l = a[0]
 		x = a[0]
 		for _, c := range a {

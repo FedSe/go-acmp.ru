@@ -1,32 +1,31 @@
 package main
 import . "fmt"
-type S struct {
-	f string
-	b int
-}
-
 func main() {
 	var (
-		a [1001]S
+		a                [2e3]string
+		b                [2e3]int
 		n, m, x, y, z, i int
 	)
 
 	Scan(&n, &m)
 	for i < n {
-		Scan(&a[i].f, &x, &y, &z)
-		a[i].b = x + y + z
-		if i > 0 && (a[i].b > a[i-1].b || (a[i].b == a[i-1].b && a[i].f > a[i-1].f)) {
+		Scan(&a[i], &x, &y, &z)
+		b[i] = x + y + z
+		if i > 0 && (b[i] > b[i-1] || b[i] == b[i-1] && a[i] > a[i-1]) {
 			c := a[i]
-			j := i-1
-			for j >= 0 && (c.b > a[j].b || (c.b == a[j].b && c.f > a[j].f)) {
+			B := b[i]
+			j := i - 1
+			for j >= 0 && (B > b[j] || B == b[j] && c > a[j]) {
 				a[j+1] = a[j]
+				b[j+1] = b[j]
 				j--
 			}
 			a[j+1] = c
+			b[j+1] = B
 		}
-	i++
+		i++
 	}
 
 	m--
-	Println(a[m].f, a[m].b)
+	Println(a[m], b[m])
 }

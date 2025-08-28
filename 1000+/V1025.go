@@ -3,11 +3,11 @@ import . "fmt"
 func main() {
 	for {
 		var (
-			N, M, l, i int
-			P          = Print
-			q, z       [3e4]int
-			G          int = 1e9
+			N, M, l, i, G int
+			P             = Print
+			q, z          [3e4]int
 		)
+		G = 1e9
 
 		Scan(&N, &M)
 		if N*M < 1 {

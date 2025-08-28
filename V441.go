@@ -1,5 +1,4 @@
 package main
-
 import (
 	d "bufio"
 	. "fmt"
@@ -7,14 +6,19 @@ import (
 	. "sort"
 )
 
-type T struct {
-	v, w, q int
-}
+type T struct{ v, w, q int }
 
 type H struct {
 	p    int
 	m, c []int
 }
+
+var (
+	n, r, j int
+	s       = d.NewReader(Stdin)
+	S       = Fscan
+	P       = Print
+)
 
 func (s *H) H(w int) int {
 	d := (w + s.p - 1) / s.p * s.p
@@ -25,42 +29,32 @@ func (s *H) H(w int) int {
 		}
 		w++
 	}
-	i := d / s.p
-	for i < len(s.c) {
-		y += s.c[i]
-		i++
+	d /= s.p
+	for d < len(s.c) {
+		y += s.c[d]
+		d++
 	}
 	return y
 }
 
-func main() {
-	var (
-		n, r, j int
-		s       = d.NewReader(Stdin)
-		S       = Fscan
-		P       = Print
-	)
-
-	S(s, &n)
-
-	F := func(n int) []T {
-		a := make([]T, n)
-		i := 0
-		v := 0
-		for i < n {
-			S(s, &v)
-			a[i] = T{v, i, 0}
-			i++
-		}
-		SliceStable(a, func(i, j int) bool {
-			return a[i].v < a[j].v
-		})
-		return a
+func F(n int) []T {
+	a := make([]T, n)
+	v := 0
+	for 0 < n {
+		n--
+		S(s, &v)
+		a[n] = T{v, n, 0}
 	}
+	SliceStable(a, func(i, j int) bool {
+		return a[i].v < a[j].v
+	})
+	return a
+}
 
+func main() {
+	S(s, &n)
 	a := F(n)
 	b := F(n)
-
 	c := make([]T, n)
 	for j < n {
 		if a[j].v != b[j].v {

@@ -1,21 +1,22 @@
 package main
 import . "fmt"
 type T [2]int
-func main() {
-	var (
-		q, r, k string
-		A       [8][8]int
-		O       = map[any]int{}
-		C, l    int
-		F       = func(s string) (int, int) {
-			c := int(s[0] - 65)
-			R := 8 - int(s[1]-48)
-			O[T{R, c}] = 1
-			return R, c
-		}
-		K = []T{{-2, -1}, {-2, 1}, {-1, -2}, {-1, 2}, {1, -2}, {1, 2}, {2, -1}, {2, 1}}
-	)
 
+var (
+	q, r, k string
+	A       [8][8]int
+	O       = map[any]int{}
+	C, l    int
+	K       = []int{-2, -1, -2, 1, -1, -2, -1, 2, 1, -2, 1, 2, 2, -1, 2, 1}
+)
+
+func F(s string) (int, int) {
+	c := int(s[0] - 65)
+	R := 8 - int(s[1]-48)
+	O[T{R, c}] = 1
+	return R, c
+}
+func main() {
 	Scan(&q, &r, &k)
 	a, b := F(q)
 	c, e := F(r)
@@ -28,8 +29,8 @@ func main() {
 			x += d[0]
 			y += d[1]
 		}
-		x = f + K[i][0]
-		y = g + K[i][1]
+		x = f + K[i*2]
+		y = g + K[i*2+1]
 		if x >= 0 && x < 8 && y >= 0 && y < 8 {
 			A[x][y] = 1
 		}

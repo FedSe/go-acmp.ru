@@ -2,28 +2,31 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a       [1e3]int
-		n, i, j, x int
+		a             [1e3]int
+		n, i, j, x, q int
 	)
-	
+
 	Scan(&n, &x)
 	a[0] = x
 	y := x
 	for i < n-1 {
 		i++
-		Scan(&a[i])
-		if a[i] > x {
-			x = a[i]
-		} else if a[i] < y {
-			y = a[i]
+		Scan(&q)
+		if q > x {
+			x = q
 		}
+		if q < y {
+			y = q
+		}
+		a[i] = q
 	}
 
 	for j < n {
-		if a[j] == x {
-			a[j] = y
+		q = a[j]
+		if q == x {
+			q = y
 		}
-		Println(a[j])
+		Println(q)
 		j++
 	}
 }

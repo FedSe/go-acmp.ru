@@ -2,59 +2,51 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [50][50]int
-		n, i, l, k, m int
-		F = 99999
+		a                [50][50]int
+		n, i, l, k, m, q int
+		F                = 99999
 	)
 
 	Scan(&n)
-
 	for i < n {
-		for
 		j := 0
-		j < n
-		{
-			Scan(&a[i][j])
-			if a[i][j] < 0 {
-				a[i][j] = F
+		for j < n {
+			Scan(&q)
+			if q < 0 {
+				q = F
 			}
-		j++
+			a[i][j] = q
+			j++
 		}
-	i++
+		i++
 	}
 
 	for k < n {
-		for
 		i = 0
-		i < n
-		{
-			for
-			j := 0
-			j < n
-			{
-				f := a[i][k] + a[k][j]
-				if a[i][j] > f {
-					a[i][j] = f
+		for i < n {
+			q = 0
+			for q < n {
+				f := a[i][k] + a[k][q]
+				if a[i][q] > f {
+					a[i][q] = f
 				}
-			j++
+				q++
 			}
-		i++
+			i++
 		}
-	k++
+		k++
 	}
 
 	for l < n {
-		for
 		i = 0
-		i < n
-		{
+		for i < n {
 			k = a[l][i]
 			if k < F && k > m {
 				m = k
 			}
-		i++
+			i++
 		}
-	l++
+		l++
 	}
 
 	Print(m)

@@ -1,18 +1,20 @@
 package main
 import . "fmt"
-func main() {
-	var (
-		d                [100][100]int
-		N, M, l, j, i, q int
-		r                = &q
-		F                = func(w int) {
-			w++
-			if *r > w {
-				*r = w
-			}
-		}
-	)
 
+var (
+	d                [100][100]int
+	N, M, l, j, i, q int
+	r                = &q
+)
+
+func F(w int) {
+	w++
+	if *r > w {
+		*r = w
+	}
+}
+
+func main() {
 	Scan(&N, &M)
 	for l < N {
 		j = 0

@@ -31,7 +31,7 @@ func main() {
 		n--
 	}
 
-	for p.Len() > 1 {
+	for len(p) > 1 {
 		n = Pop(&p).(int) + Pop(&p).(int)
 		t += n
 		Push(&p, n)

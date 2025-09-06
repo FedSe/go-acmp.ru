@@ -1,47 +1,40 @@
 package main
 import (
-	j "bufio"
+	b "bufio"
 	. "fmt"
 	. "math"
 	. "math/big"
 	. "os"
 )
-
-func F(n float64) int {
-	if n > 1 {
-		n = Floor(.5*Log(2*Pi*n)/Log(10)+n*Log10(n/E)) + 1
-	}
-	return int(n)
-}
-
 func main() {
 	var (
 		s = ""
 		a = 0
 		g = 1.
-		h = 1000.
-		k = j.NewReader(Stdin)
-		b = map[any]int{"1": 0}
+		h = 1e3
+		k = b.NewReader(Stdin)
+		w = map[any]int{"1": 0}
 		N = NewInt
+		L = Log10
 		f = N(1)
 		n = 1
 	)
 
 	for n < 101 {
 		f.Mul(f, N(int64(n)))
-		b[f.String()] = n
+		w[f.String()] = n
 		n++
 	}
 
 	Fscan(k, &s)
-	c, o := b[s]
+	c, o := w[s]
 	if o {
 		a = c
 		goto A
 	}
 
 	c = len(s)
-	for F(h) < c {
+	for int(Log(6*h)/4+h*L(h/E)) < c {
 		h *= 2
 	}
 
@@ -51,7 +44,7 @@ func main() {
 		if n < 1 {
 			n = 1
 		}
-		e := F(n)
+		e := int(Log(6*n)/4.4+n*L(n/E)) + 1
 		if e < c {
 			g = m + 1
 		} else if e > c {

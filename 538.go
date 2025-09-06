@@ -38,17 +38,15 @@ func main() {
 					s = s[:j]
 					v := 0
 					for v < n {
-						if v != u {
-							if Hypot(p[u].x-p[v].x, p[u].y-p[v].y) < 2*m {
-								if c[v] < 1 {
-									c[v] = 3 - c[u]
-									s = append(s, v)
-									j++
-								}
-								if c[v] == c[u] {
-									r = m
-									goto A
-								}
+						if v != u && Hypot(p[u].x-p[v].x, p[u].y-p[v].y) < 2*m {
+							if c[v] < 1 {
+								c[v] = 3 - c[u]
+								s = append(s, v)
+								j++
+							}
+							if c[v] == c[u] {
+								r = m
+								goto A
 							}
 						}
 						v++

@@ -56,8 +56,9 @@ func main() {
 	}
 
 	for i < n {
-		j = i + 1
+		j = i
 		for j < n {
+			j++
 			k := j
 			for k < n {
 				k++
@@ -65,7 +66,7 @@ func main() {
 				b := g[j].b
 				c := g[k].b
 				p := (a + b + c) / 2
-				u := Sqrt(p*(p-a)*(p-b)*(p-c)) / 4
+				u := p * (p - a) * (p - b) * (p - c)
 				if u > q {
 					q = u
 					e = g[i].a
@@ -73,10 +74,9 @@ func main() {
 					o = g[k].a
 				}
 			}
-			j++
 		}
 		i++
 	}
 
-	Print(q, e, f, o)
+	Print(Sqrt(q)/4, e, f, o)
 }

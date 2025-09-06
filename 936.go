@@ -16,7 +16,7 @@ func main() {
 		Scan(&x, &y)
 		x -= X
 		y -= Y
-		if x*x+y*y <= R*R+1e-9 {
+		if x*x+y*y <= R*R {
 			e = append(e, Atan2(y, x))
 		}
 		N--
@@ -28,7 +28,7 @@ func main() {
 			e = append(e, a+2*Pi)
 		}
 		for r < len(e) {
-			for e[r]-e[N] > Pi+1e-9 {
+			for e[r]-e[N] > Pi {
 				N++
 			}
 			w := r - N + 1
@@ -38,5 +38,6 @@ func main() {
 			r++
 		}
 	}
+
 	Print(g)
 }

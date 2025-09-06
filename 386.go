@@ -3,16 +3,19 @@ import (
 	. "fmt"
 	. "math/rand"
 )
-type P struct{ x, y int }
+type T struct{ x, y int }
 func main() {
-	N := 0
-	var p []P
+	var (
+		p []T
+		P = Println
+		n = 0
+	)
 
-	Scan(&N)
-	for 0 < N {
+	Scan(&n)
+	for 0 < n {
 		for {
-			x := Intn(2e4) - 1e4
-			y := Intn(2e4) - 1e4
+			x := Intn(1e4)
+			y := Intn(1e4)
 			v := 1
 			for _, i := range p {
 				if i.x == x && i.y == y {
@@ -25,7 +28,7 @@ func main() {
 				for k < len(p) {
 					a := p[j]
 					b := p[k]
-					c := P{x, y}
+					c := T{x, y}
 					if (b.x-a.x)*(c.y-a.y) == (b.y-a.y)*(c.x-a.x) {
 						v = 0
 					}
@@ -34,16 +37,15 @@ func main() {
 				j++
 			}
 			if v > 0 {
-				p = append(p, P{x, y})
+				p = append(p, T{x, y})
 				break
 			}
 		}
-		N--
+		n--
 	}
 
-	Print(`YES
-`)
+	P("YES")
 	for _, i := range p {
-		Println(i.x, i.y)
+		P(i.x, i.y)
 	}
 }

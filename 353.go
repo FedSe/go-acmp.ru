@@ -9,6 +9,7 @@ func main() {
 		d    [1e5]float64
 		n, i int
 		m    = 0.
+		f    = "%.f"
 	)
 
 	Scan(&n)
@@ -18,22 +19,21 @@ func main() {
 	}
 
 	Float64s(d[:n])
-	i = 2
-	for i < n {
-		a, b, c := d[i-2], d[i-1], d[i]
-		if a+b > c {
-			s := (a + b + c) / 2
-			e := Sqrt(s * (s - a) * (s - b) * (s - c))
-			if e > m {
-				m = e
-			}
+	for 2 < n {
+		n--
+		a := d[n]
+		b := d[n-1]
+		c := d[n-2]
+		s := (a + b + c) / 2
+		e := Sqrt(s * (s - a) * (s - b) * (s - c))
+		if a+b > c && e > m {
+			m = e
 		}
-		i++
 	}
 
 	if m > 0 {
-		Printf("%.3f", m)
-	} else {
-		Print(0)
+		f = "%.3f"
 	}
+
+	Printf(f, m)
 }

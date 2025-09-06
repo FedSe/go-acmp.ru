@@ -5,22 +5,20 @@ import (
 )
 func main() {
 	var (
-		x, y, d, c [1e3]float64
+		x, y, d, c [2e3]float64
 		n, i       int
 		e          = .0
-		M          = Inf(1)
 	)
 
 	Scan(&n)
 	for i < n {
 		Scan(&x[i], &y[i])
-		d[i] = M
 		i++
+		d[i] = 9e9
 	}
 
-	d[0] = 0
 	for {
-		m := M
+		m := 9e9
 		r := -1
 		i = 0
 		for i < n {
@@ -31,7 +29,7 @@ func main() {
 			i++
 		}
 
-		if r == -1 {
+		if r < 0 {
 			break
 		}
 

@@ -1,8 +1,5 @@
 package main
-import (
-	. "fmt"
-	. "math"
-)
+import . "fmt"
 func main() {
 	var (
 		n, x, y, z, k int
@@ -11,11 +8,10 @@ func main() {
 	)
 
 	Scan(&n, &q)
-	t := int(Round(q * 1e3))
-
+	t := int(q * 1e3)
 	for 0 < n {
 		Scan(&x, &y, &z, &k)
-		if (z*z+k*k)*1e6 > t*t*(x*x+y*y) {
+		if z*z+k*k > t*t*(x*x+y*y)/1e6 {
 			s = "No"
 		}
 		n--

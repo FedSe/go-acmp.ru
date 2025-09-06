@@ -9,8 +9,8 @@ func main() {
 	s := "NO"
 
 	Scan(&n, &a)
-	a *= .5
-	if a/Sin(Pi/n)-a/Tan(Pi/n) < 1 {
+	a /= 2
+	if a/Sin(Pi/n) < a/Tan(Pi/n)+1 {
 		s = "YES"
 	}
 

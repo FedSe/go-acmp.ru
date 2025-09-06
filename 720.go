@@ -6,9 +6,9 @@ import (
 func main() {
 	r := 0.
 	n := r
+	c := 0
 
 	Scan(&r, &n)
-	c := 0
 	m := int(r / n)
 	i := -m - 1
 	for i <= m {
@@ -18,13 +18,7 @@ func main() {
 		if b > a {
 			a = b
 		}
-		a = r*r - a*a
-		if a > 0 {
-			s := int(Floor(Sqrt(a) / n))
-			if s >= 0 {
-				c += s + s
-			}
-		}
+		c += int(Sqrt(r*r-a*a)/n) * 2
 		i++
 	}
 

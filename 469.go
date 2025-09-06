@@ -1,28 +1,16 @@
 package main
-
 import (
 	. "container/heap"
 	. "fmt"
 )
 
-type S struct { a, b, c int }
-
+type S struct{ a, b, c int }
 type P []*S
 
-func (p P) Len() int { return len(p) }
-
-func (p P) Less(i, j int) bool {
-	return p[i].a < p[j].a
-}
-
-func (p P) Swap(i, j int) {
-	p[i], p[j] = p[j], p[i]
-}
-
-func (p *P) Push(x any) {
-	*p = append(*p, x.(*S))
-}
-
+func (p P) Len() int           { return len(p) }
+func (p P) Less(i, j int) bool { return p[i].a < p[j].a }
+func (p P) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+func (p *P) Push(x any)        { *p = append(*p, x.(*S)) }
 func (p *P) Pop() any {
 	o := *p
 	n := len(o) - 1

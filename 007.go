@@ -7,7 +7,6 @@ func main() {
 	var a, b, c Int
 
 	Scan(&a, &b, &c)
-
 	if b.Cmp(&a) > 0 {
 		a = b
 	}

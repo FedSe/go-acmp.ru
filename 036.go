@@ -6,8 +6,8 @@ func main() {
 		S    [1e5]int
 		k    = 2
 	)
-	Scan(&n)
 
+	Scan(&n)
 	for k*k < n*2 {
 		l := k * k
 		for l < 2*n {
@@ -24,5 +24,6 @@ func main() {
 		}
 		k++
 	}
+
 	Print(p)
 }

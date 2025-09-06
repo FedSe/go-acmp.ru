@@ -9,10 +9,9 @@ func main() {
 	n := k
 
 	Scan(&k, &m, &n)
-
 	if n > k {
-		m *= Ceil((2 * n) / k)/2
+		m *= Ceil((2*n)/k) / 2
 	}
 
-	Print(m*2)
+	Print(m * 2)
 }

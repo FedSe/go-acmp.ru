@@ -8,7 +8,9 @@ func main() {
 
 	Scan(&n)
 	for b < n {
-		if o*o <= b+o { o++ }
+		if o*o <= b+o {
+			o++
+		}
 		b += o
 	}
 	if b != n {

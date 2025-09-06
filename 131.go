@@ -1,12 +1,12 @@
 package main
 import . "fmt"
-func main(){
+func main() {
 	var i, n, v, a, s int
-	b:=-1
-	Scan(&n)
+	b := -1
 
+	Scan(&n)
 	for i < n {
-	i++
+		i++
 		Scan(&v, &s)
 		if s > 0 && v > a {
 			a = v

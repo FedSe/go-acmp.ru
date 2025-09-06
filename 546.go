@@ -1,11 +1,11 @@
 package main
 import . "fmt"
 func main() {
-	n:=0
+	n := 0
 	Scan(&n)
-	c := n*3 % 4
+	c := n * 3 % 4
 
-	j:=1
+	j := 1
 	for n >= j {
 		q := j
 		w := 0
@@ -20,10 +20,10 @@ func main() {
 		if c < 1 {
 			q = e
 			w = r
-			n-- 
+			n--
 		}
-	j++
+		j++
 		Println(j/2, j&1+1, q, w)
-	c--
+		c--
 	}
 }

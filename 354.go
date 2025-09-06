@@ -4,18 +4,17 @@ func main() {
 	n := 0
 	i := 1
 	s := ""
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
-	i++
+		i++
 		if i*i > n {
 			i = n
 		}
-		for n % i < 1 {
+		for n%i < 1 {
 			Print(s, i)
 			s = "*"
 			n /= i
 		}
 	}
-
 }

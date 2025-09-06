@@ -2,8 +2,8 @@ package main
 import . "fmt"
 func main() {
 	var a, b, i, m, c, d uint
-	Scan(&a, &b)
 
+	Scan(&a, &b)
 	for i < 2 {
 		c = 0
 		d = 1
@@ -14,7 +14,7 @@ func main() {
 		}
 		m += c
 		a = b
-	i++
+		i++
 	}
 
 	Print(m)

@@ -3,6 +3,7 @@ import . "fmt"
 func main() {
 	a := 0
 	b := 0
+
 	Scan(&a, &b)
 	for a <= b {
 		p := 1

@@ -8,10 +8,13 @@ func main() {
 	s := "="
 
 	Scan(&a, &b)
-	
 	f := a.Cmp(&b)
-	if f > 0 { s = ">" }
-	if f < 0 { s = "<" }
+	if f > 0 {
+		s = ">"
+	}
+	if f < 0 {
+		s = "<"
+	}
 
 	Print(s)
 }

@@ -1,9 +1,7 @@
 package main
 import . "fmt"
-func main(){
-	s:="WHITE"
-	i:=s
-	Scan(&i)
-	if i[0] % 2 == i[1] % 2 { s = "BLACK" }
-	Print(s)
+func main() {
+	s := ""
+	Scan(&s)
+	Print([]any{"BLACK", "WHITE"}[(s[0]+s[1])&1])
 }

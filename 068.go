@@ -1,12 +1,12 @@
 package main
 import . "fmt"
 func main() {
-	x:=0
-	s:="No"
-	a:=s
-	Scan(&a, &x)
+	x := 0
+	s := "No"
+	a := s
 
-	if x % 2 > 0 || a[0] < 73 {
+	Scan(&a, &x)
+	if x&1 > 0 || a[0] < 73 {
 		s = "Yes"
 	}
 

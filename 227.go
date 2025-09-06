@@ -2,8 +2,8 @@ package main
 import . "fmt"
 func main() {
 	var x, y, s int
-	Scan(&x, &y)
 
+	Scan(&x, &y)
 	if x != 0 && y%x < 1 && y/x > 0 {
 		n := y / x
 		d := 2
@@ -16,12 +16,12 @@ func main() {
 			}
 			d++
 		}
-		s += n+1
+		s += n + 1
 	}
 
 	if x == y {
 		s = 1
-	} 
+	}
 
-	Print(s-1)
+	Print(s - 1)
 }

@@ -7,9 +7,7 @@ import (
 	. "sort"
 )
 
-type M struct {
-	t, w, d, s int
-}
+type M struct { t, w, d, s int }
 
 func main() {
 	var i, k, n, l int

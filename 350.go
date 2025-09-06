@@ -29,7 +29,6 @@ func main() {
 			f--
 		}
 		n[i], n[f] = n[f], n[i]
-
 		n = n[i+1:]
 		i = 0
 		j := len(n)

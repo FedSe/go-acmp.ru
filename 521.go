@@ -2,8 +2,8 @@ package main
 import . "fmt"
 func main() {
 	var p, k, f int
-	Scan(&p, &k)
 
+	Scan(&p, &k)
 	for p <= k {
 		n := p
 		for n != 2 {
@@ -14,7 +14,7 @@ func main() {
 				n = n*3 + 1
 			}
 		}
-	p++
+		p++
 	}
 
 	Print(f)

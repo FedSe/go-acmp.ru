@@ -2,10 +2,10 @@ package main
 import . "fmt"
 func main() {
 	var (
-		v []string
+		v       []string
 		c, i, l int
-		a = ""
-		t = a
+		a       = ""
+		t       = a
 	)
 
 	Scan(&a, &t)
@@ -13,17 +13,17 @@ func main() {
 	for l < len(t) {
 		v = append(v, t)
 		t = t[1:] + string(t[0])
-	l++
+		l++
 	}
 
 	for i <= len(a)-m {
 		for _, s := range v {
-			if s == a[i : i+m] {
+			if s == a[i:i+m] {
 				c++
 				break
 			}
 		}
-	i++
+		i++
 	}
 
 	Print(c)

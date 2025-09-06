@@ -1,13 +1,13 @@
 package main
 import . "fmt"
-func main(){
-	n:=0
-	s:="NO"
-	Scan(&n)
+func main() {
+	n := 0
+	s := "NO"
 
-	if n & (n - 1) < 1 && n > 0 {
-		s="YES"
+	Scan(&n)
+	if n&(n-1) < 1 && n > 0 {
+		s = "YES"
 	}
-     
+
 	Print(s)
 }

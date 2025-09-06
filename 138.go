@@ -5,14 +5,12 @@ func main() {
 		r             [1e4][3]int
 		d             [101]int
 		n, m, i, j, l int
-		F             = 30000
 		f             = 1
 	)
 
 	Scan(&n, &m)
-
 	for i < n {
-		d[i] = F
+		d[i] = 3e4
 		i++
 	}
 
@@ -36,7 +34,7 @@ func main() {
 			i = r[k][0]
 			j = r[k][1]
 			o := d[i] + r[k][2]
-			if d[i] < F && d[j] > o {
+			if d[i] < 3e4 && d[j] > o {
 				f = 1
 				d[j] = o
 			}

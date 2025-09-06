@@ -5,8 +5,6 @@ import (
 )
 func main() {
 	var n Int
-
 	Scan(&n)
-
 	Print(n.Exp(NewInt(2), &n, nil))
 }

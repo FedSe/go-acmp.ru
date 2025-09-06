@@ -1,12 +1,12 @@
 package main
 import . "fmt"
-func main(){
+func main() {
 	var a, b, c int
-	s:="YES"
-	Scan(&a, &b, &c)
+	s := "YES"
 
-	if a * b < c {
-		s="NO"
+	Scan(&a, &b, &c)
+	if a*b < c {
+		s = "NO"
 	}
 
 	Print(s)

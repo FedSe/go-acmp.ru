@@ -8,16 +8,15 @@ func main() {
 		r, a, b, c, d float64
 		C             = Cos
 		S             = Sin
+		x             = 180.
 	)
 
 	Scan(&r, &a, &c, &b, &d)
-
-	a *= Pi / 180
-	b *= Pi / 180
-	c *= Pi / 180
-	d *= Pi / 180
-
-	x := r*C(a)*C(c) - r*C(b)*C(d)
+	a *= Pi / x
+	b *= Pi / x
+	c *= Pi / x
+	d *= Pi / x
+	x = r*C(a)*C(c) - r*C(b)*C(d)
 	y := r*C(a)*S(c) - r*C(b)*S(d)
 	z := r*S(a) - r*S(b)
 

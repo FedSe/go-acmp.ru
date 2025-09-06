@@ -1,22 +1,21 @@
 package main
 import . "fmt"
-func main(){
-	n:=1
-	m:=1
+func main() {
+	n := 0
+	m := 0
+
 	Scan(&n, &m)
 	l := m
-
-	if n * m < m {
+	if n*m < m {
 		Print("Impossible")
-	} else {
-		if n > m {
-			l = n
-		}
-
-		if m > 0 {
-			n += m - 1
-		}
-
-		Print(l, n)
+		return
 	}
+	if n > m {
+		l = n
+	}
+	if m > 0 {
+		n += m - 1
+	}
+
+	Print(l, n)
 }

@@ -11,11 +11,11 @@ func main() {
 	}
 	n -= d
 	for i*i < n {
-	i++
+		i++
 		c := i
 		j := 0
 		for j < 2 {
-			t := n+d
+			t := n + d
 			u := 0
 			for c > 1 && t%c == d {
 				t /= c
@@ -25,8 +25,8 @@ func main() {
 				m = u
 				e = c
 			}
-		c = n / i
-		j++
+			c = n / i
+			j++
 		}
 	}
 

@@ -4,9 +4,9 @@ func main() {
 	s := ""
 	n := 0
 	i := 0
+
 	Scan(&s, &n)
 	v := s
-
 	if n > 0 {
 		for i < n-1 {
 			if len(s) > 1023 {
@@ -14,7 +14,7 @@ func main() {
 				v = ""
 			}
 			s += v
-		i++
+			i++
 		}
 	} else {
 		f := len(s)
@@ -28,9 +28,9 @@ func main() {
 			k += k
 		}
 		s = s[:c]
-		if f % -n + i > 0 {
+		if f%-n+i > 0 {
 			s = "NO SOLUTION"
-		} 
+		}
 	}
 
 	Print(s)

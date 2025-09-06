@@ -1,17 +1,17 @@
 package main
 import . "fmt"
-func main(){
+func main() {
 	var n, m, j, i int
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
 		Scan(&m)
-		j+=m
-	i++
+		j += m
+		i++
 	}
 
 	if n < j*2 {
-		j=n-j
+		j = n - j
 	}
 
 	Print(j)

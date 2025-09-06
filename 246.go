@@ -2,13 +2,15 @@ package main
 import . "fmt"
 func main() {
 	var n, a, b, k int
-	Scan(&n, &a)
 
+	Scan(&n, &a)
 	for 1 < n {
 		Scan(&b)
-		if a != b - 1 { k++ }
+		if a != b-1 {
+			k++
+		}
 		a = b
-	n--
+		n--
 	}
 
 	Print(k)

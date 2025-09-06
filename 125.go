@@ -3,32 +3,28 @@ import . "fmt"
 func main() {
 	var (
 		n, k, i, m int
-		b [101][100]int
+		b          [101][100]int
 	)
 
 	Scan(&n)
 	for i <= n {
-		for
 		j := 0
-		j < n
-		{
+		for j < n {
 			Scan(&b[i][j])
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	for m < n {
-		for
-		i = m+1
-		i < n
-		{
+		i = m + 1
+		for i < n {
 			if b[m][i] > 0 && b[n][m] != b[n][i] {
 				k++
 			}
-		i++
+			i++
 		}
-	m++
+		m++
 	}
 
 	Print(k)

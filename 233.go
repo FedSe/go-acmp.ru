@@ -2,16 +2,16 @@ package main
 import . "fmt"
 func main() {
 	var i, n, m int
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
-	i++
+		i++
 		Scan(&m)
 		if m < 438 {
 			Print("Crash ", i)
 			return
 		}
-	
+
 	}
 
 	Print("No crash")

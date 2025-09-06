@@ -5,9 +5,9 @@ func main() {
 
 	for i < 31 {
 		Scan(&a)
-		c+=a
-	i++
+		c += a
+		i++
 	}
 
-	Print(c/27)
+	Print(c / 27)
 }

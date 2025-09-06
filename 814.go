@@ -7,7 +7,8 @@ func main() {
 
 	Scan(&x)
 	for a <= x/2 {
-		p, q := 1, 1
+		p := 1
+		q := 1
 		i := 2
 		for i*i <= a {
 			if a%i < 1 {
@@ -22,10 +23,11 @@ func main() {
 			}
 			i++
 		}
-		if p * q > 0 {
+		if p*q > 0 {
 			c++
 		}
 		a++
 	}
+
 	Print(c)
 }

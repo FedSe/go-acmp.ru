@@ -1,12 +1,12 @@
 package main
 import . "fmt"
-func main(){
-	n:=0
-	s:=0
-	Scan(&n)
+func main() {
+	n := 0
+	s := 0
 
+	Scan(&n)
 	for n > 0 {
-		s += n % 2
+		s += n & 1
 		n /= 2
 	}
 

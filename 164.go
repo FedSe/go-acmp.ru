@@ -1,5 +1,6 @@
 package main
 import . "fmt"
+
 func F(s string) int {
 	k := 0
 	for _, i := range s {
@@ -14,14 +15,14 @@ func F(s string) int {
 func main() {
 	t := "NO"
 	s := t
-	Scan(&s)
-	for
 	i := 1
-	i < len(s)
-	i++ {
+
+	Scan(&s)
+	for i < len(s) {
 		if F(s[:i]) == F(s[i:]) {
 			t = "YES"
 		}
+		i++
 	}
 
 	Print(t)

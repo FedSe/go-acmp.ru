@@ -1,22 +1,20 @@
 package main
-import (
-	. "fmt"
-	. "math"
-)
+import . "fmt"
 func main() {
 	n := 0
 	m := 0
-	Scan(&m, &n)
+	a := 1
 
+	Scan(&m, &n)
 	m--
 	n--
 	if m > n {
 		m, n = n, m
 	}
 
-	a := 1
-	if m == int(Floor(float64(n-m)*(1+Sqrt(5))/2)) {
+	if m == int(float64(n-m)*1.62) {
 		a = 2
 	}
+
 	Print(a)
 }

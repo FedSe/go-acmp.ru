@@ -13,7 +13,7 @@ func main() {
 		if m > a {
 			a = m
 		}
-	i++
+		i++
 	}
 
 	Print(a)

@@ -5,11 +5,10 @@ func main() {
 	s := "NO"
 
 	Scan(&n)
-
-	for n % 5 < 1 {
+	for n%5 < 1 {
 		n /= 5
 	}
-	for n & 1 < 1 {
+	for n&1 < 1 {
 		n /= 2
 	}
 	if n > 1 {

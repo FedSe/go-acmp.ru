@@ -7,7 +7,6 @@ func main() {
 	b := a
 
 	Scan(&a, &b)
-
 	for i, v := range a {
 		for j, w := range b {
 			if v == w {

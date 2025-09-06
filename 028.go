@@ -1,9 +1,9 @@
 package main
-import . "fmt" 
+import . "fmt"
 func main() {
 	var a, c, b, x, y int
-	Scan(&a, &c, &b, &x, &x, &y)
 
+	Scan(&a, &c, &b, &x, &x, &y)
 	c = 2*c - y
 	if a == b {
 		x = 2*a - x

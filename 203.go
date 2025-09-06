@@ -4,21 +4,19 @@ func main() {
 	a := ""
 	b := a
 	w := 0
-	Scan(&a, &b)
 
+	Scan(&a, &b)
 	x := len(a)
 	if a != b {
-	w--
-		for
+		w--
 		z := 1
-		z < x
-		{
+		for z < x {
 			c := a[x-z:] + a[:x-z]
 			if b == c {
 				w = z
 				break
 			}
-		z++
+			z++
 		}
 	}
 

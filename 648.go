@@ -5,17 +5,16 @@ import (
 )
 func main() {
 	var (
-		a [100]int
+		a             [100]int
 		n, s, c, i, j int
 	)
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
 		Scan(&a[i])
-	i++
+		i++
 	}
 	Ints(a[:n])
-
 	for j < n {
 		i = a[j]
 		c += i
@@ -23,7 +22,7 @@ func main() {
 			s += i
 			c -= i
 		}
-	j++
+		j++
 	}
 
 	Print(c - s)

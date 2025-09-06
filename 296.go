@@ -1,11 +1,11 @@
 package main
 import . "fmt"
 func main() {
-	n:=0
-	c:=0
-	Scan(&n)
+	n := 0
+	c := 0
 
-	for n % 5 > 0 {
+	Scan(&n)
+	for n%5 > 0 {
 		n -= 3
 		c++
 	}

@@ -2,17 +2,17 @@ package main
 import . "fmt"
 func main() {
 	var n, m, i, f int
+
 	Scan(&n, &m)
 	t := n
 	k := m
-	for t * k > 0 {
+	for t*k > 0 {
 		if t > k {
 			t, k = k, t
 		}
 		k %= t
 	}
 	t += k
-
 	for i < 2 {
 		n /= t
 		f++
@@ -29,7 +29,7 @@ func main() {
 			k++
 		}
 		n = m
-	i++
+		i++
 	}
 
 	Print(f)

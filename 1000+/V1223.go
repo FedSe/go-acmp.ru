@@ -9,6 +9,7 @@ func main() {
 		n, p, r, i, j int
 		q             = 1
 		s             = 1
+		H             = Hypot
 	)
 
 	Scan(&n)
@@ -17,9 +18,7 @@ func main() {
 		j++
 	}
 
-	a := x[0] - x[1]
-	b := y[0] - y[1]
-	z := Sqrt(a*a + b*b)
+	z := H(x[0]-x[1], y[0]-y[1])
 	w := z
 	n--
 
@@ -27,9 +26,7 @@ func main() {
 		j = i
 		for j < n {
 			j++
-			a = x[i] - x[j]
-			b = y[i] - y[j]
-			c := Sqrt(a*a + b*b)
+			c := H(x[i]-x[j], y[i]-y[j])
 			if c < z {
 				z = c
 				p = i

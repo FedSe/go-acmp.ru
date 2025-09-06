@@ -1,5 +1,6 @@
 package main
 import . "fmt"
+
 func F(n, m int) int {
 	if n-m > m {
 		m = n - m
@@ -8,21 +9,21 @@ func F(n, m int) int {
 	i := n
 	for i > m {
 		c *= i
-	i--
+		i--
 	}
 	n -= m
 	for n > 1 {
 		c /= n
-	n--
+		n--
 	}
 	return c
 }
 
 func main() {
 	var (
-		W [10]int
+		W             [10]int
 		N, g, f, u, i int
-		d = 1
+		d             = 1
 	)
 
 	Scan(&N)
@@ -30,7 +31,7 @@ func main() {
 		W[0] = 1
 		for d < N {
 			W[d] = 10 * W[d-1]
-		d++
+			d++
 		}
 		for i < N {
 			u += W[i]
@@ -81,7 +82,9 @@ func main() {
 				d--
 			}
 		}
-	} else { g = 10 }
+	} else {
+		g = 10
+	}
 
 	Print(g, f)
 }

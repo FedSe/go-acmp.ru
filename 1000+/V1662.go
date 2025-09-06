@@ -5,10 +5,9 @@ import (
 )
 func main() {
 	var x, y, R float64
-	P := Println
+	P := Print
 
 	Scan(&x, &y, &R)
-
 	R = R*R - y*y
 	if R < 0 {
 		P(0)

@@ -1,12 +1,11 @@
 package main
 import . "fmt"
-
 var d, m, y int
 
 func F(x int) string {
-	r:=""
+	r := ""
 	for x > 0 {
-		v := x % d + 55
+		v := x%d + 55
 		if v > 54 && v < 65 {
 			v -= 7
 		}
@@ -15,6 +14,7 @@ func F(x int) string {
 	}
 	return r
 }
+
 func main() {
 	Scanf("%d/%d/%d", &d, &m, &y)
 	d++

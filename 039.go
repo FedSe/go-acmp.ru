@@ -3,17 +3,16 @@ import . "fmt"
 func main() {
 	var (
 		n, s, i, m int
-		p [100]int
+		p          [100]int
 	)
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
 		Scan(&p[i])
-	i++
+		i++
 	}
-
 	for i > 0 {
-	i--
+		i--
 		if p[i] > m {
 			m = p[i]
 		}

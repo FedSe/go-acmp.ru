@@ -1,14 +1,12 @@
 package main
 import . "fmt"
 func main() {
-	s:=""
+	s := ""
 	Scan(&s)
 	Print(1)
-	for
 	i := len(s) - 1
-	s[i] < 49
-	{
+	for s[i] < 49 {
 		Print(0)
-	i--
+		i--
 	}
 }

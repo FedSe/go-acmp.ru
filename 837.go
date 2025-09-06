@@ -12,6 +12,6 @@ func main() {
 			s = "No "
 		}
 		Print(s)
-	k--
+		k--
 	}
 }

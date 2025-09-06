@@ -1,10 +1,10 @@
 package main
 import . "fmt"
 func main() {
-	n:=0
-	i:=0
-	Scan(&n)
+	n := 0
+	i := 0
 
+	Scan(&n)
 	for 0 < n {
 		i++
 		x := i
@@ -15,7 +15,6 @@ func main() {
 			x /= 10
 			c++
 		}
-
 		if s%c < 1 {
 			n--
 		}

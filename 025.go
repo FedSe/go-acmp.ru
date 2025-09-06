@@ -1,17 +1,17 @@
 package main
 import . "fmt"
-func main(){
-	a:=1
-	b:=1
-	s:="="
-	Scan(&a,&b)
+func main() {
+	a := 0
+	b := 0
+	s := "="
 
+	Scan(&a, &b)
 	if a > b {
-		s=">"
+		s = ">"
 	}
 	if a < b {
-		s="<"
-	} 
+		s = "<"
+	}
 
 	Print(s)
 }

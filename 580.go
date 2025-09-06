@@ -8,7 +8,6 @@ func main() {
 	s := "YES"
 
 	Scan(&a, &b, &c, &r)
-
 	p := (a + b + c) / 2
 	if r > Sqrt((p-a)*(p-b)*(p-c)/p) {
 		s = "NO"

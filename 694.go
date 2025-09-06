@@ -3,26 +3,26 @@ import . "fmt"
 func main() {
 	var (
 		a, b, n, i, k int
-		s = "NO"
-		d [31]int
+		s             = "NO"
+		d             [31]int
 	)
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
 		Scan(&a, &b)
-		for
 		j := a
-		j <= b
-		{
+		for j <= b {
 			d[j-1]++
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	for k < 31 {
-		if d[k] == n { s = "YES"}
-	k++
+		if d[k] == n {
+			s = "YES"
+		}
+		k++
 	}
 
 	Print(s)

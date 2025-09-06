@@ -5,7 +5,7 @@ import (
 )
 func main() {
 	var a, b, r, m, t, x, k float64
-    
+
 	Scan(&a, &b, &r)
 	for x <= r {
 		y := Sqrt(r*r - x*x)
@@ -15,7 +15,7 @@ func main() {
 			m = x
 			t = y
 		}
-		x += .000001
+		x += 1e-6
 	}
 
 	Print(k, m, t)

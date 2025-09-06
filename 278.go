@@ -1,13 +1,13 @@
 package main
 import . "fmt"
 func main() {
-	a:="NO"
-	s:=a
-	t:=s
-	Scan(&s, &t)
-
+	a := "NO"
+	s := a
+	t := s
 	j := 0
 	i := 0
+
+	Scan(&s, &t)
 	for i < len(t) {
 		if s[j] == t[i] {
 			j++
@@ -17,7 +17,7 @@ func main() {
 			a = "YES"
 			t = ""
 		}
-	i++
+		i++
 	}
 
 	Print(a)

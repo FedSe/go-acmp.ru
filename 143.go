@@ -5,8 +5,6 @@ import (
 )
 func main() {
 	var a, b Int
-
 	Scan(&a, &b)
-
 	Print(a.Sub(&a, &b))
 }

@@ -8,7 +8,7 @@ func main() {
 		n, a, b, c int
 		A          []int
 	)
-    
+
 	Scan(&n)
 	for 0 < n {
 		Scan(&a, &b, &c)
@@ -17,7 +17,6 @@ func main() {
 	}
 
 	Ints(A)
-
 	for _, v := range A {
 		Println(v/3600, v/60%60, v%60)
 	}

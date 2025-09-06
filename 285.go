@@ -8,12 +8,14 @@ func main() {
 	for i < n {
 		Scan(&p)
 		a += p
-		if b < p { b = p }
-	i++
+		if b < p {
+			b = p
+		}
+		i++
 	}
-
 	if b > m || a-n+1 < m {
 		s = "no"
 	}
+
 	Print(s)
 }

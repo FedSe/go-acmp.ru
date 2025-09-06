@@ -2,59 +2,50 @@ package main
 import . "fmt"
 func main() {
 	var (
-		a [101][101]int
+		a                [101][101]int
 		n, i, j, k, l, o int
-		F = 9999
+		F                = 9999
 	)
 
 	Scan(&n)
-	
 	for i < n {
-		for
 		j = 0
-		j < n
-		{
+		for j < n {
 			Scan(&a[i][j])
 			if a[i][j] < 0 {
 				a[i][j] = F
 			}
-		j++
+			j++
 		}
-	i++
+		i++
 	}
 
 	for k < n {
-		for 
 		i = 0
-		i < n
-		{
-			for
+		for i < n {
 			j = 0
-			j < n
-			{
-				m := a[i][k]+a[k][j]
+			for j < n {
+				m := a[i][k] + a[k][j]
 				if a[i][j] > m {
 					a[i][j] = m
 				}
-			j++
+				j++
 			}
-		i++
+			i++
 		}
-	k++
+		k++
 	}
 
 	for l < n {
-		for
 		j = 0
-		j < n
-		{
+		for j < n {
 			m := a[l][j]
 			if m < F && m > o {
 				o = m
 			}
-		j++
+			j++
 		}
-	l++
+		l++
 	}
 
 	Print(o)

@@ -1,11 +1,13 @@
 package main
 import . "fmt"
-func main(){
-	s:=1
-	t:=1
+func main() {
+	s := 0
+	t := 0
+
 	Scan(&s, &t)
+	if t < s {
+		t += 12
+	}
 
-	if t < s { t += 12 }
-
-	Print(t-s)
+	Print(t - s)
 }

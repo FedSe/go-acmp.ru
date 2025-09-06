@@ -5,8 +5,6 @@ import (
 )
 func main() {
 	var a Int
-
 	Scan(&a)
-
 	Print(a.Sqrt(&a))
 }

@@ -15,7 +15,6 @@ func main() {
 	)
 
 	S(s, &n)
-
 	for n > 0 {
 		S(s, &i)
 		a = append(a, i)

@@ -1,8 +1,8 @@
 package main
 import . "fmt"
 func main() {
-	var n, x, y, a, b int
-	m := 60002
+	var n, x, y, a, b, m int
+	m = 7e4
 
 	Scan(&n, &a)
 	for 1 < n {
@@ -13,7 +13,7 @@ func main() {
 			y = b
 		}
 		a = b
-	n--
+		n--
 	}
 
 	Print(x, y)

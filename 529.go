@@ -1,11 +1,10 @@
 package main
-import (. "fmt"
-. "math"
+import (
+	. "fmt"
+	. "math"
 )
-func main(){
+func main() {
 	var a, b, c, d float64
 	Scan(&a, &b, &c, &d)
-	c-=a
-	d-=b
-	Print(Sqrt(c*c + d*d))
+	Print(Hypot(c-a, d-b))
 }

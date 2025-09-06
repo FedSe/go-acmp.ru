@@ -2,9 +2,9 @@ package main
 import . "fmt"
 func main() {
 	var a, b, c, d, e, f, m, i int
-	Scan(&c, &m, &d, &e, &f)
-
 	h := -1
+
+	Scan(&c, &m, &d, &e, &f)
 	v := h
 	d--
 	for i <= 1e6 {

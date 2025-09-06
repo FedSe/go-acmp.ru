@@ -2,10 +2,10 @@ package main
 import . "fmt"
 func main() {
 	var n, k, i int
-	Scan(&n)
 
+	Scan(&n)
 	for i < n {
-	i++
+		i++
 		r := 0
 		l := i
 		for l > 0 {

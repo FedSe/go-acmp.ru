@@ -5,9 +5,8 @@ func main() {
 	Scan(&a, &c, &e, &b, &d, &f)
 
 	s := a*e + b*f
-	a -= a*c/100
-	b -= b*d/100
-
+	a -= a * c / 100
+	b -= b * d / 100
 	c = a
 	if a > b {
 		a = b

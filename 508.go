@@ -3,6 +3,7 @@ import . "fmt"
 func main() {
 	var n, s, o, r, f, h int
 	p := ""
+
 	Scan(&n)
 	for 0 < n {
 		Scan(&p, &o, &r, &f, &h)

@@ -10,12 +10,12 @@ func main() {
 		p       = c
 		e       = c
 		s       = "NO"
-		a       [2e3][2]float64
+		a, b    [2e3]float64
 	)
 
 	Scan(&n, &c, &p)
 	for f <= n {
-		Scan(&a[f][0], &a[f][1])
+		Scan(&a[f], &b[f])
 		f++
 	}
 
@@ -24,9 +24,7 @@ func main() {
 		t := 0.
 		for f <= n {
 			if f != i {
-				x := a[i][0] - a[f][0]
-				y := a[i][1] - a[f][1]
-				t += Sqrt(x*x + y*y)
+				t += Hypot(a[i]-a[f], b[i]-b[f])
 			}
 			f++
 		}

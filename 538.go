@@ -3,8 +3,10 @@ import (
 	. "fmt"
 	. "math"
 )
+
 type A struct{ x, y float64 }
 type B []int
+
 func main() {
 	var (
 		p    [2e3]A
@@ -37,9 +39,7 @@ func main() {
 					v := 0
 					for v < n {
 						if v != u {
-							q := p[u].x - p[v].x
-							z := p[u].y - p[v].y
-							if Sqrt(q*q+z*z) < 2*m {
+							if Hypot(p[u].x-p[v].x, p[u].y-p[v].y) < 2*m {
 								if c[v] < 1 {
 									c[v] = 3 - c[u]
 									s = append(s, v)

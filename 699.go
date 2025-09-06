@@ -20,7 +20,7 @@ func main() {
 		for i < n-1 {
 			c = i + 1
 			for c < n {
-				w := Sqrt(Pow(x[i]-x[c], 2) + Pow(y[i]-y[c], 2))
+				w := Hypot(x[i]-x[c], y[i]-y[c])
 				w -= r[i] + r[c]
 				if w <= 0 {
 					t = 0

@@ -1,21 +1,19 @@
 package main
-import ( . "fmt"
-. "math"
+import (
+	. "fmt"
+	. "math"
 )
-
 func main() {
 	var s, S, d, D, x, y, n, i float64
+
 	Scan(&s, &S, &d, &D, &n)
-
 	for i < n {
-	i++
+		i++
 		Scan(&x, &y)
-		a := s-x
-		b := S-y
-		x = d-x
-		y = D-y
-
-		if 2*Sqrt(a*a + b*b) <= Sqrt(x*x + y*y) {
+		a := 2 * Hypot(s-x, S-y)
+		x = d - x
+		y = D - y
+		if a <= Hypot(x, y) {
 			Print(i)
 			return
 		}

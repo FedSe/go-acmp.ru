@@ -10,9 +10,7 @@ func main() {
 	for n > 0 {
 		Scan(&x, &y)
 		i++
-		y = w - y
-		x = q - x
-		if Sqrt(x*x+y*y) <= l {
+		if Hypot(q-x, w-y) <= l {
 			Print(i)
 			return
 		}

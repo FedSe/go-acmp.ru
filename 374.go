@@ -4,10 +4,13 @@ import (
 	. "math"
 	. "sort"
 )
-type A struct{ x, y int }
-func F(o, a, b A) int {
+
+type A struct{ x, y float64 }
+
+func F(o, a, b A) float64 {
 	return (a.x-o.x)*(b.y-o.y) - (a.y-o.y)*(b.x-o.x)
 }
+
 func main() {
 	var (
 		o, w       []A
@@ -56,9 +59,7 @@ func main() {
 	l = len(w)
 	for k < l {
 		b := w[(k+1)%l]
-		x := float64(w[k].x - b.x)
-		y := float64(w[k].y - b.y)
-		e += Sqrt(x*x + y*y)
+		e += Hypot(w[k].x-b.x, w[k].y-b.y)
 		k++
 	}
 

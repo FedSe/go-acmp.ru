@@ -8,7 +8,7 @@ func main() {
 		x, y, w, v [100]float64
 		n, m, z, j int
 		s          = 0.
-		S = Scan
+		S          = Scan
 	)
 
 	S(&n)
@@ -25,15 +25,15 @@ func main() {
 			if z < n-1 {
 				k = z + 1
 			}
-			w[z] = (x[z] + x[k]) / 2
-			v[z] = (y[z] + y[k]) / 2
+			w[z] = x[z] + x[k]
+			v[z] = y[z] + y[k]
 
 			z++
 		}
 		z = 0
 		for z < n {
-			x[z] = w[z]
-			y[z] = v[z]
+			x[z] = w[z] / 2
+			y[z] = v[z] / 2
 			z++
 		}
 		m--
@@ -44,7 +44,7 @@ func main() {
 		if j < n-1 {
 			z = j + 1
 		}
-		s += Sqrt((x[j]-x[z])*(x[j]-x[z]) + (y[j]-y[z])*(y[j]-y[z]))
+		s += Hypot(x[j]-x[z], y[j]-y[z])
 		j++
 	}
 

@@ -25,9 +25,7 @@ func main() {
 	for j < n {
 		i = j + 1
 		for i < n {
-			c = x[j] - x[i]
-			k = y[j] - y[i]
-			s[Sqrt(c*c+k*k)] = 1
+			s[Hypot(x[j]-x[i], y[j]-y[i])] = 1
 			i++
 		}
 		j++

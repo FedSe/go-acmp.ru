@@ -1,5 +1,4 @@
 package main
-
 import (
 	. "fmt"
 	. "math"
@@ -15,7 +14,7 @@ var (
 func F(g A) A {
 	u := 0.
 	for I, o := range p[:n] {
-		u += Sqrt(Pow(o-g, 2) + Pow(z[I], 2))
+		u += Hypot(o-g, z[I])
 	}
 	return u
 }

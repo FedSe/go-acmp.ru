@@ -10,13 +10,12 @@ func main() {
 		s, i int
 		h    [1e5][2]int
 		r    = b.NewReader(Stdin)
-		F    = Fscan
 	)
 
-	F(r, &s, &i)
+	Scan(&s, &i)
 	for i > 0 {
 		i--
-		F(r, &h[i][0], &h[i][1])
+		Fscan(r, &h[i][0], &h[i][1])
 	}
 
 	Slice(h[:], func(i, j int) bool {

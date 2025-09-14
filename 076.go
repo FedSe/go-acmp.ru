@@ -11,7 +11,7 @@ func main() {
 		s             = b.NewReader(Stdin)
 	)
 
-	Fscan(s, &p)
+	Scan(&p)
 	l := p
 	for l > 0 {
 		Fscanf(s, `

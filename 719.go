@@ -1,10 +1,8 @@
 package main
 import (
-	b "bufio"
 	. "fmt"
 	. "math"
 	. "math/big"
-	. "os"
 )
 func main() {
 	var (
@@ -12,7 +10,6 @@ func main() {
 		a = 0
 		g = 1.
 		h = 1e3
-		k = b.NewReader(Stdin)
 		w = map[any]int{"1": 0}
 		N = NewInt
 		L = Log10
@@ -26,7 +23,7 @@ func main() {
 		n++
 	}
 
-	Fscan(k, &s)
+	Scan(&s)
 	c, o := w[s]
 	if o {
 		a = c

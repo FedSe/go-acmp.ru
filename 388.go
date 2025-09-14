@@ -6,25 +6,24 @@ import (
 )
 func main() {
 	var (
-		n, m, c, x, i, f, j, a int
-		R, C, D                [6e5]int
-		s                      = b.NewReader(Stdin)
-		S                      = Fscan
+		n, m, c, x, i, j, a int
+		R, C, D             [6e5]int
+		s                   = b.NewReader(Stdin)
 	)
 
-	S(s, &n, &m)
+	Scan(&n, &m)
 	for x < m {
-		C[x] = -1001
+		C[x] = -2e3
 		x++
 	}
 	w := n * m
 	for j < w {
-		S(s, &D[j])
+		Fscan(s, &D[j])
 		j++
 	}
 
 	for i < n {
-		R[i] = 1001
+		R[i] = 2e3
 		j = 0
 		for j < m {
 			a = D[i*m+j]
@@ -39,15 +38,15 @@ func main() {
 		i++
 	}
 
-	for f < n {
+	for 0 < n {
+		n--
 		j = 0
 		for j < m {
-			if R[f] == C[j] {
+			if R[n] == C[j] {
 				c++
 			}
 			j++
 		}
-		f++
 	}
 
 	Print(c)

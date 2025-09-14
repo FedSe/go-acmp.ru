@@ -9,12 +9,11 @@ func main() {
 		s             = b.NewReader(Stdin)
 		N, j, o, l, i int
 		a             [1e6]int
-		S             = Fscan
 	)
 
-	S(s, &N)
+	Scan(&N)
 	for j < N {
-		S(s, &a[j])
+		Fscan(s, &a[j])
 		j++
 	}
 
@@ -26,7 +25,7 @@ func main() {
 		}
 	}
 
-	Println(o)
+	Print(o)
 	for i < N {
 		j = a[i]
 		l = 0
@@ -34,6 +33,6 @@ func main() {
 			i++
 			l++
 		}
-		Printf("[%d %d] ", j, l)
+		Printf(" [%d %d]", j, l)
 	}
 }

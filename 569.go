@@ -9,13 +9,12 @@ func main() {
 		q, z                   []int
 		n, d, y, x, o, j, i, k int
 		r                      = b.NewReader(Stdin)
-		S                      = Fscan
 	)
 
-	S(r, &n, &d)
+	Scan(&n, &d)
 	e := make([]int, n)
 	for j < n {
-		S(r, &o)
+		Fscan(r, &o)
 		e[j] = d - o
 		j++
 	}

@@ -1,21 +1,17 @@
 package main
-
 import (
 	b "bufio"
 	. "fmt"
 	. "os"
 	. "sort"
 )
-
 type M struct { t, w, d, s int }
-
 func main() {
 	var i, k, n, l int
-
 	r := b.NewReader(Stdin)
-	Fscan(r, &n)
-	a := make([]M, n)
 
+	Scan(&n)
+	a := make([]M, n)
 	for i < n {
 		Fscan(r, &a[i].t, &a[i].w)
 		a[i].d = i

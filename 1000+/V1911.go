@@ -11,12 +11,11 @@ func main() {
 		x, l, i int
 		s       = b.NewReader(Stdin)
 		P       = Println
-		S       = Fscan
 	)
 
-	S(s, &l)
+	Scan(&l)
 	for l > 0 {
-		S(s, &x)
+		Fscan(s, &x)
 		m[x]++
 		l--
 	}

@@ -10,12 +10,11 @@ func main() {
 		a, n, i int
 		t       []int
 		s       = b.NewReader(Stdin)
-		S = Fscan
 	)
 
-	S(s, &n)
+	Scan(&n)
 	for n > 0 {
-		S(s, &i)
+		Fscan(s, &i)
 		t = append(t, i)
 		n--
 	}

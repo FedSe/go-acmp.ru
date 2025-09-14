@@ -7,7 +7,6 @@ import (
 )
 
 type T struct{ v, w, q int }
-
 type H struct {
 	p    int
 	m, c []int
@@ -16,7 +15,6 @@ type H struct {
 var (
 	n, r, j int
 	s       = d.NewReader(Stdin)
-	S       = Fscan
 	P       = Print
 )
 
@@ -42,7 +40,7 @@ func F(n int) []T {
 	v := 0
 	for 0 < n {
 		n--
-		S(s, &v)
+		Fscan(s, &v)
 		a[n] = T{v, n, 0}
 	}
 	SliceStable(a, func(i, j int) bool {
@@ -52,7 +50,7 @@ func F(n int) []T {
 }
 
 func main() {
-	S(s, &n)
+	Scan(&n)
 	a := F(n)
 	b := F(n)
 	c := make([]T, n)

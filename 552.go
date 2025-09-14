@@ -9,12 +9,11 @@ func main() {
 		c, v    [1e3]int
 		n, i, j int
 		s       = b.NewReader(Stdin)
-		S       = Fscan
 	)
 
-	S(s, &n)
+	Scan(&n)
 	for j < n {
-		S(s, &v[j])
+		Fscan(s, &v[j])
 		j++
 	}
 

@@ -7,16 +7,15 @@ import (
 )
 func main() {
 	var (
-		p       [1e5][2]int
+		p       [1e5][]int
 		a, n, i int
 		s       = b.NewReader(Stdin)
-		S       = Fscan
 	)
 
-	S(s, &n)
+	Scan(&n)
 	for i < n {
-		S(s, &a)
-		p[i] = [2]int{a, i + 1}
+		Fscan(s, &a)
+		p[i] = []int{a, i + 1}
 		i++
 	}
 

@@ -23,7 +23,7 @@
 package main
 import . "fmt"
 func main(){
-	Print(1)
+    Print(1)
 }
 
 // 43 символа
@@ -50,14 +50,14 @@ func main(){
 package main
 import "fmt"
 func main(){
-	fmt.Print(1)
+    fmt.Print(1)
 }
 
 /* Хорошо */
 package main
 import . "fmt"
 func main(){
-	Print(1)
+    Print(1)
 }
 ```
 В случае golf-практик это практически всегда реализуемо. Исключения:
@@ -71,14 +71,14 @@ func main(){
 ```go
 package main
 import (
-	b "bufio"
-	. "fmt"
-	. "os"
+    b "bufio"
+    . "fmt"
+    . "os"
 )
 func main() {
-	n := 0
-	Fscan(b.NewReader(Stdin), &n)
-	Print(n)
+    n := 0
+    Fscan(b.NewReader(Stdin), &n)
+    Print(n)
 }
 ```
 
@@ -143,8 +143,8 @@ I := Index
 a := I(str, sub)   // a := strings.Index(str, sub)
 
 import (
-	. "strings"
-	u "unicode"
+    . "strings"
+    u "unicode"
 )
 L = ToLower        // strings.ToLower
 U = u.ToUpper      // unicode.ToUpper
@@ -205,7 +205,7 @@ import . "math"
 type A = float64   // Алиас к float64
 var x, y, a, b A
 func F(a, b A) A {
-	return Abs(a*(y-b)-(x-a)*b) / Sqrt(a*a+b*b)
+    return Abs(a*(y-b)-(x-a)*b) / Sqrt(a*a+b*b)
 }
 // Трижды float64 (21 симв.)
 // type A = float64 A A A (16 симв.)
@@ -217,7 +217,7 @@ func main() {
 d := [4e3]float64{1}
 Scan(&N, &Q)
 for 0 < N {
-	var w [4e3]float64
+    var w [4e3]float64
 ...
 
 /* Можно сократить так */
@@ -228,7 +228,7 @@ func main() {
 d := A{1}
 Scan(&N, &Q)
 for 0 < N {
-	var w A
+    var w A
 ...
 ```
 
@@ -270,14 +270,14 @@ Printf(`Число 1: %d
 ```go
 /*ПЛОХО*/
 t := map[float64]string{
-	12.5: "GREEN",
-	12.9: "RED",
+    12.5: "GREEN",
+    12.9: "RED",
 }
 
 /*Хорошо*/
 t := map[any]string{
-	12.5: "GREEN",
-	12.9: "RED"}
+    12.5: "GREEN",
+    12.9: "RED"}
 ```
 3. Нет ситуаций, когда `make()` выгоден для `map`. Не используйте его.
 ```go
@@ -297,7 +297,7 @@ w := map[any]map[int]bool{}
 ```go
 v, o := m[x]
 if o {
-	return v
+    return v
 }
 ```
 
@@ -310,7 +310,7 @@ if x == f || x == -f || y == f || y == -f { ... }
 
 /*23 символа*/
 switch f {
-	case x, -x, y, -y: ...
+    case x, -x, y, -y: ...
 }
 ```
 
@@ -386,7 +386,7 @@ Println(v)	//	[0 0 0 0 0]
 var v [5]Int
 
 for i := range v {
-	Printf("v[%d] = %d\n", i, &v[i])
+    Printf("v[%d] = %d\n", i, &v[i])
 }
 Println(v)
 /* Вывод:
@@ -428,18 +428,18 @@ e := new(Int).SetBytes([]byte{42})
 - WriteRune(): записывает один объект типа rune
 - WriteString(): записывает строку
 
-К такому перечню вопрос - где тут записывать **int**? **float64**? В общем, я рекомендую игнорировать эти варианты вывода и использовать всегда один универсальный:
+К такому перечню вопрос - где тут записывать **int**? **float64**? Можно, но требует реализации и по символам затратно, для чисел я рекомендую по возможности игнорировать эти варианты вывода и использовать всегда один универсальный:
 
 ```go
 func main() {
-	s := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	w := b.NewWriter(Stdout)
-	Fprint(w, "Числа --")
-	for _, v := range s {
-		Fprint(w, " ", v)  // Поддерживает множественный ввод
-	}
-	Fprintf(w, "%c", '.')      // Поддерживает форматирование
-	w.Flush()                  // Обязательная строка для вывода
+    s := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    w := b.NewWriter(Stdout)
+        Fprint(w, "Числа --")
+        for _, v := range s {
+            Fprint(w, " ", v)      // Поддерживает множественный ввод
+        }
+        Fprintf(w, "%c", '.')      // Поддерживает форматирование
+        w.Flush()                  // Обязательная строка для вывода
 }
 // Вывод: Числа -- 1 2 3 4 5 6 7 8 9 10.
 ```
@@ -455,10 +455,10 @@ func main() {
 var n string
 r := b.NewReader(Stdin)
     
-Fscan(r, &n)              // Ввод: "Одна строка"
+Fscan(r, &n)              // Ввод:  "Одна строка"
 Print(n)                  // Вывод: "Одна"
     
-n, _ = r.ReadString('\n') // Ввод: "Одна строка"
+n, _ = r.ReadString('\n') // Ввод:  "Одна строка"
 Print(n)                  // Вывод: "Одна строка"
 ```
 
@@ -467,13 +467,13 @@ Print(n)                  // Вывод: "Одна строка"
 var n string
 r := b.NewScanner(Stdin)
     
-r.Scan()                // Ввод: "Одна строка"
+r.Scan()                // Ввод:  "Одна строка"
 n = r.Text()
     
 Print(n)                // Вывод: "Одна строка"
     
 r.Split(b.ScanWords)    // Режим чтения пословно
-r.Scan()                // Ввод: "Одна строка"
+r.Scan()                // Ввод:  "Одна строка"
 n = r.Text()
 
 Print(n)                // Вывод: "Одна"

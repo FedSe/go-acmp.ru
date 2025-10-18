@@ -1,29 +1,15 @@
 package main
-import . "fmt"
+import (
+	b "bufio"
+	. "fmt"
+	. "os"
+	. "strings"
+)
 func main() {
-	var n, m, i, q int
-	P := Print
-
-	Scan(&n, &m)
-	if n > m {
-		n, m = m, n
-		q = 1
-	}
-
-	P(m)
-	for i < m {
-		P(`
-`, n, " ")
-		j := 0
-		for j < n {
-			l := (j+i)%m + 1
-			j++
-			h := j
-			if q < 1 {
-				l, h = h, l
-			}
-			P(l, "-", h, " ")
-		}
-		i++
-	}
+	r := b.NewScanner(Stdin)
+	r.Scan()
+	n := len(Fields(r.Text())) - 1
+	r.Scan()
+	w := Fields(r.Text())
+	Print(w[n%len(w)])
 }
